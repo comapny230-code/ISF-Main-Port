@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/register",
-        destination: "https://isf-test.vercel.app/",
+        destination: "https://register.startupjathara.com",
         permanent: false,
       },
       {

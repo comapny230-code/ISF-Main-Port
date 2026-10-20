@@ -133,12 +133,12 @@ export function HeroSection() {
         {/* Primary Register Button */}
         <div className="hero-enter hero-enter-delay-5 mt-5 sm:mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://isf-test.vercel.app/"
+            href="https://register.startupjathara.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-8 sm:px-9 py-3.5 sm:py-4 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-sm sm:text-base shadow-[0_8px_28px_rgba(232,112,66,0.50)] hover:shadow-[0_12px_36px_rgba(232,112,66,0.65)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200 tracking-wide"
           >
-            <span>Register for the Summit</span>
+            <span>Register</span>
             <ArrowRight className="w-4 h-4" />
           </a>
           <a

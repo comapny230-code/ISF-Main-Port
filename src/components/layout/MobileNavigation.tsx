@@ -229,13 +229,13 @@ export function MobileNavigation() {
         {/* Drawer Footer */}
         <div className="p-3.5 min-[380px]:p-4 sm:p-5 border-t border-[#e8dfd3] bg-[#f5efe6] space-y-2.5 shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <a
-            href="https://isf-test.vercel.app/"
+            href="https://register.startupjathara.com"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
             className="w-full inline-flex items-center justify-between px-4 py-2.5 sm:py-3 rounded-xl text-xs sm:text-sm font-bold bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white shadow-xs hover:shadow-sm active:scale-98 transition-all"
           >
-            <span>Register Now (Free Entry)</span>
+            <span>Register</span>
             <ArrowRight className="w-4 h-4" />
           </a>
 

@@ -45,7 +45,7 @@ export default function NotFound() {
             <span>Return to Homepage</span>
           </Button>
 
-          <Button href="https://isf-test.vercel.app/" variant="terracotta" size="md" className="font-bold shadow-sm">
+          <Button href="https://register.startupjathara.com" variant="terracotta" size="md" className="font-bold shadow-sm">
             <span>Summit Registration Gateway</span>
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>

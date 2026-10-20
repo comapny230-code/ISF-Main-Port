@@ -21,7 +21,7 @@ export const EVENT_METADATA: EventMetadata = {
     start: "2026-12-17",
     end: "2026-12-20",
   },
-  registrationUrl: "https://isf-test.vercel.app/",
+  registrationUrl: "https://register.startupjathara.com",
   venueName: "GIET University Campus",
   venueCampus: "Goboriguda, Po-Kharling",
   venueCity: "Gunupur",

@@ -34,12 +34,12 @@ export function RegistrationCTA() {
         {/* CTA Buttons */}
         <div className="mt-7 flex flex-col sm:flex-row items-center justify-center gap-3">
           <a
-            href="https://isf-test.vercel.app/"
+            href="https://register.startupjathara.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#e87042] to-[#d06030] text-white font-bold text-sm shadow-[0_6px_24px_rgba(232,112,66,0.40)] hover:shadow-[0_10px_32px_rgba(232,112,66,0.60)] hover:from-[#f07846] hover:to-[#d96a38] active:scale-95 transition-all duration-200"
           >
-            <span>Register for the Summit</span>
+            <span>Register</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>
