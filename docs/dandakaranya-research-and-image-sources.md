@@ -1,0 +1,27 @@
+# Dandakaranya page: research and image record
+
+The page distinguishes the Ramayana's literary geography from modern administrative geography and from the 1958 Dandakaranya Development Project. It describes Deomali as a Koraput landmark in the Eastern Ghats, not as the event venue or a boundary for ancient Dandakaranya.
+
+## Research sources
+
+- [Vālmīki Rāmāyaṇa, Araṇya Kāṇḍa 3.1](https://www.valmiki.iitk.ac.in/sloka?field_kanda_tid=3&field_sarga_value=1&language=en), IIT Kanpur translation project. Supports the description of Dandaka forest in the epic tradition.
+- [Koraput District Gazetteer](https://koraput.odisha.gov.in/en/documents/district-gazetteer), Government of Odisha. Regional political and social history, including the Nandapur and Jeypore historical context and linguistic diversity.
+- [Yojana, November 1968](https://publicationsdivision.nic.in/Journalarchives/Yojana/Yojana-English/1968/November/Yojana_1968_November_pdf.pdf), Publications Division, Government of India. Contemporary government account of the Dandakaranya Development Authority and resettlement project; read as an official account of project aims and activity.
+- [Tripathy, Journal of Contemporary South Asia (2025)](https://www.arfjournals.com/image/catalog/Journals%20Papers/JCSA/2025/No%201%20%282025%29/5-S.%20N.%20Tripathy-12.pdf). Scholarly discussion of impacts on indigenous communities. The page summarizes the issue cautiously and does not imply that the 1968 government account is a complete record of local effects.
+- [Koraput District: Tribal Communities](https://koraput.odisha.gov.in/en/more/tribal-communities), Government of Odisha; [Koraput District Gazetteer](https://koraput.odisha.gov.in/sites/default/files/2023-07/Koraput%20Gazetteer%20New.pdf). Community names, geographic context, languages, and cultural practices.
+- [Odisha Tourism: Deomali Hills](https://odishatourism.gov.in/en/places/deomali-hills). Location and landscape description for Deomali in Koraput district.
+- [IP India: Kotpad Handloom Fabric GI application](https://search.ipindia.gov.in/GIRPublicSearch/Application/Details/10); [Government of Odisha: Paintings](https://odisha.gov.in/en/odisha-tourism/paintings). Sources for the textile registration and Saora artistic tradition.
+- [Official Startup Jathara event page](https://www.isfnetwork.org/isf-startup-jathara-2026). Used only for the event's connection to Gunupur and GIET University.
+
+## Photographs
+
+The image subjects are identified as wider Koraput / southern Odisha landscapes; none is labelled as an exact Dandakaranya boundary or as the summit campus.
+
+1. `public/images/dandakaranya/koraput-deomali-panorama.jpg` — “Koraput.jpg”, photograph of Deomali Mountain in Koraput District, by [BubunTalk](https://commons.wikimedia.org/wiki/User:BubunTalk), [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Koraput.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized via Wikimedia Commons for web delivery.
+2. `public/images/dandakaranya/koraput-forest-sunrise.jpg` — “Sunrise at Koraput forest silhouette.jpg”, photograph of Koraput forest at sunrise, by [Shiv's fotografia](https://commons.wikimedia.org/wiki/User:Shiv%27s_fotografia), [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Sunrise_at_Koraput_forest_silhouette.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized via Wikimedia Commons for web delivery.
+3. `public/images/dandakaranya/gadaba-couple-koraput.jpg` — “A gadaba couple, Koraput Odisha”, by the Government of Odisha, [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:A_gadaba_couple,_Koraput_Odisha,.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The image was donated by the Government of Odisha and its permission verified through Wikimedia VRT. Used with a subject-specific caption in the living-cultures chapter.
+4. `public/images/dandakaranya/saura-painting-odisha.jpg` — “Saura painting of Odisha DSCN1052 05.jpg”, by [Sumita Roy Dutta](https://commons.wikimedia.org/wiki/User:Sumita_Roy_Dutta), [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Saura_painting_of_Odisha_DSCN1052_05.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Resized via Wikimedia Commons and identified as a contemporary Saura painting from Odisha.
+5. `public/images/dandakaranya/table-mountain-koraput.jpg` — “View from table mountain Koraput.jpg”, by [Asmit Kumar Panigrahi](https://commons.wikimedia.org/wiki/User:Asmit_Kumar_Panigrahi), [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:View_from_table_mountain_Koraput.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Used as a present-day view of the lived Koraput landscape in Chapter 01.
+6. `public/images/dandakaranya/deomali-hilltop-koraput.jpg` — “Deomali hill top Koraput India.jpg”, by [BubunTalk](https://commons.wikimedia.org/wiki/User:BubunTalk), [Wikimedia Commons file page](https://commons.wikimedia.org/wiki/File:Deomali_hill_top_Koraput_India.jpg), [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). Used for the Deomali landscape chapter with a location-specific caption.
+
+The page includes visible image credits and license links. The photographs use Next.js local image optimization; no unverified existing photographs or generated imagery are used on this page.

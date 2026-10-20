@@ -1,0 +1,381 @@
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --font-serif: var(--font-serif), "Libre Baskerville", "Baskerville", "Playfair Display", Georgia, serif;
+    --font-sans: var(--font-sans), Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-heading: var(--font-serif), "Libre Baskerville", "Baskerville", "Playfair Display", Georgia, serif;
+    --font-body: var(--font-sans), Inter, system-ui, sans-serif;
+
+    --breakpoint-xs: 480px;
+
+    --color-forest-950: #081a14;
+    --color-forest-900: #0d281e;
+    --color-forest-850: #103327;
+    --color-forest-800: #143e30;
+    --color-forest-700: #1b5341;
+    --color-forest-600: #256f57;
+    --color-forest-500: #318a6e;
+    --color-forest-100: #e2eee8;
+    --color-forest-50: #f2f7f4;
+
+    --color-ivory-50: #fcfbf8;
+    --color-ivory-100: #f7f4ec;
+    --color-ivory-200: #ede7db;
+    --color-ivory-300: #dfd6c4;
+    --color-ivory-400: #ccc1ab;
+
+    --color-terracotta-500: #c25e38;
+    --color-terracotta-600: #a74e2d;
+    --color-terracotta-700: #8b3e23;
+    --color-terracotta-100: #faeee8;
+
+    --color-gold-400: #d6b25e;
+    --color-gold-500: #be9740;
+    --color-gold-600: #9e792c;
+    --color-gold-100: #fbf5e6;
+
+    --color-charcoal-950: #0e1412;
+    --color-charcoal-900: #161e1b;
+    --color-charcoal-800: #222b27;
+    --color-charcoal-700: #333e3a;
+    --color-charcoal-600: #4a5752;
+    --color-charcoal-400: #7e8d87;
+    --color-charcoal-200: #c8d1cd;
+  }
+}
+
+:root {
+  --background: #fcfbf8;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --card-foreground: #1c1917;
+  --popover: #ffffff;
+  --popover-foreground: #1c1917;
+  --primary: #e87042;
+  --primary-foreground: #ffffff;
+  --secondary: #ede7db;
+  --secondary-foreground: #1c1917;
+  --accent: #c25e38;
+  --accent-foreground: #ffffff;
+  --gold: #d97706;
+  --gold-foreground: #ffffff;
+  --border: #e6dfd1;
+  --input: #e6dfd1;
+  --ring: #e87042;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure images, SVGs, and media never exceed container boundaries */
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Universal text-wrap protection against horizontal blowout */
+p, span, h1, h2, h3, h4, h5, h6, a, li, blockquote {
+  overflow-wrap: break-word;
+}
+
+/* Typographic hierarchy: Libre Baskerville stack for headings; Inter for body, subheadings & buttons */
+h1, h2, h3, .font-heading {
+  font-family: var(--font-serif), "Libre Baskerville", "Baskerville", "Playfair Display", Georgia, serif;
+}
+
+button, input, select, textarea, .btn, .font-body {
+  font-family: var(--font-sans), Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Hide scrollbars completely while retaining smooth scroll */
+html, body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge, Opera */
+  width: 0;
+  height: 0;
+}
+
+/* Subtle pattern for institutional authenticity */
+.bg-subtle-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(20, 62, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 62, 48, 0.04) 1px, transparent 1px);
+}
+
+.bg-forest-texture {
+  background-color: #0d281e;
+  background-image: radial-gradient(circle at 10% 20%, rgba(37, 111, 87, 0.25) 0%, transparent 40%),
+                    radial-gradient(circle at 90% 80%, rgba(194, 94, 56, 0.15) 0%, transparent 40%);
+}
+
+.glass-nav {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(252, 251, 248, 0.92);
+}
+
+.glass-nav-dark {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background-color: rgba(13, 40, 30, 0.94);
+}
+
+@keyframes hotelProgress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-hotel-progress {
+  animation: hotelProgress 3s linear infinite;
+}
+
+/* ─── Entrance animations ────────────────────────────────────────────────────── */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hero entrance – applied to hero content wrapper */
+.hero-enter {
+  animation: fadeInUp 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-enter-delay-1 { animation-delay: 0.10s; }
+.hero-enter-delay-2 { animation-delay: 0.22s; }
+.hero-enter-delay-3 { animation-delay: 0.34s; }
+.hero-enter-delay-4 { animation-delay: 0.48s; }
+.hero-enter-delay-5 { animation-delay: 0.62s; }
+
+/* Staggered card entrance (used on FourPillars, ExploreEvent) */
+.card-enter {
+  animation: fadeInUp 0.60s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.card-enter-1 { animation-delay: 0.05s; }
+.card-enter-2 { animation-delay: 0.15s; }
+.card-enter-3 { animation-delay: 0.25s; }
+.card-enter-4 { animation-delay: 0.35s; }
+
+/* Progressive scroll reveal for long-form editorial sections. Content remains
+   fully visible in browsers without scroll-driven animation support. */
+@keyframes heritageReveal {
+  from {
+    opacity: 0.72;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .heritage-reveal,
+    .startup-reveal {
+      animation: heritageReveal linear both;
+      animation-timeline: view();
+      animation-range: entry 8% cover 24%;
+    }
+
+    .section-reveal {
+      animation: sectionReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 5% cover 22%;
+    }
+  }
+}
+
+/* Startups page: subtle depth cues that follow the scroll without adding JS. */
+@keyframes startupHeroParallax {
+  from { transform: scale(1.04) translateY(0); }
+  to { transform: scale(1.12) translateY(9%); }
+}
+
+@keyframes startupOrbDrift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-28px, 34px, 0) scale(1.08); }
+}
+
+.startup-hero-media {
+  transform: scale(1.04);
+  transform-origin: center center;
+}
+
+.startup-depth-card,
+.startup-tilt-card,
+.startup-glass-card {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .startup-orb {
+    animation: startupOrbDrift 9s ease-in-out infinite;
+  }
+
+  .startup-tilt-card,
+  .startup-glass-card,
+  .startup-depth-card {
+    transition: transform 450ms cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 450ms cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 300ms ease;
+  }
+
+  .startup-tilt-card:hover {
+    transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-5px);
+    box-shadow: 0 24px 60px rgba(40, 34, 25, 0.12);
+  }
+
+  .startup-glass-card:hover {
+    transform: perspective(900px) rotateX(1.5deg) rotateY(1.5deg) translateZ(8px);
+    border-color: rgba(255, 255, 255, 0.24);
+  }
+
+  .startup-depth-card:hover {
+    transform: perspective(1000px) rotateX(1deg) rotateY(-1.5deg) scale(1.01);
+  }
+
+  @supports (animation-timeline: view()) {
+    .startup-hero-media {
+      animation: startupHeroParallax linear both;
+      animation-timeline: view();
+      animation-range: exit 0% exit 100%;
+    }
+  }
+}
+
+@media (max-width: 639px) {
+  .startup-tilt-card,
+  .startup-glass-card {
+    scroll-snap-stop: always;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ─── 3-D scroll-reveal for cards ───────────────────────────────────────────
+   Visible by default; enhanced animation fires only where supported.        */
+
+@keyframes card3dReveal {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateX(10deg) translateY(36px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(700px) rotateX(0deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes card3dRevealLeft {
+  from {
+    opacity: 0;
+    transform: perspective(700px) rotateY(14deg) translateX(-28px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(700px) rotateY(0deg) translateX(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .card-3d-reveal {
+      animation: card3dReveal 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    .card-3d-reveal-left {
+      animation: card3dRevealLeft 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 28%;
+    }
+    .card-3d-reveal:nth-child(2) { animation-delay: 0.08s; }
+    .card-3d-reveal:nth-child(3) { animation-delay: 0.16s; }
+    .card-3d-reveal:nth-child(4) { animation-delay: 0.24s; }
+  }
+}
+
+/* Hover 3-D tilt on milestone / feature cards */
+.card-hover-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease;
+}
+.card-hover-3d:hover {
+  transform: perspective(700px) rotateX(3deg) translateY(-5px);
+}
