@@ -247,23 +247,11 @@ describe("Login & Session API Regression Suite (P0 Emergency Fix)", () => {
   });
 
   // --------------------------------------------------------------------------
-  // 13. Firebase Admin SDK runtime module loading (ERR_REQUIRE_ESM prevention)
+  // 13. Standalone Auth module loading
   // --------------------------------------------------------------------------
-  test("13. Firebase Admin SDK runtime module loading: resolves cleanly without ERR_REQUIRE_ESM", async () => {
-    // Verifies that firebase-admin/auth and its dependencies (jwks-rsa, jose) resolve cleanly
-    // in Node.js serverless runtimes without throwing ERR_REQUIRE_ESM
-    const { createRequire } = await import("node:module");
-    const require = createRequire(import.meta.url);
-
-    assert.doesNotThrow(() => {
-      const adminApp = require("firebase-admin/app");
-      assert.ok(adminApp.initializeApp, "firebase-admin/app must export initializeApp");
-
-      const adminAuth = require("firebase-admin/auth");
-      assert.ok(adminAuth.getAuth, "firebase-admin/auth must export getAuth");
-
-      const jwks = require("jwks-rsa");
-      assert.ok(typeof jwks === "function", "jwks-rsa must export default function");
-    });
+  test("13. Standalone Auth module loading: resolves cleanly", async () => {
+    const authModule = await import("../src/lib/firebase/auth.ts");
+    assert.ok(authModule.signInSuperAdmin, "auth module must export signInSuperAdmin");
+    assert.ok(authModule.signOutSuperAdmin, "auth module must export signOutSuperAdmin");
   });
 });
