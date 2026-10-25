@@ -61,6 +61,26 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
           .filter(Boolean);
         const styles = roundtableStyles[roundtable.badgeColor];
         const isExpanded = !!expandedRoundtables[roundtable.id];
+        const toggleButton = (
+          <button
+            type="button"
+            onClick={() => toggleRoundtable(roundtable.id)}
+            aria-expanded={isExpanded}
+            className="inline-flex items-center gap-2 rounded-full border border-[#d6cfc4] bg-[#fbf9f5] px-5 py-2.5 text-xs font-bold text-[#1b1b18] shadow-xs hover:border-[#b65531] hover:text-[#b65531] hover:bg-white active:scale-95 transition-all"
+          >
+            {isExpanded ? (
+              <>
+                <span>Show Less</span>
+                <ChevronUp className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
+              </>
+            ) : (
+              <>
+                <span>Show All</span>
+                <ChevronDown className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
+              </>
+            )}
+          </button>
+        );
 
         return (
           <article key={roundtable.id} id={roundtable.id} className="scroll-mt-32">
@@ -85,6 +105,11 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                   <p className="mt-3 max-w-2xl mx-auto sm:mx-0 text-sm leading-6 text-[#656159] sm:text-[15px]">
                     {roundtable.description}
                   </p>
+                  {roundtable.moderator && (
+                    <p className="mt-3 text-xs font-bold text-[#18745b] sm:text-sm">
+                      Moderator: {roundtable.moderator}
+                    </p>
+                  )}
                 </div>
 
                 <div className="grid shrink-0 gap-x-6 gap-y-2 text-xs font-semibold text-[#4e4a43] sm:grid-cols-2 lg:max-w-[26rem] mx-auto sm:mx-0">
@@ -107,13 +132,21 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
             {/* Panelists Grid: 2 columns on mobile, 3 on md, 4 on xl */}
             <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">
               {panelists.map((panelist, index) => {
-                const isHiddenOnMobile = index >= 4 && !isExpanded;
+                const hiddenUntilExpanded = !isExpanded && index >= 4;
+                const responsiveVisibility =
+                  index < 4
+                    ? "flex"
+                    : index < 6
+                      ? "hidden md:flex"
+                      : index < 8
+                        ? "hidden xl:flex"
+                        : "hidden";
 
                 return (
                   <article
                     key={panelist.id}
-                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border border-[#ded8cd] bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
-                      isHiddenOnMobile ? "hidden sm:flex" : "flex"
+                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border ${panelist.roleLabel ? "border-[#8b5717]" : "border-[#ded8cd]"} bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
+                      hiddenUntilExpanded ? responsiveVisibility : "flex"
                     }`}
                   >
                     <div className="relative aspect-square sm:aspect-[4/4.35] overflow-hidden bg-[#ece8df]">
@@ -122,6 +155,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                           src={panelist.photoUrl}
                           alt={panelist.name}
                           fill
+                          unoptimized
                           sizes="(max-width: 639px) 48vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
                           className="object-cover object-top grayscale-[8%] transition-transform duration-700 ease-out group-hover:scale-[1.035] motion-reduce:transition-none"
                         />
@@ -138,6 +172,15 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                             {panelist.initials}
                           </span>
                         </div>
+                      )}
+
+                      {panelist.roleLabel && (
+                        <>
+                          <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-12 bg-gradient-to-b from-black/60 to-transparent sm:h-16" />
+                          <span className="absolute left-2 top-2 z-10 text-[10px] font-bold tracking-[0.04em] text-[#fff7eb] sm:left-3.5 sm:top-3.5 sm:text-xs">
+                            {panelist.roleLabel}
+                          </span>
+                        </>
                       )}
 
 
@@ -180,29 +223,10 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
               })}
             </div>
 
-            {/* Mobile Dropdown / Show All Toggle Button */}
-            {panelists.length > 4 && (
-              <div className="mt-5 flex justify-center sm:hidden">
-                <button
-                  type="button"
-                  onClick={() => toggleRoundtable(roundtable.id)}
-                  aria-expanded={isExpanded}
-                  className="inline-flex items-center gap-2 rounded-full border border-[#d6cfc4] bg-[#fbf9f5] px-5 py-2.5 text-xs font-bold text-[#1b1b18] shadow-xs hover:border-[#b65531] hover:text-[#b65531] hover:bg-white active:scale-95 transition-all"
-                >
-                  {isExpanded ? (
-                    <>
-                      <span>Show Less</span>
-                      <ChevronUp className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
-                    </>
-                  ) : (
-                    <>
-                      <span>Show All ({panelists.length} Speakers)</span>
-                      <ChevronDown className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
-                    </>
-                  )}
-                </button>
-              </div>
-            )}
+            {/* Show All Toggle Button: only show when the current breakpoint has hidden cards. */}
+            {panelists.length > 4 && <div className="mt-5 flex justify-center md:hidden">{toggleButton}</div>}
+            {panelists.length > 6 && <div className="mt-5 hidden justify-center md:flex xl:hidden">{toggleButton}</div>}
+            {panelists.length > 8 && <div className="mt-5 hidden justify-center xl:flex">{toggleButton}</div>}
           </article>
         );
       })}
