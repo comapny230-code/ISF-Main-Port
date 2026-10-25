@@ -140,10 +140,6 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         </div>
                       )}
 
-                      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 sm:h-24 bg-gradient-to-t from-black/45 sm:from-black/40 to-transparent" />
-                      <span className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 text-[8px] sm:text-[10px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.16em] text-white/90">
-                        Panelist {String(index + 1).padStart(2, "0")}
-                      </span>
 
                       {panelist.linkedinUrl && (
                         <a
