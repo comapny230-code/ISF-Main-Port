@@ -117,7 +117,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                     }`}
                   >
                     <div className="relative aspect-square sm:aspect-[4/4.35] overflow-hidden bg-[#ece8df]">
-                      {panelist.photoUrl ? (
+                      {!roundtable.hidePhotos && panelist.photoUrl ? (
                         <Image
                           src={panelist.photoUrl}
                           alt={panelist.name}
@@ -162,16 +162,16 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                     </div>
 
                     <div className="flex flex-1 flex-col p-3 sm:px-6 sm:pb-6 sm:pt-5">
-                      <h4 className="font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528] line-clamp-1 sm:line-clamp-none">
+                      <h4 className="font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
                         {panelist.name}
                       </h4>
                       {panelist.designation && (
-                        <p className="mt-1 sm:mt-3 text-[10.5px] sm:text-[13px] font-medium sm:font-semibold leading-[1.3] sm:leading-[1.45] text-[#4d4b45] line-clamp-2">
+                        <p className="mt-1 sm:mt-3 text-[10.5px] sm:text-[13px] font-medium sm:font-semibold leading-[1.3] sm:leading-[1.45] text-[#4d4b45]">
                           {panelist.designation}
                         </p>
                       )}
                       {panelist.organization && (
-                        <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs leading-snug sm:leading-[1.5] text-[#817b71] line-clamp-1">
+                        <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs leading-snug sm:leading-[1.5] text-[#817b71]">
                           {panelist.organization}
                         </p>
                       )}
