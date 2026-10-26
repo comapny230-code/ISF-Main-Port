@@ -133,6 +133,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
             <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">
               {panelists.map((panelist, index) => {
                 const hiddenUntilExpanded = !isExpanded && index >= 4;
+                const hasLinkedIn = Boolean(panelist.linkedinUrl);
                 const responsiveVisibility =
                   index < 4
                     ? "flex"
@@ -174,38 +175,37 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         </div>
                       )}
 
-                      {panelist.roleLabel && (
-                        <>
-                          <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-12 bg-gradient-to-b from-black/60 to-transparent sm:h-16" />
-                          <span className="absolute left-2 top-2 z-10 text-[10px] font-bold tracking-[0.04em] text-[#fff7eb] sm:left-3.5 sm:top-3.5 sm:text-xs">
-                            {panelist.roleLabel}
-                          </span>
-                        </>
-                      )}
-
-
-                      {panelist.linkedinUrl && (
-                        <a
-                          href={panelist.linkedinUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={`${panelist.name} on LinkedIn`}
-                          title={`${panelist.name} on LinkedIn`}
-                          className="absolute right-2 top-2 sm:right-3.5 sm:top-3.5 flex h-7 w-7 sm:h-9 sm:w-9 items-center justify-center rounded-full border border-white/70 bg-white/90 text-[#185f8c] shadow-sm backdrop-blur-sm transition-[transform,background-color] duration-200 hover:scale-105 hover:bg-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#185f8c] motion-reduce:transition-none"
-                        >
-                          <svg className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                          </svg>
-                        </a>
-                      )}
                     </div>
 
-                    <div className="flex flex-1 flex-col p-3 sm:px-6 sm:pb-6 sm:pt-5">
-                      <h4 className="font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
-                        {panelist.name}
-                      </h4>
+                    <div
+                      className={`flex flex-1 flex-col p-3 sm:px-6 sm:pb-6 sm:pt-5 ${hasLinkedIn ? "cursor-pointer" : ""}`}
+                      role={hasLinkedIn ? "link" : undefined}
+                      tabIndex={hasLinkedIn ? 0 : undefined}
+                      aria-label={hasLinkedIn ? `Open ${panelist.name}'s LinkedIn profile` : undefined}
+                      onClick={() => {
+                        if (panelist.linkedinUrl) window.open(panelist.linkedinUrl, "_blank", "noopener,noreferrer");
+                      }}
+                      onKeyDown={(event) => {
+                        if (hasLinkedIn && (event.key === "Enter" || event.key === " ")) {
+                          event.preventDefault();
+                          window.open(panelist.linkedinUrl, "_blank", "noopener,noreferrer");
+                        }
+                      }}
+                    >
+                      <div className="flex items-start gap-1.5 sm:gap-2">
+                        <h4 className="min-w-0 flex-1 font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
+                          {panelist.name}
+                        </h4>
+                        {hasLinkedIn && (
+                          <span className="mt-0.5 inline-flex shrink-0 text-[#0a66c2]" aria-label="LinkedIn profile available">
+                            <svg className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" viewBox="0 0 24 24" aria-hidden="true">
+                              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                            </svg>
+                          </span>
+                        )}
+                      </div>
                       {panelist.designation && (
-                        <p className="mt-1 sm:mt-3 text-[10.5px] sm:text-[13px] font-medium sm:font-semibold leading-[1.3] sm:leading-[1.45] text-[#4d4b45]">
+                        <p className="mt-1.5 sm:mt-3 text-[11px] sm:text-sm font-bold leading-[1.3] sm:leading-[1.45] text-[#7a4d22]">
                           {panelist.designation}
                         </p>
                       )}

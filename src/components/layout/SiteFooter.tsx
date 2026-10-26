@@ -119,18 +119,18 @@ export function SiteFooter() {
               </h4>
               <ul className="space-y-2 text-xs text-[#a8a29e]">
                 <li>
-                  <a href="https://register.startupjathara.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
                     <span>Register</span>
                     <span className="text-[9px] bg-emerald-900/70 text-emerald-300 px-1 py-0.2 rounded border border-emerald-500/30">Free</span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://register.startupjathara.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Founder Pitch Application
                   </a>
                 </li>
                 <li>
-                  <a href="https://register.startupjathara.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                     Investor Delegation Seat
                   </a>
                 </li>

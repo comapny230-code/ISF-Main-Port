@@ -43,7 +43,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0f62fe]",
     designation: "Founder & Managing Partner",
     organization: "SucSEED Indovation GROWTH Fund",
-    photoUrl: "/images/speakers/vikrant-varshney-partner.png",
+    photoUrl: "/images/speakers/vikrant-varshney-updated.png",
     linkedinUrl: "https://www.linkedin.com/in/vikrantvarshney-indovation/",
   },
   "uday-saxena": {
@@ -63,7 +63,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#8a3800]",
     designation: "Professor, Department of Biomedical Engineering",
     organization: "Indian Institute of Technology, Hyderabad",
-    photoUrl: "/images/speakers/dr-renu-john.png",
+    photoUrl: "/images/speakers/dr-renu-john-updated.png",
     linkedinUrl: "https://www.linkedin.com/in/renu-john-ab20a29/",
   },
   "col-dr-k-suresh-babu": {
@@ -292,8 +292,10 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Vikrant Varshney",
     initials: "VV",
     initialsBg: "bg-[#0f62fe]",
+    designation: "Founder & Managing Partner",
+    organization: "SucSEED Indovation GROWTH Fund",
     roleLabel: "Moderator",
-    photoUrl: "/images/speakers/vikrant-varshney-partner.png",
+    photoUrl: "/images/speakers/vikrant-varshney-updated.png",
     linkedinUrl: "https://www.linkedin.com/in/vikrantvarshney-indovation/",
   },
   "rathnakar-samavedam-gcc": {
