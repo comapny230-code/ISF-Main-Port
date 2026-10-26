@@ -229,7 +229,7 @@ export function MobileNavigation() {
         {/* Drawer Footer */}
         <div className="p-3.5 min-[380px]:p-4 sm:p-5 border-t border-[#e8dfd3] bg-[#f5efe6] space-y-2.5 shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
           <a
-            href="https://register.startupjathara.com"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform"
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setIsOpen(false)}
