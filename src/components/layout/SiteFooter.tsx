@@ -145,6 +145,29 @@ export function SiteFooter() {
                   </Link>
                 </li>
               </ul>
+              <div className="mt-5 border-t border-[#232733] pt-4 text-xs">
+                <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#e87042]">
+                  Printing Material
+                </p>
+                <p className="mt-1 text-[#d6d0c7]">
+                  Mr. Rajendra Kumar Patro
+                </p>
+                <a
+                  href="mailto:rajurajpatro@gmail.com"
+                  className="mt-1.5 flex min-w-0 items-start gap-2 text-[11px] text-[#a8a29e] transition-colors hover:text-[#e87042]"
+                >
+                  <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#e87042]" />
+                  <span className="min-w-0 break-all">rajurajpatro@gmail.com</span>
+                </a>
+                <div className="mt-1.5 flex items-start gap-2 text-[11px] text-[#a8a29e]">
+                  <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#d68c45]" />
+                  <span className="flex flex-wrap gap-x-2 gap-y-0.5">
+                    <a href="tel:+919438765251" className="hover:text-[#e87042] transition-colors">+91 94387 65251</a>
+                    <span className="text-[#57534e]">•</span>
+                    <a href="tel:+917735745518" className="hover:text-[#e87042] transition-colors">+91 77357 45518</a>
+                  </span>
+                </div>
+              </div>
             </div>
 
             {/* Column 4: Contact & Secretariat */}
@@ -185,6 +208,7 @@ export function SiteFooter() {
                     Contact Secretariat →
                   </a>
                 </div>
+
               </div>
             </div>
           </div>
