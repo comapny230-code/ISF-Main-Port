@@ -6,19 +6,19 @@ import { ArrowRight } from "lucide-react";
 
 const HERO_BACKDROPS = [
   {
-    src: "/images/hero-junicorn-summit.jpeg",
+    src: "/images/hero-junicorn-summit.webp",
     alt: "ISF Junicorn Student Innovators and Mentors Delegation",
   },
   {
-    src: "/images/hero-cohort-team.png",
+    src: "/images/hero-cohort-team.webp",
     alt: "ISF Global Innovation Summit Cohort Delegation on Stage",
   },
   {
-    src: "/images/startup-stage-backdrop.jpg",
+    src: "/images/startup-stage-backdrop.webp",
     alt: "ISF Startup Jathara Grand Keynote Arena and Delegates",
   },
   {
-    src: "/images/grassroots-dandakaranya-summit.jpg",
+    src: "/images/grassroots-dandakaranya-summit.webp",
     alt: "Dandakaranya Forest Landscape, Venue of ISF Startup Jathara 2026",
   },
 ];

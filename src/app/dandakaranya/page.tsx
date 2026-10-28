@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dandakaranya: A Land of Legends, Life & Legacy",
     description: "A researched editorial journey through Dandakaranya’s landscapes, literary memory, history and living heritage.",
-    images: [{ url: "/images/dandakaranya/koraput-deomali-panorama.jpg", width: 1600, height: 738, alt: "Deomali highlands in Koraput district, Odisha" }],
+    images: [{ url: "/images/dandakaranya/koraput-deomali-panorama.webp", width: 1600, height: 738, alt: "Deomali highlands in Koraput district, Odisha" }],
   },
 };
 
@@ -27,7 +27,7 @@ export default function DandakaranyaPage() {
   return (
     <article className="bg-[#fcfbf8]">
       <header className="relative isolate flex min-h-[580px] items-center overflow-hidden bg-[#081a14] sm:min-h-[660px] lg:min-h-[720px] pt-24 pb-14 sm:pt-28 sm:pb-16">
-        <Image src="/images/dandakaranya/koraput-deomali-panorama.jpg" alt="The open Deomali ridgeline in Koraput district, part of the Eastern Ghats highlands of southern Odisha" fill priority sizes="100vw" className="-z-20 object-cover object-center" />
+        <Image src="/images/dandakaranya/koraput-deomali-panorama.webp" alt="The open Deomali ridgeline in Koraput district, part of the Eastern Ghats highlands of southern Odisha" fill priority sizes="100vw" className="-z-20 object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-[#081a14]/95 via-[#081a14]/50 to-[#081a14]/20" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#081a14]/75 via-[#081a14]/35 to-transparent" />
         <Container size="wide" className="py-6 text-white">
@@ -55,7 +55,7 @@ export default function DandakaranyaPage() {
             </div>
             <figure className="overflow-hidden rounded-[1.5rem] border border-[#dfd6c4] bg-white shadow-xl">
               <div className="relative aspect-[4/3]">
-                <Image src="/images/dandakaranya/table-mountain-koraput.jpg" alt="Koraput town and surrounding forested hills viewed from Table Mountain in southern Odisha" fill sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover transition-transform duration-700 hover:scale-[1.02]" />
+                <Image src="/images/dandakaranya/table-mountain-koraput.webp" alt="Koraput town and surrounding forested hills viewed from Table Mountain in southern Odisha" fill sizes="(max-width: 1024px) 100vw, 44vw" className="object-cover transition-transform duration-700 hover:scale-[1.02]" />
               </div>
               <figcaption className="px-4 py-3 text-xs leading-5 text-[#6b6257]">Koraput and its surrounding hills viewed from Table Mountain · Southern Odisha</figcaption>
             </figure>
@@ -66,7 +66,7 @@ export default function DandakaranyaPage() {
       <section className="heritage-reveal border-t border-[#e5d9c5] bg-[#f5efe6]">
         <Container size="wide" className="grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16 lg:py-24">
           <div className="relative order-2 aspect-[4/3] overflow-hidden rounded-xl lg:order-1">
-            <Image src="/images/dandakaranya/koraput-forest-sunrise.jpg" alt="Sunrise behind a tree-lined Koraput highland ridge in southern Odisha" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
+            <Image src="/images/dandakaranya/koraput-forest-sunrise.webp" alt="Sunrise behind a tree-lined Koraput highland ridge in southern Odisha" fill sizes="(max-width: 1024px) 100vw, 42vw" className="object-cover" />
             <p className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/75 to-transparent px-4 pb-3 pt-10 text-xs text-white">Koraput forest at sunrise · wider southern Odisha landscape</p>
           </div>
           <div className="order-1 max-w-xl lg:order-2">
@@ -96,7 +96,7 @@ export default function DandakaranyaPage() {
       </section>
 
       <section className="heritage-reveal relative isolate min-h-[580px] overflow-hidden bg-[#081a14] text-white sm:min-h-[640px]">
-        <Image src="/images/dandakaranya/deomali-hilltop-koraput.jpg" alt="Open grassland and mountain ridges at Deomali in Koraput district, Odisha" fill sizes="100vw" className="-z-20 object-cover object-center" />
+        <Image src="/images/dandakaranya/deomali-hilltop-koraput.webp" alt="Open grassland and mountain ridges at Deomali in Koraput district, Odisha" fill sizes="100vw" className="-z-20 object-cover object-center" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#081a14]/95 via-[#081a14]/70 to-[#081a14]/10" />
         <Container size="wide" className="flex min-h-[580px] items-center py-16 sm:min-h-[640px] sm:py-20">
           <div className="max-w-xl">
@@ -114,7 +114,7 @@ export default function DandakaranyaPage() {
           <div className="grid items-center gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:gap-16">
             <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-[1.5rem] border border-white/10 bg-[#081a14] shadow-2xl lg:mx-0">
               <div className="relative aspect-[3/4]">
-                <Image src="/images/dandakaranya/gadaba-couple-koraput.jpg" alt="A Gadaba couple photographed in Koraput, Odisha, wearing traditional clothing" fill sizes="(max-width: 1024px) 100vw, 38vw" className="object-cover" />
+                <Image src="/images/dandakaranya/gadaba-couple-koraput.webp" alt="A Gadaba couple photographed in Koraput, Odisha, wearing traditional clothing" fill sizes="(max-width: 1024px) 100vw, 38vw" className="object-cover" />
               </div>
               <figcaption className="px-4 py-3 text-xs leading-5 text-[#c8d1cd]">Gadaba couple, Koraput · Photograph released by the Government of Odisha</figcaption>
             </figure>
@@ -144,7 +144,7 @@ export default function DandakaranyaPage() {
             </div>
             <figure className="relative mx-auto w-full max-w-md overflow-hidden rounded-[1.5rem] border border-[#dfd6c4] bg-white shadow-xl lg:mx-0 lg:ml-auto">
               <div className="relative aspect-[4/5]">
-                <Image src="/images/dandakaranya/saura-painting-odisha.jpg" alt="A contemporary Saura painting from Odisha featuring a tree motif and detailed geometric border" fill sizes="(max-width: 1024px) 100vw, 38vw" className="object-cover" />
+                <Image src="/images/dandakaranya/saura-painting-odisha.webp" alt="A contemporary Saura painting from Odisha featuring a tree motif and detailed geometric border" fill sizes="(max-width: 1024px) 100vw, 38vw" className="object-cover" />
               </div>
               <figcaption className="px-4 py-3 text-xs leading-5 text-[#6b6257]">Saura painting from Odisha · Photograph by Sumita Roy Dutta</figcaption>
             </figure>

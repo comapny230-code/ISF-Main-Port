@@ -30,7 +30,7 @@ const ORGANIZERS: OrganizerItem[] = [
     role: "Host Institution",
     badgeStyle: "bg-[#edf6f2] text-[#1c6651] border-[#cbe4d8]",
     description: "Scenic 65+ acre academic campus with state-of-the-art convention halls and 28-year innovation legacy.",
-    logo: "/logos/giet-logo.png",
+    logo: "/logos/giet-logo.webp",
     href: "https://www.giet.edu",
   },
   {
@@ -39,7 +39,7 @@ const ORGANIZERS: OrganizerItem[] = [
     role: "Innovation Partner",
     badgeStyle: "bg-[#fdf6e7] text-[#8c671b] border-[#fae6b8]",
     description: "Venture incubation foundation providing design curriculums, investor roundtables, and mentor ecosystems.",
-    logo: "/logos/incubatex-logo.png",
+    logo: "/logos/incubatex-logo.webp",
     href: "https://www.incubationx.com",
   },
 ];

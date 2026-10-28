@@ -17,7 +17,7 @@ export function FAQPageClient() {
         {/* Background Image: faq-knowledge-hero.jpg */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/faq-knowledge-hero.jpg"
+            src="/images/faq-knowledge-hero.webp"
             alt="ISF Startup Jathara Attendee Concierge & FAQ Pavilion"
             fill
             priority

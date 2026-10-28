@@ -156,7 +156,6 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                           src={panelist.photoUrl}
                           alt={panelist.name}
                           fill
-                          unoptimized
                           sizes="(max-width: 639px) 48vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
                           className="object-cover object-top grayscale-[8%] transition-transform duration-700 ease-out group-hover:scale-[1.035] motion-reduce:transition-none"
                         />

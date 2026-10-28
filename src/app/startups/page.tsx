@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Discover the ISF Junicorn Tribal & Rural Innovation Challenge Cohort 3.0 at Startup Jathara 2026, GIET University, Gunupur.",
 };
 
-const applyUrl = "https://match.myanatomy.in/sc/69eaf7b184db4d003436f748/n";
+const applyUrl = "https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform";
 
 const supportPillars = [
   {
@@ -55,7 +55,7 @@ export default function StartupsPage() {
         {/* Background Media */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-pitch-stage.jpg"
+            src="/images/summit-pitch-stage.webp"
             alt="A young founder presenting an innovation to an investor jury"
             fill
             priority

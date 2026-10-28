@@ -18,7 +18,7 @@ export function ChiefGuestSection() {
             <div className="shrink-0 flex flex-col items-center">
               <div className="relative w-40 h-52 sm:w-48 sm:h-60 rounded-2xl overflow-hidden shadow-sm border border-stone-200/90 group">
                 <Image
-                  src="/images/sadguru-sri-madhusudan-sai.jpg"
+                  src="/images/sadguru-sri-madhusudan-sai.webp"
                   alt="Sadguru Sri Madhusudan Sai - Chief Guest of Honour at ISF Startup Jathara 2026"
                   fill
                   priority

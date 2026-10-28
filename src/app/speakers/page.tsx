@@ -28,7 +28,7 @@ export default function SpeakersPage() {
         {/* Topic-matching Dedicated Static Hero Image */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-speakers-backdrop.jpg"
+            src="/images/summit-speakers-backdrop.webp"
             alt="Speakers, Mentors and Dignitaries on Podium"
             fill
             priority
@@ -84,7 +84,7 @@ export default function SpeakersPage() {
 
                   <div className="relative aspect-[4/5] overflow-hidden rounded-3xl border-4 border-white bg-white shadow-[0_20px_50px_rgba(43,37,28,0.18)]">
                     <Image
-                      src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.jpg"}
+                      src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.webp"}
                       alt={chiefGuest.name}
                       fill
                       priority

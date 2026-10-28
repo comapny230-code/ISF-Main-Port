@@ -36,7 +36,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     name: "Dr. Satya Prakash Panda",
     position: "President",
     category: "governance",
-    imageSrc: "/images/leadership/dr-satya-prakash-panda.jpg",
+    imageSrc: "/images/leadership/dr-satya-prakash-panda.webp",
     fallbackInitials: "SPP",
     education: [
       "Venerable Founder Chairman of the Gandhi Group of Institutions",
@@ -60,7 +60,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     name: "Dr. Chandra Dhwaj Panda",
     position: "Vice President",
     category: "governance",
-    imageSrc: "/images/leadership/dr-chandra-dhwaj-panda.jpg",
+    imageSrc: "/images/leadership/dr-chandra-dhwaj-panda.webp",
     fallbackInitials: "CDP",
     education: [
       "Scholar of Economics",
@@ -84,7 +84,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     name: "Dr. Jagadish Panda",
     position: "Director General",
     category: "executive",
-    imageSrc: "/images/leadership/dr-jagadish-panda.jpeg",
+    imageSrc: "/images/leadership/dr-jagadish-panda.webp",
     fallbackInitials: "JP",
     education: [
       "M.Tech in Computer Science & Engineering",
@@ -108,7 +108,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     name: "Prof. Goutam Ghosh",
     position: "Vice Chancellor",
     category: "executive",
-    imageSrc: "/images/leadership/prof-goutam-ghosh.jpg",
+    imageSrc: "/images/leadership/prof-goutam-ghosh.webp",
     fallbackInitials: "GG",
     education: [
       "Alumnus of IIT Kharagpur and IIT Delhi",
@@ -133,7 +133,7 @@ export const GIET_LEADERSHIP_PROFILES: LeadershipProfile[] = [
     name: "Dr. N. V. Jagannadha Rao",
     position: "Registrar",
     category: "administration",
-    imageSrc: "/images/leadership/dr-nv-jagannadha-rao.jpg",
+    imageSrc: "/images/leadership/dr-nv-jagannadha-rao.webp",
     fallbackInitials: "NVJR",
     education: [
       "MBA in Management",
@@ -274,24 +274,24 @@ export const GIET_INNOVATION_ECOSYSTEM = [
     title: "Atal Community Innovation Centre (ACIC)",
     desc: "NITI Aayog-backed innovation centre fostering grassroots tech transfer, student prototypes, and youth enterprise across Odisha.",
     tag: "NITI Aayog / ACIC",
-    image: "/images/innovation/acic-innovation-lab.jpg"
+    image: "/images/innovation/acic-innovation-lab.webp"
   },
   {
     title: "BIRAC E-YUVA Innovation Centre",
     desc: "Biotechnology Industry Research Assistance Council (BIRAC) supported centre empowering student entrepreneurs with biotech and life sciences testbeds.",
     tag: "Biotech & Healthcare",
-    image: "/images/innovation/birac-biotech-centre.jpg"
+    image: "/images/innovation/birac-biotech-centre.webp"
   },
   {
     title: "Technology Business Incubator (TBI) & Incubatex",
     desc: "Pre-incubation & startup acceleration pipeline offering prototyping labs, seed grants, IP support, and investor access.",
     tag: "Startup Acceleration",
-    image: "/images/innovation/tbi-startup-incubator.jpg"
+    image: "/images/innovation/tbi-startup-incubator.webp"
   },
   {
     title: "DSIR Scientific & Industrial Research Facility",
     desc: "Officially recognized Scientific and Industrial Research Organization (SIRO) by the Ministry of Science & Technology, Govt. of India.",
     tag: "Govt. Recognized (SIRO)",
-    image: "/images/innovation/dsir-research-facility.jpg"
+    image: "/images/innovation/dsir-research-facility.webp"
   }
 ];

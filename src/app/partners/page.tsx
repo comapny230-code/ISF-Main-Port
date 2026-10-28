@@ -29,7 +29,7 @@ export default function PartnersPage() {
         {/* Topic-matching Dedicated Static Hero Image */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-partners-expo.jpg"
+            src="/images/summit-partners-expo.webp"
             alt="International Partners Expo Pavilion and Delegates"
             fill
             priority

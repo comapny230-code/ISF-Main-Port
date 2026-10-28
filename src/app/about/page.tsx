@@ -42,7 +42,7 @@ export default function AboutPage() {
       <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/grassroots-dandakaranya-summit.jpg"
+            src="/images/grassroots-dandakaranya-summit.webp"
             alt="Igniting Grassroots Potential in Dandakaranya"
             fill
             priority
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 <div className="px-6 sm:px-7 pt-6 pb-5 flex items-center gap-4 border-b border-[#f0ebe2]">
                   <div className="w-14 h-14 rounded-xl bg-[#f7f4ec] border border-[#ede7db] flex items-center justify-center p-2 shrink-0">
                     <Image
-                      src="/logos/giet-logo.png"
+                      src="/logos/giet-logo.webp"
                       alt="GIET University Official Crest"
                       width={48}
                       height={48}

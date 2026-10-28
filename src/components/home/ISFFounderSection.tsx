@@ -44,7 +44,7 @@ export function ISFFounderSection() {
 
             <div className="relative aspect-[4/5] sm:aspect-[4/5] lg:aspect-[4/5] overflow-hidden rounded-3xl border-4 border-white bg-white shadow-[0_20px_50px_rgba(43,37,28,0.18)]">
               <Image
-                src="/images/leadership/dr-ja-chowdary.jpg"
+                src="/images/leadership/dr-ja-chowdary.webp"
                 alt="Shri J.A. Chowdary — Founder & Chairman, International Startup Foundation"
                 fill
                 sizes="(max-width: 640px) 240px, (max-width: 1023px) 260px, 360px"

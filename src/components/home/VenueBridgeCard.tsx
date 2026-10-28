@@ -13,7 +13,7 @@ export function VenueBridgeCard() {
           <div className="lg:col-span-6 relative">
             <div className="relative rounded-3xl overflow-hidden shadow-lg border border-[#e2d8c7] aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full">
               <Image
-                src="/images/giet-campus-main-building.jpg"
+                src="/images/giet-campus-main-building.webp"
                 alt="GIET University Campus Main Building"
                 fill
                 className="object-cover object-center"

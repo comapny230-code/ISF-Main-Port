@@ -203,7 +203,7 @@ export function LoginPageClient() {
         {/* Authentic Host University Photograph Background */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/giet-school-of-engineering.jpg"
+            src="/images/giet-school-of-engineering.webp"
             alt="GIET University School of Engineering Campus, Gunupur, Odisha"
             fill
             priority
@@ -233,7 +233,7 @@ export function LoginPageClient() {
               </div>
               <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-1.5 flex items-center justify-center shrink-0 shadow-xs">
                 <Image
-                  src="/logos/giet-logo.png"
+                  src="/logos/giet-logo.webp"
                   alt="GIET University Crest"
                   width={32}
                   height={32}

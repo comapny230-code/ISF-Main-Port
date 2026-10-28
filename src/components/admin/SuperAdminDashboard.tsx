@@ -494,7 +494,7 @@ export function SuperAdminDashboard() {
               </div>
               <div className="w-12 h-12 rounded-xl bg-white p-1.5 flex items-center justify-center shadow-md">
                 <Image
-                  src="/logos/giet-logo.png"
+                  src="/logos/giet-logo.webp"
                   alt="GIET University Crest"
                   width={38}
                   height={38}
@@ -664,7 +664,7 @@ export function SuperAdminDashboard() {
               </div>
               <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-white p-1 flex items-center justify-center shrink-0">
                 <Image
-                  src="/logos/giet-logo.png"
+                  src="/logos/giet-logo.webp"
                   alt="GIET University Crest"
                   width={28}
                   height={28}

@@ -33,7 +33,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#6929c4]",
     designation: "Retired Professor",
     organization: "University of Hyderabad",
-    photoUrl: "/images/speakers/reddanna-pallu.png",
+    photoUrl: "/images/speakers/reddanna-pallu.webp",
     linkedinUrl: "https://www.linkedin.com/in/reddanna-pallu-8a67a5182/",
   },
   "vikrant-varshney": {
@@ -43,7 +43,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0f62fe]",
     designation: "Founder & Managing Partner",
     organization: "SucSEED Indovation GROWTH Fund",
-    photoUrl: "/images/speakers/vikrant-varshney-updated.png",
+    photoUrl: "/images/speakers/vikrant-varshney-updated.webp",
     linkedinUrl: "https://www.linkedin.com/in/vikrantvarshney-indovation/",
   },
   "uday-saxena": {
@@ -53,7 +53,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#007d79]",
     designation: "Founder",
     organization: "IEFR Foundation for Translational Research",
-    photoUrl: "/images/speakers/uday-saxena-founder.png",
+    photoUrl: "/images/speakers/uday-saxena-founder.webp",
     linkedinUrl: "https://www.linkedin.com/in/uday-saxena-94b071245/",
   },
   "dr-renu-john": {
@@ -63,7 +63,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#8a3800]",
     designation: "Professor, Department of Biomedical Engineering",
     organization: "Indian Institute of Technology, Hyderabad",
-    photoUrl: "/images/speakers/dr-renu-john-updated.png",
+    photoUrl: "/images/speakers/dr-renu-john-updated.webp",
     linkedinUrl: "https://www.linkedin.com/in/renu-john-ab20a29/",
   },
   "col-dr-k-suresh-babu": {
@@ -73,7 +73,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#198038]",
     designation: "Institution Academics Director",
     organization: "Sindhu Hospitals",
-    photoUrl: "/images/speakers/col-dr-k-suresh-babu-director.png",
+    photoUrl: "/images/speakers/col-dr-k-suresh-babu-director.webp",
   },
   "dr-markandeya-gorantla": {
     id: "dr-markandeya-gorantla",
@@ -82,7 +82,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0043ce]",
     designation: "Founder",
     organization: "ATGC Bio Technology",
-    photoUrl: "/images/speakers/s-subramanyam-raju-correct.png",
+    photoUrl: "/images/speakers/s-subramanyam-raju-correct.webp",
     linkedinUrl: "https://www.linkedin.com/in/drgorantla/",
   },
   "s-subramanyam-raju": {
@@ -92,7 +92,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#a2191f]",
     designation: "CEO",
     organization: "International Development Finance and Investment Corporation, Dubai",
-    photoUrl: "/images/speakers/dr-markandeya-gorantla-correct.png",
+    photoUrl: "/images/speakers/dr-markandeya-gorantla-correct.webp",
   },
   "kishan-gurram": {
     id: "kishan-gurram",
@@ -101,7 +101,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#117a8b]",
     designation: "Founder & MD",
     organization: "Sravathi AI Technology Pvt Ltd",
-    photoUrl: "/images/speakers/kishan-gurram.jpg",
+    photoUrl: "/images/speakers/kishan-gurram.webp",
     linkedinUrl: "https://www.linkedin.com/in/gurram-kishan-36a9ab3/",
   },
   "dr-ratnakar-palakodeti": {
@@ -111,7 +111,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#525252]",
     designation: "Entrepreneur, Bio Startup Mentor",
     organization: "Bio Startup Mentor",
-    photoUrl: "/images/speakers/dr-ratnakar-palakodeti-correct.png",
+    photoUrl: "/images/speakers/dr-ratnakar-palakodeti-correct.webp",
     linkedinUrl: "https://www.linkedin.com/in/dr-ratnakar-palakodeti-99124412/",
   },
   "ravi-chandra": {
@@ -129,7 +129,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#9f1853]",
     designation: "Founder",
     organization: "RemDi",
-    photoUrl: "/images/speakers/dr-sridevi-kakarlapudi.png",
+    photoUrl: "/images/speakers/dr-sridevi-kakarlapudi.webp",
     linkedinUrl: "https://www.linkedin.com/in/sridevi-kakarlapudi-remnutri/",
   },
   "sridhar": {
@@ -220,7 +220,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0f62fe]",
     designation: "Chairman & Founder",
     organization: "Summannnathi",
-    photoUrl: "/images/speakers/mr-anil-kumar-sg.png",
+    photoUrl: "/images/speakers/mr-anil-kumar-sg.webp",
     linkedinUrl: "https://www.linkedin.com/in/anilkumar-sg/",
   },
   "dr-siva-mahesh-tangutooru-agri": {
@@ -231,7 +231,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     designation: "CEO",
     organization: "Avani Global Group",
     roleLabel: "Moderator",
-    photoUrl: "/images/speakers/dr-siva-mahesh-tangutooru-agri.png",
+    photoUrl: "/images/speakers/dr-siva-mahesh-tangutooru-agri.webp",
     linkedinUrl: "https://www.linkedin.com/in/dr-siva-mahesh-tangutooru-18410926/",
   },
   "ram-kumar-varma-agri": {
@@ -241,7 +241,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#198038]",
     designation: "Founder",
     organization: "Native Araku Coffee",
-    photoUrl: "/images/speakers/ram-kumar-varma-agri.png",
+    photoUrl: "/images/speakers/ram-kumar-varma-agri.webp",
     linkedinUrl: "https://www.linkedin.com/in/ram-kumar-varma-87069312/",
   },
   "r-srinivasu-agri": {
@@ -251,7 +251,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#a2191f]",
     designation: "Director",
     organization: "Kalpagrow Agri Innovatives",
-    photoUrl: "/images/speakers/r-srinivasu-agri.png",
+    photoUrl: "/images/speakers/r-srinivasu-agri.webp",
   },
   "sanith-aminileni-agri": {
     id: "sanith-aminileni-agri",
@@ -260,7 +260,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#a23d06]",
     designation: "Co-Founder",
     organization: "Toffee Doodle",
-    photoUrl: "/images/speakers/sanith-aminileni-agri.png",
+    photoUrl: "/images/speakers/sanith-aminileni-agri.webp",
     linkedinUrl: "https://www.linkedin.com/in/sanith-amilineni-06578397/",
   },
   "aruna-agri": {
@@ -277,7 +277,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initials: "DD",
     initialsBg: "bg-[#0f62fe]",
     organization: "Clairvoy Analytics",
-    photoUrl: "/images/speakers/durga-prakash-devarakonda-gcc.png",
+    photoUrl: "/images/speakers/durga-prakash-devarakonda-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/prakashdurgad/?isSelfProfile=false",
   },
   "s-subramanyam-raju-gcc": {
@@ -285,7 +285,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "S. Subramanyam Raju",
     initials: "SR",
     initialsBg: "bg-[#a2191f]",
-    photoUrl: "/images/speakers/dr-markandeya-gorantla-correct.png",
+    photoUrl: "/images/speakers/dr-markandeya-gorantla-correct.webp",
   },
   "vikrant-varshney-gcc": {
     id: "vikrant-varshney-gcc",
@@ -295,7 +295,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     designation: "Founder & Managing Partner",
     organization: "SucSEED Indovation GROWTH Fund",
     roleLabel: "Moderator",
-    photoUrl: "/images/speakers/vikrant-varshney-updated.png",
+    photoUrl: "/images/speakers/vikrant-varshney-updated.webp",
     linkedinUrl: "https://www.linkedin.com/in/vikrantvarshney-indovation/",
   },
   "rathnakar-samavedam-gcc": {
@@ -303,7 +303,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Rathnakar Samavedam",
     initials: "RS",
     initialsBg: "bg-[#6929c4]",
-    photoUrl: "/images/speakers/rathnakar-samavedam-gcc.png",
+    photoUrl: "/images/speakers/rathnakar-samavedam-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/rathnakar-samavedam-816085a/",
   },
   "prasad-vanga-gcc": {
@@ -313,7 +313,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#198038]",
     designation: "Founder & CEO",
     organization: "Anthill",
-    photoUrl: "/images/speakers/prasad-vanga-gcc.png",
+    photoUrl: "/images/speakers/prasad-vanga-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/prasadvanga/",
   },
   "gaurav-mathur-gcc": {
@@ -323,7 +323,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0f62fe]",
     designation: "CEO",
     organization: "Credera India",
-    photoUrl: "/images/speakers/gaurav-mathur-gcc.png",
+    photoUrl: "/images/speakers/gaurav-mathur-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/digitalleadermathurg/",
   },
   "p-s-sreekanth-gcc": {
@@ -331,7 +331,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "P S Sreekanth",
     initials: "PS",
     initialsBg: "bg-[#525252]",
-    photoUrl: "/images/speakers/p-s-sreekanth-gcc.png",
+    photoUrl: "/images/speakers/p-s-sreekanth-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/sreekanthperepu/",
   },
   "praveena-b-gcc": {
@@ -352,7 +352,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initials: "ST",
     initialsBg: "bg-[#0043ce]",
     organization: "Fintech Global",
-    photoUrl: "/images/speakers/surya-timmaraju-gcc.png",
+    photoUrl: "/images/speakers/surya-timmaraju-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/thammiraju/?isSelfProfile=false",
   },
   "madhu-mohan-avalur-gcc": {
@@ -369,7 +369,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0072c3]",
     designation: "CEO & MD",
     organization: "Lloyds Technology",
-    photoUrl: "/images/speakers/sireesha-voruganti-gcc.png",
+    photoUrl: "/images/speakers/sireesha-voruganti-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/sirisha-voruganti-5384602/?isSelfProfile=false",
   },
   "vamshi-gcc": {
@@ -395,7 +395,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Dr JA Chowdary",
     initials: "JC",
     initialsBg: "bg-[#ba4e00]",
-    photoUrl: "/images/leadership/dr-ja-chowdary.jpg",
+    photoUrl: "/images/leadership/dr-ja-chowdary.webp",
     linkedinUrl: "https://www.linkedin.com/in/jachowdary/",
   },
   "chinmay-kumar-dash-forward": {
@@ -403,7 +403,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Chinmay Kumar Dash",
     initials: "CD",
     initialsBg: "bg-[#007d79]",
-    photoUrl: "/images/speakers/chinmay-kumar-dash-forward.png",
+    photoUrl: "/images/speakers/chinmay-kumar-dash-forward.webp",
     linkedinUrl: "https://www.linkedin.com/in/chinmay-kumar-dash-92309b16/",
   },
   "dr-mrutyunjay-suar-forward": {
@@ -417,7 +417,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Dr Siva Mahesh Tangutooru",
     initials: "SM",
     initialsBg: "bg-[#198038]",
-    photoUrl: "/images/speakers/dr-siva-mahesh-tangutooru-agri.png",
+    photoUrl: "/images/speakers/dr-siva-mahesh-tangutooru-agri.webp",
     linkedinUrl: "https://www.linkedin.com/in/dr-siva-mahesh-tangutooru-18410926/",
   },
   "poondla-siddharth-reddy-forward": {
@@ -426,14 +426,14 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initials: "PS",
     initialsBg: "bg-[#525252]",
     roleLabel: "Moderator",
-    photoUrl: "/images/speakers/poondla-siddharth-reddy-forward.png",
+    photoUrl: "/images/speakers/poondla-siddharth-reddy-forward.webp",
   },
   "ram-kumar-varma-forward": {
     id: "ram-kumar-varma-forward",
     name: "Ram Kumar Varma",
     initials: "RV",
     initialsBg: "bg-[#198038]",
-    photoUrl: "/images/speakers/ram-kumar-varma-agri.png",
+    photoUrl: "/images/speakers/ram-kumar-varma-agri.webp",
     linkedinUrl: "https://www.linkedin.com/in/ram-kumar-varma-87069312/",
   },
   "m-satyendra-kumar-forward": {
@@ -441,7 +441,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "M Satyendra Kumar",
     initials: "MS",
     initialsBg: "bg-[#0f62fe]",
-    photoUrl: "/images/speakers/m-satyendra-kumar-forward.png",
+    photoUrl: "/images/speakers/m-satyendra-kumar-forward.webp",
     linkedinUrl: "https://www.linkedin.com/in/sathyendra/",
   },
   "seshadri-vangala-forward": {
@@ -449,14 +449,14 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Seshadri Vangala",
     initials: "SV",
     initialsBg: "bg-[#0072c3]",
-    photoUrl: "/images/speakers/seshadri-vangala-forward.png",
+    photoUrl: "/images/speakers/seshadri-vangala-forward.webp",
   },
   "dr-nv-jagannadha-rao-forward": {
     id: "dr-nv-jagannadha-rao-forward",
     name: "Dr NV Jagannadha Rao",
     initials: "NR",
     initialsBg: "bg-[#0043ce]",
-    photoUrl: "/images/leadership/dr-nv-jagannadha-rao.jpg",
+    photoUrl: "/images/leadership/dr-nv-jagannadha-rao.webp",
     linkedinUrl: "https://www.linkedin.com/in/dr-n-v-jagannadha-rao-1825ab5a/?isSelfProfile=false",
   },
   "usha-nandigala-forward": {
@@ -464,7 +464,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Usha Nandigala",
     initials: "UN",
     initialsBg: "bg-[#a2191f]",
-    photoUrl: "/images/speakers/usha-nandigala-forward.png",
+    photoUrl: "/images/speakers/usha-nandigala-forward.webp",
     linkedinUrl: "https://www.linkedin.com/in/usha-nandigala-47735b2/",
   },
   "venkata-sai-forward": {

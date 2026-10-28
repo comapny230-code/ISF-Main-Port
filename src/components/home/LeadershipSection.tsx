@@ -47,7 +47,7 @@ export function LeadershipSection() {
                   <div className="w-full h-full rounded-full p-1.5 sm:p-2 bg-white shadow-inner">
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-[#faf8f5]">
                       <Image
-                        src="/images/leadership/ja-chowdary.jpg"
+                        src="/images/leadership/ja-chowdary.webp"
                         alt="J. A. Chowdary - Founder & Chairman, International Startup Foundation"
                         fill
                         priority

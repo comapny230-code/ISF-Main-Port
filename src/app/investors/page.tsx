@@ -29,7 +29,7 @@ export default function InvestorsPage() {
         {/* Topic-matching Dedicated Static Hero Image */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-investors-lounge.jpg"
+            src="/images/summit-investors-lounge.webp"
             alt="Investors and VCs in Private Dealmaking Lounge"
             fill
             priority

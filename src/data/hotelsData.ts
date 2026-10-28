@@ -55,12 +55,12 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     tags: ["AC Rooms Available", "Non-AC Rooms Available", "Mandap Hall", "Central Location"],
     primaryPhone: "+91 99372 50003",
     allPhones: ["+91 99372 50003", "06857-250003"],
-    frontPhoto: "/hotels/jagannath palace/outside photo.png",
+    frontPhoto: "/hotels/jagannath palace/outside photo.webp",
     photos: [
-      { url: "/hotels/jagannath palace/outside photo.png", label: "Palace Facade & Entrance" },
-      { url: "/hotels/jagannath palace/bedroom.jpeg", label: "Double Bedroom" },
-      { url: "/hotels/jagannath palace/room.png", label: "AC Room & TV" },
-      { url: "/hotels/jagannath palace/bed room2.png", label: "Guest Room" }
+      { url: "/hotels/jagannath palace/outside photo.webp", label: "Palace Facade & Entrance" },
+      { url: "/hotels/jagannath palace/bedroom.webp", label: "Double Bedroom" },
+      { url: "/hotels/jagannath palace/room.webp", label: "AC Room & TV" },
+      { url: "/hotels/jagannath palace/bed room2.webp", label: "Guest Room" }
     ],
     tariffNotes: "24-hour checkout. All room tariffs include GST."
   },
@@ -86,11 +86,11 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     tags: ["AC Rooms Available", "Non-AC Rooms Available", "Single & Double Beds", "In-Room TV"],
     primaryPhone: "+91 93376 57885",
     allPhones: ["+91 93376 57885", "+91 86586 94826", "+91 90783 19111"],
-    frontPhoto: "/hotels/sai surya/sai surya building outside.jpeg",
+    frontPhoto: "/hotels/sai surya/sai surya building outside.webp",
     photos: [
-      { url: "/hotels/sai surya/sai surya building outside.jpeg", label: "Exterior View & Elevation" },
-      { url: "/hotels/sai surya/room_with_tv_straight.jpg", label: "AC Room with TV" },
-      { url: "/hotels/sai surya/sai surya bed room.jpeg", label: "Standard Room" }
+      { url: "/hotels/sai surya/sai surya building outside.webp", label: "Exterior View & Elevation" },
+      { url: "/hotels/sai surya/room_with_tv_straight.webp", label: "AC Room with TV" },
+      { url: "/hotels/sai surya/sai surya bed room.webp", label: "Standard Room" }
     ]
   },
   {
@@ -115,13 +115,13 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     tags: ["AC Rooms Available", "Non-AC Rooms Available", "Transit Hub", "24/7 Front Desk"],
     primaryPhone: "+91 94380 50088",
     allPhones: ["+91 94380 50088", "06857-250088"],
-    frontPhoto: "/hotels/sree satya/outside picture.jpg",
+    frontPhoto: "/hotels/sree satya/outside picture.webp",
     photos: [
-      { url: "/hotels/sree satya/outside picture.jpg", label: "Main Entrance & Signage" },
-      { url: "/hotels/sree satya/gate in.png", label: "Lobby & Reception Entrance" },
-      { url: "/hotels/sree satya/bedroom.png", label: "Deluxe AC Bedroom" },
-      { url: "/hotels/sree satya/bed room 2.png", label: "AC Room with TV & Vanity" },
-      { url: "/hotels/sree satya/corridor.png", label: "Guest Floor Corridor" }
+      { url: "/hotels/sree satya/outside picture.webp", label: "Main Entrance & Signage" },
+      { url: "/hotels/sree satya/gate in.webp", label: "Lobby & Reception Entrance" },
+      { url: "/hotels/sree satya/bedroom.webp", label: "Deluxe AC Bedroom" },
+      { url: "/hotels/sree satya/bed room 2.webp", label: "AC Room with TV & Vanity" },
+      { url: "/hotels/sree satya/corridor.webp", label: "Guest Floor Corridor" }
     ]
   },
   {
@@ -146,12 +146,12 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     tags: ["AC Rooms Only", "Super Deluxe Category", "Station Road", "Quiet Stay"],
     primaryPhone: "+91 63704 60845",
     allPhones: ["+91 63704 60845", "+91 94381 63605", "+91 93480 28358", "06857-465171"],
-    frontPhoto: "/hotels/vijay in/corridor vijay in.jpeg",
+    frontPhoto: "/hotels/vijay in/corridor vijay in.webp",
     photos: [
-      { url: "/hotels/vijay in/bedroom_enhanced.jpg", label: "Double Bedroom" },
-      { url: "/hotels/vijay in/justdial_real_vijay_inn.jpg", label: "Verified Listing" },
-      { url: "/hotels/vijay in/corridor vijay in.jpeg", label: "Polished Corridor" },
-      { url: "/hotels/vijay in/single_room vijay in.jpeg", label: "Single Bedroom" }
+      { url: "/hotels/vijay in/bedroom_enhanced.webp", label: "Double Bedroom" },
+      { url: "/hotels/vijay in/justdial_real_vijay_inn.webp", label: "Verified Listing" },
+      { url: "/hotels/vijay in/corridor vijay in.webp", label: "Polished Corridor" },
+      { url: "/hotels/vijay in/single_room vijay in.webp", label: "Single Bedroom" }
     ]
   }
 ];

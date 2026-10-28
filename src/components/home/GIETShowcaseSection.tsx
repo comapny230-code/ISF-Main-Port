@@ -58,7 +58,7 @@ export function GIETShowcaseSection() {
               {/* Official School of Engineering Building Photograph from https://www.giet.edu/schools/school-of-engineering/ */}
               <div className="relative aspect-[16/10] w-full overflow-hidden">
                 <Image
-                  src="/images/giet-school-of-engineering.jpg"
+                  src="/images/giet-school-of-engineering.webp"
                   alt="School of Engineering and Technology Building, GIET University Campus, Gunupur"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -98,7 +98,7 @@ export function GIETShowcaseSection() {
               <div className="flex items-center gap-4">
                 <div className="w-20 h-16 sm:w-24 sm:h-20 rounded-2xl bg-white p-2 sm:p-2.5 flex items-center justify-center border border-[#dfd6c4] shadow-2xs shrink-0">
                   <Image
-                    src="/logos/giet-logo.png"
+                    src="/logos/giet-logo.webp"
                     alt="GIET University Official Crest (Gunupur, Odisha)"
                     width={84}
                     height={70}

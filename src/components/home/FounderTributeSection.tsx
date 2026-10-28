@@ -84,7 +84,7 @@ export function FounderTributeSection() {
                     <div className="w-full h-full rounded-full p-1.5 bg-white shadow-inner">
                       <div className="relative w-full h-full rounded-full overflow-hidden bg-[#faf8f5]">
                         <Image
-                          src="/images/leadership/ja-chowdary.jpg"
+                          src="/images/leadership/ja-chowdary.webp"
                           alt="Dr. J. A. Chowdary, Founder & Chairman of the International Startup Foundation (ISF)"
                           fill
                           sizes="(max-width: 640px) 240px, 280px"

@@ -12,7 +12,7 @@ export function VenueTravelClient() {
       <section className="relative overflow-hidden border-b border-[#232733] bg-[#0c0d12] py-16 text-white sm:py-20 md:py-24">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/gietu-campus-aerial.jpg"
+            src="/images/gietu-campus-aerial.webp"
             alt="GIET University campus in Gunupur, Odisha"
             fill
             priority

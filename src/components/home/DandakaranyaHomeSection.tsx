@@ -12,7 +12,7 @@ export function DandakaranyaHomeSection() {
           <div className="relative order-2 overflow-hidden rounded-2xl lg:order-1 shadow-[0_16px_56px_-8px_rgba(8,26,20,0.25)]">
             <div className="aspect-[16/10]">
               <Image
-                src="/images/dandakaranya/jagged-peaks-forested-valley.png"
+                src="/images/dandakaranya/jagged-peaks-forested-valley.webp"
                 alt="Jagged peaks above the forested valley in Dandakaranya, Odisha"
                 fill
                 sizes="(max-width: 1024px) 100vw, 55vw"

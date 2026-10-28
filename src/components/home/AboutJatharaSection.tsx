@@ -12,7 +12,7 @@ const STATS = [
     accent: "#c25e38",
     href: "/programme",
     cta: "Programme",
-    image: "/images/explore-roundtable-panel-2026.jpg",
+    image: "/images/explore-roundtable-panel-2026.webp",
   },
   {
     value: "9+",
@@ -21,7 +21,7 @@ const STATS = [
     accent: "#1c6651",
     href: "/startups",
     cta: "Tracks",
-    image: "/images/junicorn-innovators.jpg",
+    image: "/images/junicorn-innovators.webp",
   },
   {
     value: "50+",
@@ -30,7 +30,7 @@ const STATS = [
     accent: "#8c671b",
     href: "/speakers",
     cta: "Speakers",
-    image: "/images/explore-keynote-speakers-2026.jpg",
+    image: "/images/explore-keynote-speakers-2026.webp",
   },
   {
     value: "1",
@@ -39,7 +39,7 @@ const STATS = [
     accent: "#4a5752",
     href: "/venue",
     cta: "Venue",
-    image: "/images/gietu-campus-aerial.jpg",
+    image: "/images/gietu-campus-aerial.webp",
   },
 ];
 
