@@ -23,13 +23,77 @@ const HERO_BACKDROPS = [
   },
 ];
 
+const REGISTRATION_ENDS_AT = new Date("2026-11-11T23:59:59+05:30").getTime();
+
+type Countdown = {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+};
+
+function getRegistrationCountdown(): Countdown {
+  const remaining = Math.max(REGISTRATION_ENDS_AT - Date.now(), 0);
+
+  return {
+    days: Math.floor(remaining / 86_400_000),
+    hours: Math.floor((remaining / 3_600_000) % 24),
+    minutes: Math.floor((remaining / 60_000) % 60),
+    seconds: Math.floor((remaining / 1_000) % 60),
+  };
+}
+
+function FlipCountdownUnit({ label, value }: { label: string; value: number | null }) {
+  const display = value === null ? "--" : String(value).padStart(2, "0");
+
+  return (
+    <div className="relative flex h-16 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/25 bg-white/[0.12] pb-4 shadow-[0_6px_18px_rgba(0,0,0,0.22)] backdrop-blur-sm sm:h-20 sm:w-16 sm:pb-5">
+        <span className="pointer-events-none absolute inset-x-0 top-1/2 z-10 h-px bg-white/25" aria-hidden="true" />
+        <span
+          key={display}
+          className="countdown-paper-fold relative z-20 font-sans text-3xl font-black tabular-nums leading-none text-white sm:text-4xl"
+        >
+          {display}
+        </span>
+      <span className="absolute bottom-1.5 left-0 right-0 z-20 text-center text-[8px] font-bold uppercase tracking-[0.12em] text-white/70 sm:bottom-2 sm:text-[9px]">
+        {label}
+      </span>
+    </div>
+  );
+}
+
+function RegistrationCountdown({ countdown }: { countdown: Countdown | null }) {
+  return (
+    <div className="w-full">
+      <p className="text-center text-[10px] font-bold uppercase tracking-[0.15em] text-white/85 sm:text-xs">
+        Registration deadline: November 11th
+      </p>
+      <div className="mt-3 flex items-center justify-center gap-2.5 sm:gap-4" aria-live="polite">
+        <FlipCountdownUnit label="Days" value={countdown?.days ?? null} />
+        <FlipCountdownUnit label="Hours" value={countdown?.hours ?? null} />
+        <FlipCountdownUnit label="Mins" value={countdown?.minutes ?? null} />
+        <FlipCountdownUnit label="Secs" value={countdown?.seconds ?? null} />
+      </div>
+    </div>
+  );
+}
+
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
+  const [countdown, setCountdown] = useState<Countdown | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlide((prev) => (prev + 1) % HERO_BACKDROPS.length);
     }, 5500);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    const updateCountdown = () => setCountdown(getRegistrationCountdown());
+    updateCountdown();
+
+    const timer = setInterval(updateCountdown, 1000);
     return () => clearInterval(timer);
   }, []);
 
@@ -149,6 +213,11 @@ export function HeroSection() {
           </a>
         </div>
 
+        {/* Registration Countdown */}
+        <div className="hero-enter hero-enter-delay-5 mt-6 w-full max-w-[22rem] sm:max-w-md">
+          <RegistrationCountdown countdown={countdown} />
+        </div>
+
         {/* Slide indicator dots */}
         <div className="mt-6 sm:mt-7 flex items-center justify-center gap-1.5" aria-hidden="true">
           {HERO_BACKDROPS.map((_, i) => (
@@ -165,6 +234,7 @@ export function HeroSection() {
           ))}
         </div>
       </div>
+
     </section>
   );
 }
