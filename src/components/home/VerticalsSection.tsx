@@ -75,7 +75,7 @@ export function VerticalsSection() {
             return (
               <Link
                 key={track.slug}
-                href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform"
+                href="https://register.startupjathara.com/"
                 className={cn(
                   "group relative rounded-3xl p-6 bg-white/90 backdrop-blur-sm border border-[#e4dcce] hover:border-[#be9740]/70",
                   "shadow-[0_4px_20px_-4px_rgba(20,62,48,0.06)] hover:shadow-[0_24px_48px_-12px_rgba(20,62,48,0.18),0_8px_20px_-4px_rgba(194,94,56,0.10)]",
