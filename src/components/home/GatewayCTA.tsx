@@ -27,7 +27,7 @@ export function GatewayCTA() {
         {/* Buttons */}
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
           <Button
-            href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform"
+            href="https://register.startupjathara.com/"
             variant="gold"
             size="lg"
             className="font-bold text-sm sm:text-base shadow-lg"

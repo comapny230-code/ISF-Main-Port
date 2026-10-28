@@ -21,7 +21,7 @@ export const EVENT_METADATA: EventMetadata = {
     start: "2026-12-17",
     end: "2026-12-20",
   },
-  registrationUrl: "https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform",
+  registrationUrl: "https://register.startupjathara.com/",
   venueName: "GIET University Campus",
   venueCampus: "Goboriguda, Po-Kharling",
   venueCity: "Gunupur",

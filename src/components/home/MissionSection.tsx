@@ -99,7 +99,7 @@ export function MissionSection() {
 
               <div className="pt-2">
                 <Button
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform"
+                  href="https://register.startupjathara.com/"
                   variant="gold"
                   size="md"
                   className="w-full justify-center font-bold"
