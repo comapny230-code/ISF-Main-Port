@@ -85,7 +85,6 @@ export default function SpeakersPage() {
                       src={chiefGuest.photoUrl || "/images/sadguru-sri-madhusudan-sai.webp"}
                       alt={chiefGuest.name}
                       fill
-                      priority
                       sizes="(max-width: 640px) 240px, (max-width: 1023px) 260px, 340px"
                       className="object-cover object-top"
                     />

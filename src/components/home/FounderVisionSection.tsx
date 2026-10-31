@@ -45,7 +45,6 @@ export function FounderVisionSection() {
                       src="/images/leadership/ja-chowdary.webp"
                       alt="J. A. Chowdary - Founder & Chairman, International Startup Foundation"
                       fill
-                      priority
                       sizes="(max-width: 640px) 240px, (max-width: 1024px) 300px, 320px"
                       className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
                     />

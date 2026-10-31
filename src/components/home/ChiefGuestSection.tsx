@@ -21,7 +21,6 @@ export function ChiefGuestSection() {
                   src="/images/sadguru-sri-madhusudan-sai.webp"
                   alt="Sadguru Sri Madhusudan Sai - Chief Guest of Honour at ISF Startup Jathara 2026"
                   fill
-                  priority
                   sizes="(max-width: 640px) 160px, 192px"
                   className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-103"
                 />
