@@ -13,19 +13,19 @@ import { CopyrightYear } from "./CopyrightYear";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-[#0c0d12] text-[#d6d0c7] border-t border-[#232733] relative overflow-hidden">
+    <footer className="relative overflow-hidden border-t border-[#2b2e38] bg-[#0b0c10] text-[#d6d0c7]">
       {/* Subtle warm decorative glow */}
       <div 
-        className="absolute top-0 right-1/4 w-80 h-40 bg-[#e87042]/10 rounded-full blur-3xl pointer-events-none" 
+        className="pointer-events-none absolute right-1/4 top-0 h-40 w-80 rounded-full bg-[#e87042]/10 blur-3xl"
         aria-hidden="true" 
       />
 
       {/* Main Concise Footer Content */}
-      <div className="relative pt-10 pb-8">
+      <div className="relative py-8 sm:py-10">
         <Container size="wide">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-8">
+          <div className="grid grid-cols-1 gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-[1.35fr_0.8fr_1fr_1.15fr] lg:gap-y-0">
             {/* Column 1: Identity & Summit Details */}
-            <div className="space-y-3 lg:col-span-1">
+            <div className="space-y-4 lg:pr-8">
               <Link
                 href="/"
                 className="group flex items-center gap-2.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl w-fit"
@@ -50,11 +50,11 @@ export function SiteFooter() {
                 </div>
               </Link>
 
-              <p className="text-xs text-[#a8a29e] leading-relaxed">
+              <p className="max-w-xs text-xs leading-relaxed text-[#a8a29e]">
                 National entrepreneurship &amp; grassroots innovation summit convening in South Odisha.
               </p>
 
-              <div className="space-y-2 text-xs text-[#d6d0c7] pt-1">
+              <div className="space-y-2.5 pt-1 text-xs text-[#d6d0c7]">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-3.5 h-3.5 text-[#e87042] flex-shrink-0" />
                   <span>17–20 December 2026</span>
@@ -75,10 +75,11 @@ export function SiteFooter() {
 
             {/* Column 2: Navigation */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
+              <h4 className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#e87042]">
+                <span className="h-px w-5 bg-[#e87042]/70" aria-hidden="true" />
                 Explore
               </h4>
-              <ul className="space-y-2 text-xs text-[#a8a29e]">
+              <ul className="space-y-2.5 text-xs text-[#a8a29e]">
                 <li>
                   <Link href="/about" className="hover:text-white transition-colors">
                     About Summit
@@ -114,10 +115,11 @@ export function SiteFooter() {
 
             {/* Column 3: Participation */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
+              <h4 className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#e87042]">
+                <span className="h-px w-5 bg-[#e87042]/70" aria-hidden="true" />
                 Participation
               </h4>
-              <ul className="space-y-2 text-xs text-[#a8a29e]">
+              <ul className="space-y-2.5 text-xs text-[#a8a29e]">
                 <li>
                   <a href="https://register.startupjathara.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
                     <span>Register</span>
@@ -145,8 +147,8 @@ export function SiteFooter() {
                   </Link>
                 </li>
               </ul>
-              <div className="mt-5 border-t border-[#232733] pt-4 text-xs">
-                <p className="text-[10px] font-bold uppercase tracking-[0.12em] text-[#e87042]">
+              <div className="mt-6 border-t border-[#232733] pt-4 text-xs">
+                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#e87042]">
                   Printing Material
                 </p>
                 <p className="mt-1 text-[#d6d0c7]">
@@ -172,7 +174,8 @@ export function SiteFooter() {
 
             {/* Column 4: Contact & Secretariat */}
             <div>
-              <h4 className="text-xs uppercase tracking-wider text-[#e87042] font-bold mb-3">
+              <h4 className="mb-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.16em] text-[#e87042]">
+                <span className="h-px w-5 bg-[#e87042]/70" aria-hidden="true" />
                 Contact
               </h4>
               <div className="space-y-2.5 text-xs text-[#a8a29e]">
@@ -214,22 +217,29 @@ export function SiteFooter() {
           </div>
 
           {/* Compact Copyright & Legal Bar */}
-          <div className="mt-8 pt-5 border-t border-[#232733] flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-[#78716c]">
+          <div className="mt-8 flex flex-col gap-3 border-t border-[#232733] pt-4 text-[11px] text-[#78716c] sm:flex-row sm:items-center sm:justify-between">
             <p>
               © <CopyrightYear /> {EVENT_METADATA.name}. All rights reserved.
             </p>
 
-            <div className="flex flex-wrap items-center gap-4">
-              <Link href="/privacy" className="hover:text-[#d6d0c7] transition-colors">
-                Privacy Policy
-              </Link>
-              <span>•</span>
-              <Link href="/terms" className="hover:text-[#d6d0c7] transition-colors">
-                Terms of Attendance
-              </Link>
-              <span>•</span>
-              <a href={`mailto:${EVENT_METADATA.contactEmail}`} className="hover:text-[#d6d0c7] transition-colors">
-                Contact Secretariat
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[#78716c] sm:order-2">
+              <span>Built by</span>
+              <a
+                href="https://mdfaizaanrazakhan.netlify.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#d6d0c7] transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
+              >
+                MD Faizaan Raza Khan
+              </a>
+              <span aria-hidden="true">&amp;</span>
+              <a
+                href="https://focus-trigger-automation-website.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-[#d6d0c7] transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
+              >
+                Arush Kumar <span className="text-[#a8a29e]">(FocusTrigger Automation)</span>
               </a>
             </div>
           </div>

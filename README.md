@@ -36,8 +36,6 @@ The application features 18 statically optimized, accessible public routes:
 | `/partners` | Ecosystem partners, institutional sponsors, and patronage directory |
 | `/register` | Unified participation registration with role-based intake flows |
 | `/faq` | Frequently asked questions regarding travel, accommodation, and pitches |
-| `/privacy` | Data privacy guidelines and delegate confidentiality commitments |
-| `/terms` | Event terms, exhibition guidelines, and participation standards |
 
 ---
 

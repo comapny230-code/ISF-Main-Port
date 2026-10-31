@@ -2,15 +2,13 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { 
   Mic2, 
-  Mail,
   HeartHandshake,
   GraduationCap,
   Utensils
 } from "lucide-react";
-import { INITIAL_SPEAKERS, EVENT_METADATA } from "@/data/eventData";
+import { INITIAL_SPEAKERS } from "@/data/eventData";
 import { Container } from "@/components/common/Container";
 import { SectionHeading } from "@/components/common/SectionHeading";
-import { Button } from "@/components/common/Button";
 import { RoundtableShowcase } from "@/components/speakers/RoundtableShowcase";
 
 export const metadata: Metadata = {
@@ -175,31 +173,6 @@ export default function SpeakersPage() {
         </Container>
       </section>
 
-      {/* Speaker Nominations & Applications */}
-      <section className="section-reveal py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
-        <Container size="default">
-          <div className="bg-[#ffffff] rounded-3xl p-8 sm:p-12 border border-[#e6dfd1] shadow-xs max-w-4xl mx-auto text-center space-y-6">
-            <div className="w-12 h-12 rounded-2xl bg-[#f7f4ec] border border-[#dfd6c4] flex items-center justify-center text-[#143e30] mx-auto">
-              <Mic2 className="w-6 h-6 text-[#c25e38]" />
-            </div>
-
-            <h3 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl text-[#1c1917] tracking-tight">
-              Recommend a Speaker or <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#c25022] via-[#e87042] to-[#d68c45]">Apply to Mentor</span>
-            </h3>
-
-            <p className="text-sm sm:text-base text-[#4a5752] max-w-2xl mx-auto leading-relaxed">
-              Are you an experienced founder, agronomist, public health expert, angel investor, or academic researcher passionate about grassroots youth entrepreneurship? We welcome nominations for our sector roundtables.
-            </p>
-
-            <div className="pt-2 flex flex-wrap justify-center gap-4">
-              <Button href={`mailto:${EVENT_METADATA.contactEmail}?subject=Speaker%20Nomination`} variant="primary" size="md">
-                <Mail className="w-4 h-4 mr-2" />
-                <span>Submit Speaker Nomination</span>
-              </Button>
-            </div>
-          </div>
-        </Container>
-      </section>
     </div>
   );
 }
