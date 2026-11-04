@@ -27,7 +27,7 @@ interface OrbitNode {
   role: string;
   description: string;
   metric: string;
-  href: string;
+  href?: string;
   icon: React.ElementType;
   positionAngle: number; // in degrees for desktop SVG ring placement
   ring: "inner" | "mid" | "outer";
@@ -341,17 +341,19 @@ export function InnovationOrbit() {
               </div>
 
               {/* Action Link to Relevant Route */}
-              <div className="mt-7 pt-4 border-t border-[#1b5341]">
-                <Button 
-                  href={activeNode.href}
-                  variant="gold"
-                  size="sm"
-                  className="w-full justify-between font-bold"
-                >
-                  <span>Explore {activeNode.label} Details</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </div>
+              {activeNode.href && (
+                <div className="mt-7 pt-4 border-t border-[#1b5341]">
+                  <Button
+                    href={activeNode.href}
+                    variant="gold"
+                    size="sm"
+                    className="w-full justify-between font-bold"
+                  >
+                    <span>Explore {activeNode.label} Details</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </div>
+              )}
 
             </div>
           </div>
