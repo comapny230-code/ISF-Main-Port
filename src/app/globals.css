@@ -1,5 +1,24 @@
 @import "tailwindcss";
 
+@keyframes speaker-photo-ring-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 2px rgba(194, 94, 56, 0.28), 0 0 0 5px rgba(194, 94, 56, 0.08), 0 12px 30px rgba(43, 37, 28, 0.14);
+  }
+  50% {
+    box-shadow: 0 0 0 3px rgba(194, 94, 56, 0.46), 0 0 0 8px rgba(194, 94, 56, 0.12), 0 14px 34px rgba(43, 37, 28, 0.18);
+  }
+}
+
+.speaker-photo-ring {
+  animation: speaker-photo-ring-pulse 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaker-photo-ring {
+    animation: none;
+  }
+}
+
 @layer theme {
   :root {
     --font-serif: var(--font-serif), "Libre Baskerville", "Baskerville", "Playfair Display", Georgia, serif;

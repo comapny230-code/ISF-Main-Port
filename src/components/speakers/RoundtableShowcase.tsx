@@ -59,6 +59,12 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
         const panelists = roundtable.panelistIds
           .map((id) => OFFICIAL_PANELISTS[id])
           .filter(Boolean);
+        const moderatorPanelist = roundtable.moderator
+          ? panelists.find((panelist) => panelist.name === roundtable.moderator)
+          : undefined;
+        const orderedPanelists = moderatorPanelist
+          ? [moderatorPanelist, ...panelists.filter((panelist) => panelist.id !== moderatorPanelist.id)]
+          : panelists;
         const styles = roundtableStyles[roundtable.badgeColor];
         const isExpanded = !!expandedRoundtables[roundtable.id];
         const toggleButton = (
@@ -93,8 +99,9 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                     <span className={`font-serif text-sm font-bold ${styles.number}`}>
                       0{roundtable.number}
                     </span>
+                    <span className={`h-px w-8 ${styles.line}`} aria-hidden="true" />
                     <span
-                      className={`rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-[0.14em] ${styles.badge}`}
+                      className={`text-[10px] font-bold uppercase tracking-[0.14em] ${styles.number}`}
                     >
                       {roundtable.badge}
                     </span>
@@ -131,9 +138,10 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
 
             {/* Panelists Grid: 2 columns on mobile, 3 on md, 4 on xl */}
             <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">
-              {panelists.map((panelist, index) => {
+              {orderedPanelists.map((panelist, index) => {
                 const hiddenUntilExpanded = !isExpanded && index >= 4;
                 const hasLinkedIn = Boolean(panelist.linkedinUrl);
+                const isModerator = panelist.id === moderatorPanelist?.id;
                 const responsiveVisibility =
                   index < 4
                     ? "flex"
@@ -146,7 +154,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                 return (
                   <article
                     key={panelist.id}
-                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border ${panelist.roleLabel ? "border-[#8b5717]" : "border-[#ded8cd]"} bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
+                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border ${isModerator ? "border-2 border-[#c25e38] ring-2 ring-[#c25e38]/15" : panelist.roleLabel ? "border-[#8b5717]" : "border-[#ded8cd]"} bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
                       hiddenUntilExpanded ? responsiveVisibility : "flex"
                     }`}
                   >
@@ -191,6 +199,11 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         }
                       }}
                     >
+                      {isModerator && (
+                        <span className="mb-2 block text-[9px] font-bold uppercase tracking-[0.16em] text-[#18745b]">
+                          Moderator
+                        </span>
+                      )}
                       <div className="flex items-start gap-1.5 sm:gap-2">
                         <h4 className="min-w-0 flex-1 font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
                           {panelist.name}
@@ -223,9 +236,9 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
             </div>
 
             {/* Show All Toggle Button: only show when the current breakpoint has hidden cards. */}
-            {panelists.length > 4 && <div className="mt-5 flex justify-center md:hidden">{toggleButton}</div>}
-            {panelists.length > 6 && <div className="mt-5 hidden justify-center md:flex xl:hidden">{toggleButton}</div>}
-            {panelists.length > 8 && <div className="mt-5 hidden justify-center xl:flex">{toggleButton}</div>}
+            {orderedPanelists.length > 4 && <div className="mt-5 flex justify-center md:hidden">{toggleButton}</div>}
+            {orderedPanelists.length > 6 && <div className="mt-5 hidden justify-center md:flex xl:hidden">{toggleButton}</div>}
+            {orderedPanelists.length > 8 && <div className="mt-5 hidden justify-center xl:flex">{toggleButton}</div>}
           </article>
         );
       })}
