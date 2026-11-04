@@ -154,7 +154,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                 return (
                   <article
                     key={panelist.id}
-                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border ${isModerator ? "border-2 border-[#e7b39e] ring-2 ring-[#e7b39e]/20" : panelist.roleLabel ? "border-[#8b5717]" : "border-[#ded8cd]"} bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
+                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border ${isModerator ? "border-[#d28b6d] ring-1 ring-[#d28b6d]/20" : panelist.roleLabel ? "border-[#8b5717]" : "border-[#ded8cd]"} bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
                       hiddenUntilExpanded ? responsiveVisibility : "flex"
                     }`}
                   >
