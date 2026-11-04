@@ -231,7 +231,7 @@ export const PROGRAMME_DAYS: ProgrammeDay[] = [
           { time: "09:30 - 09:35", title: "Inviting the Guests to the Dias" },
           { time: "09:35 - 09:40", title: "Lighting of the Lamp and Saraswati Vandana, National Song" },
           { time: "09:40 - 09:50", title: "Welcoming Address by NVJ Rao, Registrar, GIET University" },
-          { time: "09:50 - 10:00", title: "Welcoming Address by Shri J. A. Chowdary, Founder & Chairman, International Startup Foundation" },
+          { time: "09:50 - 10:00", title: "Welcoming Address by Dr. J. A. Chowdary, Founder & Chairman, International Startup Foundation" },
           { time: "10:00 - 10:10", title: "Address by Chandra Dhwaj Panda, Vice-President, GIET University" },
           { time: "10:10 - 10:20", title: "Address by Guest of Honor 1" },
           { time: "10:20 - 10:30", title: "Address by Guest of Honor 2" },
@@ -406,7 +406,7 @@ export const PROGRAMME_DAYS: ProgrammeDay[] = [
         track: "Policy & Ecosystem",
         sessionType: "roundtable",
         location: "Admin Conference Hall, GIET University",
-        description: "Strategic synthesis session formulating policy frameworks, venture capital access pathways, and sustainable incubation models for rural India, chaired by Shri J. A. Chowdary.",
+        description: "Strategic synthesis session formulating policy frameworks, venture capital access pathways, and sustainable incubation models for rural India, chaired by Dr. J. A. Chowdary.",
         isTentative: true,
       },
       {

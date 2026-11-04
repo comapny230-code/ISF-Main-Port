@@ -65,7 +65,8 @@ export function AboutJatharaSection() {
               </div>
 
               <h2 className="font-serif font-black text-[2.1rem] sm:text-[2.6rem] lg:text-[2.9rem] text-[#1c1917] tracking-tight leading-[1.07]">
-                A Gathering{" "}
+                A Gathering
+                <br />
                 <span className="relative inline-block">
                   Unlike Any Other
                   {/* Hand-drawn underline accent */}

@@ -71,6 +71,33 @@ export function SiteFooter() {
                   </a>
                 </div>
               </div>
+
+              <div className="mt-2 pt-1">
+                <div className="flex items-center gap-2">
+                  <span className="h-px w-4 bg-[#e87042]" aria-hidden="true" />
+                  <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#e87042]">
+                    Built by
+                  </p>
+                </div>
+                <div className="mt-2 space-y-1.5 text-[11px] font-bold leading-relaxed text-[#d6d0c7]">
+                  <a
+                    href="https://focus-trigger-automation-website.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
+                  >
+                    Arush Kumar <span className="font-medium text-[#a8a29e]">· FocusTrigger Automation</span>
+                  </a>
+                  <a
+                    href="https://mdfaizaanrazakhan.netlify.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
+                  >
+                    <span className="text-[#78716c]">&amp;</span>{" "}MD Faizaan Raza Khan
+                  </a>
+                </div>
+              </div>
             </div>
 
             {/* Column 2: Navigation */}
@@ -213,31 +240,11 @@ export function SiteFooter() {
           </div>
 
           {/* Compact Copyright & Legal Bar */}
-          <div className="mt-8 flex flex-col gap-3 border-t border-[#232733] pt-4 text-[11px] text-[#78716c] sm:flex-row sm:items-center sm:justify-between">
+          <div className="mt-8 border-t border-[#232733] pt-4 text-[11px] text-[#78716c]">
             <p>
               © <CopyrightYear /> ISF Network, managed by Startup Jathara. All rights reserved.
             </p>
 
-            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[#78716c] sm:order-2">
-              <span>Built by</span>
-              <a
-                href="https://mdfaizaanrazakhan.netlify.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[#d6d0c7] transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
-              >
-                MD Faizaan Raza Khan
-              </a>
-              <span aria-hidden="true">&amp;</span>
-              <a
-                href="https://focus-trigger-automation-website.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-medium text-[#d6d0c7] transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
-              >
-                Arush Kumar <span className="text-[#a8a29e]">(FocusTrigger Automation)</span>
-              </a>
-            </div>
           </div>
         </Container>
       </div>

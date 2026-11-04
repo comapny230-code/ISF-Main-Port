@@ -45,7 +45,7 @@ export function ISFFounderSection() {
             <div className="relative aspect-[4/5] sm:aspect-[4/5] lg:aspect-[4/5] overflow-hidden rounded-3xl border-4 border-white bg-white shadow-[0_20px_50px_rgba(43,37,28,0.18)]">
               <Image
                 src="/images/leadership/dr-ja-chowdary.webp"
-                alt="Shri J.A. Chowdary — Founder & Chairman, International Startup Foundation"
+                alt="Dr. J.A. Chowdary — Founder & Chairman, International Startup Foundation"
                 fill
                 sizes="(max-width: 640px) 240px, (max-width: 1023px) 260px, 360px"
                 className="object-cover object-center"
@@ -71,7 +71,7 @@ export function ISFFounderSection() {
             </div>
 
             <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#1c1917] tracking-tight leading-[1.1]">
-              Shri J.A. Chowdary
+              Dr. J.A. Chowdary
             </h2>
             <p className="mt-1 text-sm font-semibold text-[#7a5c28]">
               Founder & Chairman — International Startup Foundation (ISF)
@@ -79,7 +79,7 @@ export function ISFFounderSection() {
 
             <p className="mt-5 text-sm sm:text-[15px] leading-[1.8] text-[#4a4540] max-w-xl">
               Widely recognized as a prime architect of Cyberabad and HITEC City,
-              Shri J.A. Chowdary has spent over three decades building India&apos;s technology
+              Dr. J.A. Chowdary has spent over three decades building India&apos;s technology
               ecosystem. Through ISF, he is now leading the movement to connect grassroots
               innovators across Bharat with global mentorship and venture capital.
             </p>
