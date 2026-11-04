@@ -47,7 +47,7 @@ export function Button({
   );
 
   if (href) {
-    const isExternal = external || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("//");
+    const isExternal = external || href.startsWith("http://") || href.startsWith("https://") || href.startsWith("//") || href.startsWith("mailto:") || href.startsWith("tel:");
     if (isExternal) {
       return (
         <a

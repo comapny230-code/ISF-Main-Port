@@ -66,7 +66,6 @@ export function InnovationOrbit() {
       role: "Associated Innovation Foundation",
       description: "Venture incubation foundation delivering design sprints, mentorship curriculums, and pitch preparation for emerging regional enterprises.",
       metric: "Incubation Accelerator",
-      href: "/partners",
       icon: Building2,
       positionAngle: 285,
       ring: "inner",

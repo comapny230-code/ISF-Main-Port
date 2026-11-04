@@ -121,25 +121,20 @@ export function SiteFooter() {
               </h4>
               <ul className="space-y-2.5 text-xs text-[#a8a29e]">
                 <li>
-                  <a href="https://register.startupjathara.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
+                  <a href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors inline-flex items-center gap-1.5">
                     <span>Register</span>
                     <span className="text-[9px] bg-emerald-900/70 text-emerald-300 px-1 py-0.2 rounded border border-emerald-500/30">Free</span>
                   </a>
                 </li>
                 <li>
-                  <a href="https://register.startupjathara.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <span className="text-[#a8a29e]">
                     Founder Pitch Application
-                  </a>
+                  </span>
                 </li>
                 <li>
-                  <a href="https://register.startupjathara.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                  <span className="text-[#a8a29e]">
                     Investor Delegation Seat
-                  </a>
-                </li>
-                <li>
-                  <Link href="/partners" className="hover:text-white transition-colors">
-                    Partner With Us
-                  </Link>
+                  </span>
                 </li>
                 <li>
                   <Link href="/faq" className="hover:text-white transition-colors">
@@ -147,29 +142,6 @@ export function SiteFooter() {
                   </Link>
                 </li>
               </ul>
-              <div className="mt-6 border-t border-[#232733] pt-4 text-xs">
-                <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#e87042]">
-                  Printing Material
-                </p>
-                <p className="mt-1 text-[#d6d0c7]">
-                  Mr. Rajendra Kumar Patro
-                </p>
-                <a
-                  href="mailto:rajurajpatro@gmail.com"
-                  className="mt-1.5 flex min-w-0 items-start gap-2 text-[11px] text-[#a8a29e] transition-colors hover:text-[#e87042]"
-                >
-                  <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#e87042]" />
-                  <span className="min-w-0 break-all">rajurajpatro@gmail.com</span>
-                </a>
-                <div className="mt-1.5 flex items-start gap-2 text-[11px] text-[#a8a29e]">
-                  <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#d68c45]" />
-                  <span className="flex flex-wrap gap-x-2 gap-y-0.5">
-                    <a href="tel:+919438765251" className="hover:text-[#e87042] transition-colors">+91 94387 65251</a>
-                    <span className="text-[#57534e]">•</span>
-                    <a href="tel:+917735745518" className="hover:text-[#e87042] transition-colors">+91 77357 45518</a>
-                  </span>
-                </div>
-              </div>
             </div>
 
             {/* Column 4: Contact & Secretariat */}
@@ -212,6 +184,30 @@ export function SiteFooter() {
                   </a>
                 </div>
 
+                <div className="mt-6 border-t border-[#232733] pt-4 text-xs">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#e87042]">
+                    Printing Material
+                  </p>
+                  <p className="mt-1 text-[#d6d0c7]">
+                    Mr. Rajendra Kumar Patro
+                  </p>
+                  <a
+                    href="mailto:rajurajpatro@gmail.com"
+                    className="mt-1.5 flex min-w-0 items-start gap-2 text-[11px] text-[#a8a29e] transition-colors hover:text-[#e87042]"
+                  >
+                    <Mail className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#e87042]" />
+                    <span className="min-w-0 break-all">rajurajpatro@gmail.com</span>
+                  </a>
+                  <div className="mt-1.5 flex items-start gap-2 text-[11px] text-[#a8a29e]">
+                    <Phone className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#d68c45]" />
+                    <span className="flex flex-wrap gap-x-2 gap-y-0.5">
+                      <a href="tel:+919438765251" className="hover:text-[#e87042] transition-colors">+91 94387 65251</a>
+                      <span className="text-[#57534e]">•</span>
+                      <a href="tel:+917735745518" className="hover:text-[#e87042] transition-colors">+91 77357 45518</a>
+                    </span>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -219,7 +215,7 @@ export function SiteFooter() {
           {/* Compact Copyright & Legal Bar */}
           <div className="mt-8 flex flex-col gap-3 border-t border-[#232733] pt-4 text-[11px] text-[#78716c] sm:flex-row sm:items-center sm:justify-between">
             <p>
-              © <CopyrightYear /> {EVENT_METADATA.name}. All rights reserved.
+              © <CopyrightYear /> ISF Network, managed by Startup Jathara. All rights reserved.
             </p>
 
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[#78716c] sm:order-2">

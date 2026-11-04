@@ -30,7 +30,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/register",
-        destination: "https://register.startupjathara.com",
+        destination: "https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform",
         permanent: false,
       },
       {

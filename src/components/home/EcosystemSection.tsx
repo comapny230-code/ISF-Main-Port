@@ -5,7 +5,6 @@ import { PARTNERS_ORGANIZATIONS } from "@/data/eventData";
 import { Container } from "../common/Container";
 import { SectionHeading } from "../common/SectionHeading";
 import { Badge } from "../common/Badge";
-import { Button } from "../common/Button";
 
 export function EcosystemSection() {
   return (
@@ -122,10 +121,6 @@ export function EcosystemSection() {
             </p>
           </div>
 
-          <Button href="/partners" variant="forest" size="md" className="shrink-0 shadow-md">
-            <span>Explore Partner Program</span>
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
         </div>
       </Container>
     </section>
