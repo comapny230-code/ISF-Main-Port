@@ -56,13 +56,13 @@ export default function InvestorsPage() {
           </p>
 
           <div className="mt-8 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <button
-              type="button"
+            <a
+              href="mailto:sjd@giet.edu?subject=Investor%20%2F%20Fund%20Delegate%20Registration"
               className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs min-[360px]:text-sm shadow-md hover:shadow-lg transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Register as Investor / Fund Delegate</span>
               <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
-            </button>
+            </a>
             <Link 
               href="/programme" 
               className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-xs min-[360px]:text-sm backdrop-blur-md transition-all w-full min-[420px]:w-auto text-center"
@@ -116,48 +116,6 @@ export default function InvestorsPage() {
               <p className="mt-3 text-sm text-[#4a5752] leading-relaxed">
                 Participating investors receive a pre-screened deal dossier prepared by ISF and IncubateX, profiling high-potential ventures across confirmed summit tracks.
               </p>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* Global Investors & GCC Connect Spotlight */}
-      <section className="py-20 bg-[#f7f4ec] border-b border-[#e6dfd1]">
-        <Container size="default">
-          <div className="bg-gradient-to-br from-[#103327] to-[#081a14] rounded-3xl p-8 sm:p-12 text-[#fcfbf8] border border-[#256f57]/50 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-80 h-80 bg-[#c25e38]/15 rounded-full blur-3xl pointer-events-none" />
-
-            <div className="relative z-10 max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1b5341] text-xs text-[#d6b25e] font-semibold">
-                <Globe2 className="w-3.5 h-3.5" />
-                <span>Signature Session Spotlight</span>
-              </div>
-
-              <h2 className="font-serif font-black text-2xl sm:text-3xl md:text-4xl leading-tight">
-                Global Investors & GCC Connect Roundtable
-              </h2>
-
-              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-[#dfd6c4]">
-                <span className="p-2 rounded-lg bg-[#081a14]/60 border border-[#256f57]/40">
-                  <strong>Date:</strong> Friday, 18 December 2026
-                </span>
-                <span className="p-2 rounded-lg bg-[#081a14]/60 border border-[#256f57]/40">
-                  <strong>Time:</strong> 4:00 PM – 5:00 PM (Draft)
-                </span>
-                <span className="p-2 rounded-lg bg-[#081a14]/60 border border-[#256f57]/40">
-                  <strong>Venue:</strong> Executive Boardroom, GIET Campus
-                </span>
-              </div>
-
-              <p className="text-sm sm:text-base text-[#c8d1cd] leading-relaxed">
-                This closed-door session convenes venture fund partners, angel syndicates, GCC strategy leads, and government delegates to discuss co-investment models, cross-border market access, and long-term capital deployment in rural and tribal enterprise clusters.
-              </p>
-
-              <div className="pt-2">
-                <Button variant="gold" size="md" className="font-bold">
-                  Request Roundtable Seat
-                </Button>
-              </div>
             </div>
           </div>
         </Container>
