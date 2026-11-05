@@ -68,14 +68,17 @@ export function SiteHeader() {
           <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
             <nav
               aria-label="Main Navigation"
-              className="hidden lg:flex items-center gap-1 xl:gap-1.5"
+              className="hidden min-[1180px]:flex items-center gap-1 xl:gap-1.5"
             >
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
+                const isExternal = link.href.startsWith("https://");
                 return (
                   <Link
                     key={link.href}
                     href={link.href}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
                     className={cn(
                       "px-3 py-1.5 rounded-xl text-xs xl:text-[13px] transition-all duration-200 ease-out whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]",
                       isActive

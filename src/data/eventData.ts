@@ -45,6 +45,7 @@ export const NAV_LINKS: NavLink[] = [
   { label: "Startups & Junicorn", href: "/startups" },
   { label: "Speakers", href: "/speakers" },
   { label: "Venue & Travel", href: "/venue" },
+  { label: "Book My Stall", href: "https://register.startupjathara.com/book-your-stall" },
 ];
 
 export const MOBILE_NAV_GROUPS: MobileNavGroup[] = [
@@ -58,6 +59,7 @@ export const MOBILE_NAV_GROUPS: MobileNavGroup[] = [
       { label: "Startups & Junicorn", href: "/startups", description: "Grassroots scouting, demo kiosks and pitches" },
       { label: "Speakers", href: "/speakers", description: "Chief guest, sector luminaries and leaders" },
       { label: "Venue & Travel", href: "/venue", description: "GIET University campus, trains and stays" },
+      { label: "Book My Stall", href: "https://register.startupjathara.com/book-your-stall", description: "Reserve your startup stall on the live venue map" },
       { label: "FAQs", href: "/faq", description: "Frequently asked questions and delegate help" },
     ],
   },
