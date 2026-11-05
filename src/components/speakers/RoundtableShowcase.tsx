@@ -237,11 +237,6 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         }
                       }}
                     >
-                      {isModerator && (
-                        <span className="mb-2 block text-[9px] font-bold uppercase tracking-[0.16em] text-[#18745b]">
-                          Moderator
-                        </span>
-                      )}
                       <div className="flex items-start gap-2">
                         <h4 className="min-w-0 flex-1 font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
                           {panelist.name}
@@ -259,6 +254,11 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                           </span>
                         )}
                       </div>
+                      {isModerator && (
+                        <span className="mt-1.5 block text-[9px] font-bold uppercase tracking-[0.16em] text-[#18745b]">
+                          Moderator
+                        </span>
+                      )}
                       {panelist.designation && (
                         <p className="mt-1.5 sm:mt-3 text-[11px] sm:text-sm font-bold leading-[1.3] sm:leading-[1.45] text-[#7a4d22]">
                           {panelist.designation}
