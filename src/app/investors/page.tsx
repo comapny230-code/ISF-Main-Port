@@ -56,13 +56,13 @@ export default function InvestorsPage() {
           </p>
 
           <div className="mt-8 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
-            <Link 
-              href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform"
+            <button
+              type="button"
               className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-gradient-to-r from-[#e87042] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] text-white font-bold text-xs min-[360px]:text-sm shadow-md hover:shadow-lg transition-all w-full min-[420px]:w-auto text-center"
             >
               <span>Register as Investor / Fund Delegate</span>
               <ArrowRight className="w-4 h-4 ml-1 shrink-0" />
-            </Link>
+            </button>
             <Link 
               href="/programme" 
               className="inline-flex items-center justify-center gap-2 px-4 min-[360px]:px-6 py-2.5 sm:py-3 rounded-xl bg-[#141620]/80 hover:bg-[#1f2230] text-white border border-white/20 font-bold text-xs min-[360px]:text-sm backdrop-blur-md transition-all w-full min-[420px]:w-auto text-center"
@@ -154,7 +154,7 @@ export default function InvestorsPage() {
               </p>
 
               <div className="pt-2">
-                <Button href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform" variant="gold" size="md" className="font-bold">
+                <Button variant="gold" size="md" className="font-bold">
                   Request Roundtable Seat
                 </Button>
               </div>
@@ -225,7 +225,7 @@ export default function InvestorsPage() {
             Contact the ISF Investor Relations desk or register your delegation interest.
           </p>
           <div className="mt-6 flex flex-col min-[420px]:flex-row items-stretch min-[420px]:items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
-            <Button href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform" variant="gold" size="md" className="w-full min-[420px]:w-auto justify-center">
+            <Button href="https://mail.google.com/mail/?view=cm&fs=1&to=sjd@giet.edu&su=Investor%20Delegation%20Interest" variant="gold" size="md" className="w-full min-[420px]:w-auto justify-center">
               Register as Investor
             </Button>
             <Button href="/venue" variant="outline" size="md" className="w-full min-[420px]:w-auto justify-center text-[#fcfbf8] border-[#dfd6c4]/40 hover:bg-[#143e30]">

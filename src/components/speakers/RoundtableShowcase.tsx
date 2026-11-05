@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { CalendarDays, Clock3, MapPin, ChevronDown, ChevronUp } from "lucide-react";
+import { CalendarDays, Clock3, MapPin, ChevronDown, ChevronUp, ExternalLink } from "lucide-react";
 import {
   OFFICIAL_PANELISTS,
   OFFICIAL_ROUNDTABLES,
@@ -119,7 +119,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                   )}
                 </div>
 
-                <div className="grid shrink-0 gap-x-6 gap-y-2 text-xs font-semibold text-[#4e4a43] sm:grid-cols-2 lg:max-w-[26rem] mx-auto sm:mx-0">
+                <div className="grid grid-cols-2 shrink-0 gap-x-4 gap-y-2 text-xs font-semibold text-[#4e4a43] sm:gap-x-6 lg:max-w-[26rem] mx-auto sm:mx-0">
                   <span className="flex items-center justify-center sm:justify-start gap-2">
                     <CalendarDays className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
                     {roundtable.date}
@@ -128,7 +128,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                     <Clock3 className="h-4 w-4 text-[#b65531]" aria-hidden="true" />
                     {roundtable.time}
                   </span>
-                  <span className="flex items-start justify-center sm:justify-start text-center sm:text-left gap-2 sm:col-span-2">
+                  <span className="col-span-2 flex items-start justify-center text-center gap-2 sm:justify-start sm:text-left">
                     <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-[#b65531]" aria-hidden="true" />
                     {roundtable.location}
                   </span>
@@ -136,8 +136,8 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
               </div>
             </header>
 
-            {/* Panelists Grid: 2 columns on mobile, 3 on md, 4 on xl */}
-            <div className="mt-6 sm:mt-8 grid grid-cols-2 gap-3 sm:gap-5 md:grid-cols-3 xl:grid-cols-4">
+            {/* Editorial portrait gallery. */}
+            <div className="mt-6 grid grid-cols-2 gap-x-3 gap-y-7 sm:mt-8 sm:gap-x-5 sm:gap-y-10 md:grid-cols-3 xl:grid-cols-4">
               {orderedPanelists.map((panelist, index) => {
                 const hiddenUntilExpanded = !isExpanded && index >= 4;
                 const hasLinkedIn = Boolean(panelist.linkedinUrl);
@@ -154,18 +154,18 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                 return (
                   <article
                     key={panelist.id}
-                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[16px] sm:rounded-[22px] border ${isModerator ? "border-[#d28b6d] ring-1 ring-[#d28b6d]/20" : panelist.roleLabel ? "border-[#8b5717]" : "border-[#ded8cd]"} bg-white shadow-[0_6px_20px_rgba(40,35,27,0.04)] sm:shadow-[0_10px_30px_rgba(40,35,27,0.055)] transition-[transform,box-shadow,border-color] duration-300 ease-out hover:-translate-y-1 hover:border-[#bdb4a6] hover:shadow-[0_20px_46px_rgba(40,35,27,0.12)] motion-reduce:transform-none motion-reduce:transition-none ${
+                    className={`group relative min-w-0 flex-col ${
                       hiddenUntilExpanded ? responsiveVisibility : "flex"
                     }`}
                   >
-                    <div className="relative aspect-square sm:aspect-[4/4.35] overflow-hidden bg-[#ece8df]">
+                    <div className={`relative aspect-[4/5] w-full overflow-hidden rounded-[22px_22px_22px_8px] border bg-[#ece8df] shadow-[0_10px_28px_rgba(40,35,27,0.08)] transition-[transform,box-shadow,border-color] duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_22px_46px_rgba(40,35,27,0.15)] motion-reduce:transform-none motion-reduce:transition-none sm:rounded-[30px_30px_30px_10px] ${isModerator ? "border-[#d28b6d] ring-1 ring-[#d28b6d]/20" : "border-[#d8d1c5]"}`}>
                       {!roundtable.hidePhotos && panelist.photoUrl ? (
                         <Image
                           src={panelist.photoUrl}
                           alt={panelist.name}
                           fill
                           sizes="(max-width: 639px) 48vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
-                          className="object-cover object-top grayscale-[8%] transition-transform duration-700 ease-out group-hover:scale-[1.035] motion-reduce:transition-none"
+                          className="object-cover object-top grayscale-[6%] transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.055] group-hover:grayscale-0 motion-reduce:transition-none"
                         />
                       ) : (
                         <div
@@ -182,10 +182,48 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         </div>
                       )}
 
+                      <div className="hidden" aria-hidden="true" />
+                      <div className="hidden" aria-hidden="true" />
+
+                      {isModerator && (
+                        <span className="hidden">
+                          Moderator
+                        </span>
+                      )}
+
+                      {hasLinkedIn && (
+                        <span
+                          className="hidden"
+                          aria-label="Open LinkedIn profile"
+                          title="Open LinkedIn profile"
+                        >
+                          <svg className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 1-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                          </svg>
+                        </span>
+                      )}
+
+                      <div className="hidden">
+                        <span className={`mb-2 block h-[2px] w-7 rounded-full ${styles.line} transition-[width] duration-300 group-hover:w-12 motion-reduce:transition-none sm:w-9`} aria-hidden="true" />
+                        <h4 className="font-serif text-[13px] font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm sm:text-[1.35rem] sm:leading-[1.1] sm:tracking-[-0.02em]">
+                          {panelist.name}
+                        </h4>
+                        {panelist.designation && (
+                          <p className="mt-1.5 text-[10px] font-bold leading-snug text-[#ffd9c4] sm:mt-2 sm:text-sm">
+                            {panelist.designation}
+                          </p>
+                        )}
+                        {panelist.organization && (
+                          <p className="mt-0.5 text-[9px] leading-snug text-white/70 sm:mt-1 sm:text-xs">
+                            {panelist.organization}
+                          </p>
+                        )}
+                      </div>
+
                     </div>
 
                     <div
-                      className={`flex flex-1 flex-col p-3 sm:px-6 sm:pb-6 sm:pt-5 ${hasLinkedIn ? "cursor-pointer" : ""}`}
+                      className={`flex min-w-0 flex-1 flex-col px-1 pb-1 pt-3 sm:px-2 sm:pt-4 ${hasLinkedIn ? "cursor-pointer" : ""}`}
                       role={hasLinkedIn ? "link" : undefined}
                       tabIndex={hasLinkedIn ? 0 : undefined}
                       aria-label={hasLinkedIn ? `Open ${panelist.name}'s LinkedIn profile` : undefined}
@@ -204,15 +242,20 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                           Moderator
                         </span>
                       )}
-                      <div className="flex items-start gap-1.5 sm:gap-2">
+                      <div className="flex items-start gap-2">
                         <h4 className="min-w-0 flex-1 font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
                           {panelist.name}
                         </h4>
                         {hasLinkedIn && (
-                          <span className="mt-0.5 inline-flex shrink-0 text-[#0a66c2]" aria-label="LinkedIn profile available">
+                          <span
+                            className="mt-0.5 inline-flex shrink-0 items-center gap-1 text-[#0a66c2] transition-colors group-hover:text-[#084f96]"
+                            aria-label="Open LinkedIn profile"
+                            title="Open LinkedIn profile"
+                          >
                             <svg className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" viewBox="0 0 24 24" aria-hidden="true">
                               <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
                             </svg>
+                            <ExternalLink className="h-3 w-3" aria-hidden="true" />
                           </span>
                         )}
                       </div>
@@ -227,7 +270,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         </p>
                       )}
                       <div className="mt-2 sm:mt-auto pt-1 sm:pt-5">
-                        <div className={`h-[2px] w-6 sm:w-8 rounded-full ${styles.line} opacity-75 transition-[width] duration-300 group-hover:w-10 sm:group-hover:w-12 motion-reduce:transition-none`} />
+                        <div className={`h-[2px] w-6 rounded-full ${styles.line} opacity-75 transition-[width] duration-300 group-hover:w-10 motion-reduce:transition-none sm:w-8 sm:group-hover:w-12`} />
                       </div>
                     </div>
                   </article>
