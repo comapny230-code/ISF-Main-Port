@@ -6,24 +6,40 @@ import { ArrowRight } from "lucide-react";
 
 const HERO_BACKDROPS = [
   {
-    src: "/images/hero-junicorn-summit.webp",
-    alt: "ISF Junicorn Student Innovators and Mentors Delegation",
+    src: "/images/hero/isf-convention-delegates-grand-assembly.webp",
+    alt: "ISF Convention Delegates Grand Assembly Arena",
   },
   {
-    src: "/images/hero-cohort-team.webp",
-    alt: "ISF Global Innovation Summit Cohort Delegation on Stage",
+    src: "/images/hero/junicorn-state-honors-assembly.webp",
+    alt: "ISF Junicorn State Honors and Innovators Assembly",
   },
   {
-    src: "/images/startup-stage-backdrop.webp",
-    alt: "ISF Startup Jathara Grand Keynote Arena and Delegates",
+    src: "/images/hero/isf-junicorn-summit-stage.webp",
+    alt: "ISF Junicorn Innovation Summit Grand Stage",
   },
   {
-    src: "/images/grassroots-dandakaranya-summit.webp",
-    alt: "Dandakaranya Forest Landscape, Venue of ISF Startup Jathara 2026",
+    src: "/images/hero/junicorn-dk-shivakumar-unveiling.webp",
+    alt: "Junicorn Leadership and Dignitaries Summit Showcase",
+  },
+  {
+    src: "/images/hero/junicorn-dubai-future-museum-delegation.webp",
+    alt: "ISF Global Innovation Delegation at Dubai Museum of the Future",
+  },
+  {
+    src: "/images/hero/india-tech-talent-league.webp",
+    alt: "India Tech Talent League Innovation Arena",
+  },
+  {
+    src: "/images/hero/junicorn-us-consulate-delegation.webp",
+    alt: "ISF Junicorn Innovation US Consulate Delegation",
+  },
+  {
+    src: "/images/hero/junicorn-us-consulate-exterior.webp",
+    alt: "ISF Junicorn Delegation at the US Consulate",
   },
 ];
 
-const REGISTRATION_ENDS_AT = new Date("2026-11-11T23:59:59+05:30").getTime();
+const REGISTRATION_ENDS_AT = new Date("2026-11-10T23:59:59+05:30").getTime();
 
 type Countdown = {
   days: number;
@@ -66,7 +82,7 @@ function RegistrationCountdown({ countdown }: { countdown: Countdown | null }) {
   return (
     <div className="w-full">
       <p className="text-center text-[10px] font-bold uppercase tracking-[0.15em] text-white/85 sm:text-xs">
-        Registration deadline: November 11th
+        Registration deadline: November 10th
       </p>
       <div className="mt-3 flex items-center justify-center gap-2.5 sm:gap-4" aria-live="polite">
         <FlipCountdownUnit label="Days" value={countdown?.days ?? null} />

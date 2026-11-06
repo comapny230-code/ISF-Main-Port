@@ -42,15 +42,16 @@ export default function AboutPage() {
       <section className="relative text-[#fcfbf8] py-16 sm:py-24 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/grassroots-dandakaranya-summit.webp"
+            src="/images/events/grassroots-leadership-meet.webp"
             alt="Igniting Grassroots Potential in Dandakaranya"
             fill
             priority
+            quality={95}
             sizes="100vw"
-            className="object-cover object-[center_35%] brightness-95"
+            className="object-cover object-[center_45%]"
           />
-          <div className="absolute inset-0 z-10 bg-black/45 sm:bg-black/40" />
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/35 to-[#0c0d12]/60" />
+          <div className="absolute inset-0 z-10 bg-black/40 sm:bg-black/35" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0c0d12] via-[#0c0d12]/20 to-[#0c0d12]/45" />
           <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#e87042]/15 rounded-full blur-[140px] pointer-events-none z-10" />
         </div>
         <Container size="default" className="relative z-20 text-center">

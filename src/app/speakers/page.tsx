@@ -26,7 +26,7 @@ export default function SpeakersPage() {
         {/* Topic-matching Dedicated Static Hero Image */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-speakers-backdrop.webp"
+            src="/images/events/speakers-global-dignitaries.webp"
             alt="Speakers, Mentors and Dignitaries on Podium"
             fill
             priority

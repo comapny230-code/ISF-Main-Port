@@ -345,7 +345,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     name: "Tathagat Kumar",
     initials: "TK",
     initialsBg: "bg-[#007d79]",
-    photoUrl: "/images/speakers/tathagat-kumar-gcc.png",
+    photoUrl: "/images/speakers/tathagat-kumar-gcc.webp",
     linkedinUrl: "https://www.linkedin.com/in/heytathagat/",
   },
   "surya-timmaraju-gcc": {

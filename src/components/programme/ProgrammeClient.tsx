@@ -340,8 +340,8 @@ export function ProgrammeClient() {
       <section className="relative text-[#fcfbf8] py-20 sm:py-28 border-b border-[#232733] bg-[#0c0d12] overflow-hidden">
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-timetable-display.webp"
-            alt="Summit Programme & Timetable Display Screen with Attendees"
+            src="/images/events/journey-of-innovation-summit.webp"
+            alt="The Journey of Innovation - Executive delegates and founders at Startup Jathara"
             fill
             priority
             sizes="100vw"

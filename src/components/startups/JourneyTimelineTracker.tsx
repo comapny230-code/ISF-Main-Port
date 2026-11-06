@@ -1,14 +1,13 @@
 "use client";
 
 import React from "react";
-import { ArrowRight, ArrowDown, Sparkles } from "lucide-react";
+import { ArrowRight, ArrowDown, Trophy } from "lucide-react";
 
 interface MilestoneData {
   phase: string;
   stepNumber: string;
   stepLabel: string;
   monthLabel: string;
-  badge: string;
   title: string;
   description: string;
   isFinale?: boolean;
@@ -19,8 +18,7 @@ const MILESTONES: MilestoneData[] = [
     phase: "Phase 01",
     stepNumber: "01",
     stepLabel: "Stage 01",
-    monthLabel: "October 2026",
-    badge: "Applications Open",
+    monthLabel: "November 10, 2026",
     title: "Applications Close",
     description:
       "Submit your idea or working prototype. Open to school builders and student innovators from 20+ states nationwide.",
@@ -30,7 +28,6 @@ const MILESTONES: MilestoneData[] = [
     stepNumber: "02",
     stepLabel: "Stage 02",
     monthLabel: "November 2026",
-    badge: "Top 200 Cohort",
     title: "First Shortlist · 200 Teams",
     description:
       "Top 200 projects enter weekly mentorship sprints, prototype refinement workshops, and faculty domain clinics.",
@@ -40,7 +37,6 @@ const MILESTONES: MilestoneData[] = [
     stepNumber: "03",
     stepLabel: "Stage 03",
     monthLabel: "Early December",
-    badge: "Top 100 Finalists",
     title: "Final 100 · Investor Ready",
     description:
       "Final 100 founders receive live pitch coaching, venture deck reviews, and 1-on-1 investor connects.",
@@ -50,7 +46,6 @@ const MILESTONES: MilestoneData[] = [
     stepNumber: "04",
     stepLabel: "Stage 04",
     monthLabel: "18 December 2026",
-    badge: "Main Stage Finale",
     title: "Grand Finale · Gunupur",
     description:
       "Pitch live before prominent investors, industry leaders, and institutional juries at GIET University.",
@@ -86,7 +81,7 @@ export function JourneyTimelineTracker() {
                     <div className="flex items-center justify-between gap-2 mb-3.5">
                       {milestone.isFinale ? (
                         <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider bg-[#faebd7] text-[#a84e2d] border border-[#f0d4bd]">
-                          <Sparkles className="h-3 w-3 text-[#d96842]" />
+                          <Trophy className="h-3 w-3 text-[#d96842]" />
                           Grand Finale
                         </span>
                       ) : (
@@ -122,15 +117,6 @@ export function JourneyTimelineTracker() {
                         {milestone.phase}
                       </span>
                     </div>
-
-                    {/* Badge */}
-                    <p
-                      className={`text-[10px] font-semibold mb-1 ${
-                        milestone.isFinale ? "text-[#a84e2d]" : "text-[#666158]"
-                      }`}
-                    >
-                      {milestone.badge}
-                    </p>
 
                     {/* Title */}
                     <h3 className="font-serif text-lg sm:text-xl font-bold text-[#1c1917] leading-snug">

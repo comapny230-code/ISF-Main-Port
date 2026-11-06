@@ -55,8 +55,8 @@ export default function StartupsPage() {
         {/* Background Media */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
           <Image
-            src="/images/summit-pitch-stage.webp"
-            alt="A young founder presenting an innovation to an investor jury"
+            src="/images/events/global-innovation-summit-cohort.webp"
+            alt="Rural Ideas. Global Ambition. ISF Global Innovation Summit Cohort Delegation"
             fill
             priority
             sizes="100vw"
