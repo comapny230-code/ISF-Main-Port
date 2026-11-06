@@ -274,24 +274,24 @@ export const GIET_INNOVATION_ECOSYSTEM = [
     title: "Atal Community Innovation Centre (ACIC)",
     desc: "NITI Aayog-backed innovation centre fostering grassroots tech transfer, student prototypes, and youth enterprise across Odisha.",
     tag: "NITI Aayog / ACIC",
-    image: "/images/innovation/acic-innovation-lab.webp"
+    image: "/images/innovation/acic-grassroots-centre.webp"
   },
   {
     title: "BIRAC E-YUVA Innovation Centre",
     desc: "Biotechnology Industry Research Assistance Council (BIRAC) supported centre empowering student entrepreneurs with biotech and life sciences testbeds.",
     tag: "Biotech & Healthcare",
-    image: "/images/innovation/birac-biotech-centre.webp"
+    image: "/images/innovation/birac-microscopy-lab.webp"
   },
   {
     title: "Technology Business Incubator (TBI) & Incubatex",
     desc: "Pre-incubation & startup acceleration pipeline offering prototyping labs, seed grants, IP support, and investor access.",
     tag: "Startup Acceleration",
-    image: "/images/innovation/tbi-startup-incubator.webp"
+    image: "/images/innovation/tbi-drone-incubation.webp"
   },
   {
     title: "DSIR Scientific & Industrial Research Facility",
     desc: "Officially recognized Scientific and Industrial Research Organization (SIRO) by the Ministry of Science & Technology, Govt. of India.",
     tag: "Govt. Recognized (SIRO)",
-    image: "/images/innovation/dsir-research-facility.webp"
+    image: "/images/innovation/dsir-protein-estimation-facility.webp"
   }
 ];
