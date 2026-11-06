@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Building2, Cpu, ShieldCheck, Users } from "lucide-react";
+import { Building2, Cpu, ShieldCheck, Rocket } from "lucide-react";
 import { Container } from "../common/Container";
 
 const credentials = [
@@ -19,7 +19,7 @@ const credentials = [
     detail: "Special Chief Secretary to CM, Andhra Pradesh",
   },
   {
-    icon: Users,
+    icon: Rocket,
     label: "Startup Patron",
     detail: "Co-Founder, Hyderabad Angels Network",
   },
@@ -93,8 +93,8 @@ export function ISFFounderSection() {
                     key={c.label + c.detail}
                     className="flex items-center gap-3.5 rounded-xl border border-[#e3d9cc] bg-white px-4 py-3 shadow-[0_2px_8px_rgba(43,37,28,0.04)] hover:border-[#c25e38]/35 transition-colors"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-[#faf3ea] border border-[#ecdccb] flex items-center justify-center shrink-0 text-[#c25e38]">
-                      <IconComponent className="w-4 h-4" />
+                    <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#c25e38]">
+                      <IconComponent className="w-6 h-6" strokeWidth={2} />
                     </div>
                     <div className="min-w-0">
                       <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#c25e38] block">
