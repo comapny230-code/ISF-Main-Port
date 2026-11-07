@@ -8,7 +8,7 @@ const FOUR_PILLARS = [
     title: "Junicorn Startup Showcase",
     tag: "Grassroots & Student Founders",
     description:
-      "A dedicated stage for early-stage student and grassroots founders to pitch before investors, mentors, and industry leaders.",
+      "A dedicated launchpad for student innovators and grassroots problem-solvers to pitch directly before marquee investors, GCC heads, and global mentors. Direct seed grant opportunities, on-spot term sheets, and pilot connections.",
     icon: Rocket,
     accent: "#c25e38",
     iconBg: "#feeae0",
@@ -21,7 +21,7 @@ const FOUR_PILLARS = [
     title: "Investor & Mentor Connect",
     tag: "Capital & 1-on-1 Mentorship",
     description:
-      "Structured one-on-one meetings, panel discussions, and open mentoring sessions bridging capital with grassroots innovation.",
+      "Structured 1-on-1 deal rooms, founder clinics, and reverse pitches connecting high-potential regional ventures with strategic capital and seasoned operators. Direct access to angel syndicates, venture funds, and valuation advisory.",
     icon: Users2,
     accent: "#a1781c",
     iconBg: "#fef4db",
@@ -34,7 +34,7 @@ const FOUR_PILLARS = [
     title: "Sectoral Roundtables",
     tag: "8 Growth Sectors",
     description:
-      "Deep-dive roundtable dialogues across eight high-growth sectors, led by domain experts, investors, and ecosystem builders.",
+      "Deep-dive Chatham House rule dialogues across AgriTech, Tribal Crafts, Bio-Economy, Clean Energy, and AI-enabled rural enterprises. Unlocking procurement linkages, policy solutions, and supply chain scaling.",
     icon: MessageSquare,
     accent: "#166e55",
     iconBg: "#e6f6ef",
@@ -47,7 +47,7 @@ const FOUR_PILLARS = [
     title: "Dandakaranya Experience",
     tag: "Nature & Heritage Trek",
     description:
-      "A signature immersive trekking experience through the ancient forests of Dandakaranya, where dialogue flows freely in nature.",
+      "A signature immersive trail through the ancient forests of Dandakaranya. Guided morning nature trails, Araku coffee fireside circles, living tribal artisan showcases, and open nature dialogues under pristine forest canopies.",
     icon: Compass,
     accent: "#246347",
     iconBg: "#ecf5f0",
@@ -108,7 +108,7 @@ export function FourPillarsSection() {
 
                 {/* ── INNER CANVAS CONTAINER: Pastel Canvas from Reference ── */}
                 <div
-                  className={`relative flex flex-1 flex-col justify-center rounded-[20px] sm:rounded-[22px] border p-4 sm:p-5 transition-all duration-300 min-h-[110px] sm:min-h-[120px] ${pillar.canvasBg} ${pillar.canvasBorder}`}
+                  className={`relative flex flex-1 flex-col justify-center rounded-[20px] sm:rounded-[22px] border p-4 sm:p-5 transition-all duration-300 min-h-[140px] sm:min-h-[155px] ${pillar.canvasBg} ${pillar.canvasBorder}`}
                 >
                   {/* Canvas Description Content */}
                   <p className="text-xs sm:text-[13px] leading-relaxed text-[#3d3833] font-medium">
