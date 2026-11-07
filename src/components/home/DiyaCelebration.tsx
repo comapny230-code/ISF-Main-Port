@@ -535,6 +535,26 @@ export function DiyaCelebration() {
           isWillow: true,
         });
       }
+
+      // 5. Ambient Golden & Diamond Floating Stardust (Slow drifting sparkler ash)
+      const h = window.innerHeight;
+      for (let g = 0; g < 40; g++) {
+        const gx = w * (0.28 + Math.random() * 0.44);
+        const gy = h * (0.32 + Math.random() * 0.36);
+        particlesRef.current.push({
+          x: gx,
+          y: gy,
+          vx: (Math.random() - 0.5) * 0.8,
+          vy: 0.12 + Math.random() * 0.35,
+          rgb: g % 2 === 0 ? "254, 240, 138" : "255, 255, 255",
+          alpha: 0.9,
+          decay: 0.004 + Math.random() * 0.003,
+          size: 1.1 + Math.random() * 0.8,
+          gravity: 0.006,
+          drag: 0.992,
+          trail: [],
+        });
+      }
     }
   }, []);
 
@@ -825,13 +845,19 @@ export function DiyaCelebration() {
         </button>
       </aside>
 
-      {/* ── 2. Cinematic Midnight Sky Atmosphere (Zero Boxes, Zero Cards - Soft Translucent Tint, Crisp Clear Background) ── */}
+      {/* ── 2. Cinematic Midnight Sky Atmosphere (Zero Boxes, Zero Cards - Soft Spotlight Vignette, Crisp Clear Background) ── */}
       {celebrating && (
         <div
           onClick={() => setCelebrating(false)}
-          className={`fixed inset-0 z-40 bg-[#06080e]/40 backdrop-blur-[1px] transition-opacity duration-700 ease-out cursor-pointer ${
+          className={`fixed inset-0 z-40 transition-opacity duration-700 ease-out cursor-pointer ${
             skyGreetingFading ? "opacity-0" : "opacity-100"
           }`}
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 45%, rgba(6, 8, 14, 0.22) 0%, rgba(6, 8, 14, 0.42) 60%, rgba(6, 8, 14, 0.62) 100%)",
+            backdropFilter: "blur(1px)",
+            WebkitBackdropFilter: "blur(1px)",
+          }}
           aria-hidden="true"
         />
       )}
@@ -857,14 +883,19 @@ export function DiyaCelebration() {
           aria-live="polite"
         >
           {/* Centered Glowing Diya Mascot */}
-          <div className="relative w-16 h-18 sm:w-20 sm:h-24 mx-auto mb-2 drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] animate-diya-float flex items-center justify-center">
+          <div className="relative w-16 h-18 sm:w-20 sm:h-24 mx-auto mb-1 animate-diya-float flex items-center justify-center">
+            {/* Subtle Ambient Ground Warmth */}
+            <span
+              className="absolute -bottom-1 w-12 sm:w-16 h-2 bg-[#f59e0b]/35 rounded-full blur-[6px] pointer-events-none"
+              aria-hidden="true"
+            />
             <Image
               src="/images/diya.png"
               alt="Diwali Diya"
               width={72}
               height={84}
               priority
-              className="object-contain select-none pointer-events-none"
+              className="object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] select-none pointer-events-none"
             />
           </div>
 
@@ -881,18 +912,28 @@ export function DiyaCelebration() {
             Happy Diwali
           </h2>
 
-          {/* ── Subtitle: Short Inspiring English Subtitle (Zero Icons, Pure Typography, Zero Glow) ── */}
-          <p
-            className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-base lg:text-lg tracking-[0.16em] sm:tracking-[0.22em] uppercase mt-2 sm:mt-2.5 max-w-[280px] min-[400px]:max-w-sm sm:max-w-xl mx-auto leading-normal select-none"
-            style={{
-              background: "linear-gradient(90deg, #ff758c 0%, #ffd166 50%, #4facfe 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0 1px 3px rgba(0, 0, 0, 0.85))",
-            }}
-          >
-            Lighting the Path of Innovation &amp; Prosperity
-          </p>
+          {/* ── Subtitle: Short Inspiring English Subtitle with Elegant Hairline Accents ── */}
+          <div className="flex items-center justify-center gap-2.5 sm:gap-4 mt-2 sm:mt-2.5 select-none px-4">
+            <span
+              className="hidden min-[420px]:block h-px w-6 sm:w-12 bg-gradient-to-r from-transparent via-[#ffd166]/50 to-[#ffd166]"
+              aria-hidden="true"
+            />
+            <p
+              className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-sm lg:text-base tracking-[0.20em] sm:tracking-[0.26em] uppercase max-w-[280px] min-[400px]:max-w-sm sm:max-w-xl mx-auto leading-normal select-none text-center"
+              style={{
+                background: "linear-gradient(90deg, #ff758c 0%, #ffd166 50%, #4facfe 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                filter: "drop-shadow(0 1px 3px rgba(0, 0, 0, 0.85))",
+              }}
+            >
+              Lighting the Path of Innovation &amp; Prosperity
+            </p>
+            <span
+              className="hidden min-[420px]:block h-px w-6 sm:w-12 bg-gradient-to-l from-transparent via-[#ffd166]/50 to-[#ffd166]"
+              aria-hidden="true"
+            />
+          </div>
         </div>
       )}
     </>
