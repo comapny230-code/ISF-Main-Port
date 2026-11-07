@@ -156,7 +156,7 @@ export function HeroSection() {
       </div>
 
       {/* Foreground Content */}
-      <div className="relative z-30 w-full max-w-4xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center justify-center">
+      <div className="hero-foreground-content relative z-30 w-full max-w-4xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center justify-center">
 
         {/* ISF Logo */}
         <div className="mb-4 sm:mb-5 hero-enter hero-enter-delay-1">

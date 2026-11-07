@@ -83,7 +83,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#0043ce]",
     designation: "Founder",
     organization: "ATGC Bio Technology",
-    photoUrl: "/images/speakers/dr-markandeya-gorantla-correct.webp",
+    photoUrl: "/images/speakers/dr-markandeya-gorantla.webp",
     linkedinUrl: "https://www.linkedin.com/in/drgorantla/",
   },
   "s-subramanyam-raju": {
@@ -93,7 +93,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#a2191f]",
     designation: "CEO",
     organization: "International Development Finance and Investment Corporation, Dubai",
-    photoUrl: "/images/speakers/s-subramanyam-raju-correct.webp",
+    photoUrl: "/images/speakers/s-subramanyam-raju.webp",
   },
   "kishan-gurram": {
     id: "kishan-gurram",
@@ -285,7 +285,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     initialsBg: "bg-[#a2191f]",
     designation: "CEO",
     organization: "International Development Finance and Investment Corporation, Dubai",
-    photoUrl: "/images/speakers/s-subramanyam-raju-correct.webp",
+    photoUrl: "/images/speakers/s-subramanyam-raju.webp",
   },
   "vikrant-varshney-gcc": {
     id: "vikrant-varshney-gcc",

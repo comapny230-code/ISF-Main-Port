@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import "tailwindcss";
 
 @keyframes speaker-photo-ring-pulse {
@@ -25,6 +26,10 @@
 .platinum-border-beam {
   animation: platinum-beam 12s linear infinite;
   will-change: transform;
+}
+
+.font-calligraphy {
+  font-family: 'Great Vibes', var(--font-calligraphy), 'Brush Script MT', cursive !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -601,4 +606,86 @@ html, body {
 .animate-pulse-ring {
   transform-origin: center;
   animation: pulseGlowRing 2.2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
+}
+
+/* ─── Diwali Animated Diya & Celebration ─── */
+@keyframes diyaFlameFlicker {
+  0%, 100% {
+    transform: scale(1) rotate(0deg) skewX(0deg);
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.85)) drop-shadow(0 -4px 14px rgba(234, 88, 12, 0.7));
+  }
+  20% {
+    transform: scale(1.04, 0.96) rotate(-1.5deg) skewX(-1.5deg);
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.95)) drop-shadow(0 -5px 18px rgba(234, 88, 12, 0.8));
+  }
+  40% {
+    transform: scale(0.97, 1.05) rotate(1.2deg) skewX(1deg);
+    filter: drop-shadow(0 0 7px rgba(251, 191, 36, 0.8)) drop-shadow(0 -3px 12px rgba(234, 88, 12, 0.65));
+  }
+  60% {
+    transform: scale(1.05, 0.98) rotate(-0.8deg) skewX(-1deg);
+    filter: drop-shadow(0 0 11px rgba(251, 191, 36, 1)) drop-shadow(0 -6px 20px rgba(234, 88, 12, 0.85));
+  }
+  80% {
+    transform: scale(0.98, 1.02) rotate(1.8deg) skewX(1.5deg);
+    filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.85)) drop-shadow(0 -4px 15px rgba(234, 88, 12, 0.7));
+  }
+}
+
+.animate-diya-flame {
+  transform-origin: bottom center;
+  animation: diyaFlameFlicker 1.4s ease-in-out infinite;
+}
+
+@keyframes diyaGlowHalo {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.15);
+  }
+}
+
+.animate-diya-halo {
+  animation: diyaGlowHalo 2.2s ease-in-out infinite;
+}
+
+@keyframes diyaFloatBob {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-diya-float {
+  animation: diyaFloatBob 3.5s ease-in-out infinite;
+}
+
+@keyframes festiveMandalaSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-mandala-spin {
+  animation: festiveMandalaSpin 30s linear infinite;
+}
+
+/* Seamless page-level celebration dimming: softens foreground text during Diwali celebration so fireworks and greeting never collide or overlap */
+body.diwali-celebrating .hero-foreground-content {
+  opacity: 0;
+  transform: scale(0.96) translateY(10px);
+  pointer-events: none;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-foreground-content {
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }

@@ -7,12 +7,16 @@ import { DandakaranyaHomeSection } from "@/components/home/DandakaranyaHomeSecti
 import { RegistrationCTA } from "@/components/home/RegistrationCTA";
 import { OrganizersPartnersSection } from "@/components/home/OrganizersPartnersSection";
 import { ScrollObserver } from "@/components/common/ScrollObserver";
+import { DiyaCelebration } from "@/components/home/DiyaCelebration";
 
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full overflow-hidden">
       {/* Scroll-Driven Section Entrance Animation Observer */}
       <ScrollObserver />
+
+      {/* Interactive Festive Diwali Diya & Sky Shots Celebration */}
+      <DiyaCelebration />
 
       {/* Home Page Sections (Hero untouched, remaining sections animate on scroll) */}
       <HeroSection />

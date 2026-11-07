@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Libre_Baskerville } from "next/font/google";
+import { Inter, Libre_Baskerville, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { PublicHeaderWrapper, PublicFooterWrapper } from "@/components/layout/ConditionalPublicLayout";
 import { SmoothScroll } from "@/components/common/SmoothScroll";
@@ -17,6 +17,13 @@ const libreBaskerville = Libre_Baskerville({
   display: "swap",
   weight: ["400", "700"],
   style: ["normal", "italic"],
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  variable: "--font-calligraphy",
+  weight: "400",
+  display: "swap",
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://isf-startup-jathara-2026.vercel.app";
@@ -76,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${libreBaskerville.variable} h-full antialiased`}
+      className={`${inter.variable} ${libreBaskerville.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#fcfbf8] text-[#161e1b] selection:bg-[#c25e38]/20 selection:text-[#a74e2d]">
         {/* Global Butter-Smooth Scrolling Engine (Lenis) */}
