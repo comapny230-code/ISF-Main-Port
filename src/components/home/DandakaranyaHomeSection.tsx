@@ -5,11 +5,32 @@ import { Container } from "../common/Container";
 
 export function DandakaranyaHomeSection() {
   return (
-    <section aria-labelledby="dandakaranya-preview-title" className="section-reveal border-y border-[#e6dfd1] bg-[#f7f4ec] py-16 sm:py-20 lg:py-24">
-      <Container size="wide">
+    <section
+      aria-labelledby="dandakaranya-preview-title"
+      className="section-reveal relative overflow-hidden border-y border-[#e6dfd1] bg-[#f7f4ec] py-16 sm:py-20 lg:py-24"
+    >
+      {/* ── Soft Atmospheric Forest Background Crossfade ── */}
+      <div
+        className="dandakaranya-bg-forest pointer-events-none absolute inset-0 z-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <Image
+          src="/images/dandakaranya/koraput-forest-sunrise.webp"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover object-center filter saturate-[0.95] contrast-[1.02]"
+        />
+        {/* Soft atmospheric cream wash to balance rich forest presence with clean text contrast */}
+        <div className="absolute inset-0 bg-[#f7f4ec]/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f7f4ec]/50 via-transparent to-[#f7f4ec]/65" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f7f4ec] via-transparent to-[#f7f4ec]" />
+      </div>
+
+      <Container size="wide" className="relative z-10">
         <div className="grid items-center gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {/* Image */}
-          <div className="relative order-2 overflow-hidden rounded-2xl lg:order-1 shadow-[0_16px_56px_-8px_rgba(8,26,20,0.25)]">
+          <div className="relative order-2 overflow-hidden rounded-2xl lg:order-1 shadow-[0_16px_56px_-8px_rgba(8,26,20,0.25)] dandakaranya-image-reveal">
             <div className="aspect-[16/10]">
               <Image
                 src="/images/dandakaranya/jagged-peaks-forested-valley.webp"
@@ -28,7 +49,7 @@ export function DandakaranyaHomeSection() {
           </div>
 
           {/* Text */}
-          <div className="order-1 max-w-xl lg:order-2 space-y-5">
+          <div className="order-1 max-w-xl lg:order-2 space-y-5 dandakaranya-text-reveal">
             <div className="flex items-center gap-2.5">
               <span className="w-4 h-px bg-[#9e792c]" aria-hidden="true" />
               <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#9e792c]">

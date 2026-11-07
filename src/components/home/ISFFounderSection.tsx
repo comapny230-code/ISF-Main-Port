@@ -29,13 +29,19 @@ export function ISFFounderSection() {
   return (
     <section
       aria-label="ISF Founder"
-      className="section-reveal bg-[#f7f4ec] py-16 sm:py-20 border-b border-[#e6dfd1]"
+      className="section-reveal relative overflow-hidden bg-[#fcfbf8] py-16 sm:py-20 border-b border-[#e6dfd1]"
     >
-      <Container size="default">
+      {/* Subtle warm ambient highlight to enrich depth */}
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_25%_45%,rgba(194,94,56,0.04),transparent_70%)]"
+        aria-hidden="true"
+      />
+
+      <Container size="default" className="relative z-10">
         <div className="grid gap-10 lg:grid-cols-[380px_1fr] lg:gap-16 items-center">
 
           {/* Photo */}
-          <div className="relative mx-auto w-56 sm:w-64 lg:w-full max-w-[320px] lg:max-w-[360px] mb-4 sm:mb-0">
+          <div className="relative mx-auto w-56 sm:w-64 lg:w-full max-w-[320px] lg:max-w-[360px] mb-8 sm:mb-8 lg:mb-0 founder-photo-reveal">
             {/* Decorative background accent block */}
             <div
               className="absolute -bottom-2.5 -right-2.5 sm:-bottom-3 sm:-right-3 w-full h-full rounded-3xl bg-[#c25e38]/12 border border-[#c25e38]/25 -z-10"
@@ -61,23 +67,24 @@ export function ISFFounderSection() {
           </div>
 
           {/* Content */}
-          <div>
+          <div className="founder-content-reveal text-center lg:text-left">
             {/* Eyebrow */}
-            <div className="flex items-center gap-2.5 mb-5">
+            <div className="flex items-center justify-center lg:justify-start gap-2.5 mb-4 sm:mb-5">
               <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
               <span className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
                 The Visionary Behind the Jathara
               </span>
+              <span className="w-4 h-px bg-[#c25e38] lg:hidden" aria-hidden="true" />
             </div>
 
             <h2 className="font-serif font-black text-3xl sm:text-4xl text-[#1c1917] tracking-tight leading-[1.1]">
               Dr. J.A. Chowdary
             </h2>
-            <p className="mt-1 text-sm font-semibold text-[#7a5c28]">
+            <p className="mt-1.5 text-sm font-semibold text-[#7a5c28]">
               Founder & Chairman — International Startup Foundation (ISF)
             </p>
 
-            <p className="mt-5 text-sm sm:text-[15px] leading-[1.8] text-[#4a4540] max-w-xl">
+            <p className="mt-5 text-sm sm:text-[15px] leading-[1.8] text-[#4a4540] max-w-xl mx-auto lg:mx-0">
               Widely recognized as a prime architect of Cyberabad and HITEC City,
               Dr. J.A. Chowdary has spent over three decades building India&apos;s technology
               ecosystem. Through ISF, he is now leading the movement to connect grassroots
@@ -85,13 +92,13 @@ export function ISFFounderSection() {
             </p>
 
             {/* Credential row */}
-            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 text-left">
               {credentials.map((c) => {
                 const IconComponent = c.icon;
                 return (
                   <div
                     key={c.label + c.detail}
-                    className="flex items-center gap-3.5 rounded-xl border border-[#e3d9cc] bg-white px-4 py-3 shadow-[0_2px_8px_rgba(43,37,28,0.04)] hover:border-[#c25e38]/35 transition-colors"
+                    className="flex items-center gap-3.5 rounded-xl border border-[#e8e0d2] bg-white px-4 py-3 shadow-[0_3px_12px_rgba(28,25,23,0.04)] hover:border-[#c25e38]/35 hover:shadow-[0_8px_20px_rgba(43,37,28,0.08)] transition-all"
                   >
                     <div className="w-8 h-8 flex items-center justify-center shrink-0 text-[#c25e38]">
                       <IconComponent className="w-6 h-6" strokeWidth={2} />

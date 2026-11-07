@@ -224,22 +224,12 @@ function SessionRow({
           )}
         >
           {/* Top meta row */}
-          {((session.isTentative || isTentativeDay) || session.location) && (
-            <div className="flex items-center justify-between gap-1.5 sm:gap-2 mb-2 sm:mb-2.5">
-              {(session.isTentative || isTentativeDay) ? (
-                <span className="inline-flex items-center px-1.5 sm:px-2 py-0.5 rounded-md text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
-                  Tentative
-                </span>
-              ) : (
-                <div />
-              )}
-
-              {session.location && (
-                <div className="flex items-center gap-1 ml-auto text-[10px] sm:text-[11px] text-[#78716c] font-medium">
-                  <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
-                  <span className="truncate max-w-[150px] sm:max-w-none">{session.location}</span>
-                </div>
-              )}
+          {session.location && (
+            <div className="flex items-center justify-end gap-1.5 sm:gap-2 mb-2 sm:mb-2.5">
+              <div className="flex items-center gap-1 ml-auto text-[10px] sm:text-[11px] text-[#78716c] font-medium">
+                <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
+                <span className="truncate max-w-[150px] sm:max-w-none">{session.location}</span>
+              </div>
             </div>
           )}
 
@@ -477,11 +467,6 @@ export function ProgrammeClient() {
                       {activeDay.dayName},{" "}
                       <span className="text-[#e87042]">{activeDay.dateFormatted}</span>
                     </h3>
-                    {activeDay.status === "Tentative" && (
-                      <span className="inline-flex items-center px-2 py-0.5 rounded-md text-[10px] font-bold text-amber-700 bg-amber-50 border border-amber-200 uppercase tracking-wider">
-                        Tentative
-                      </span>
-                    )}
                   </div>
                   <p className="text-sm text-[#57534e] font-medium">{activeDay.theme}</p>
                   {activeDay.statusNote && (

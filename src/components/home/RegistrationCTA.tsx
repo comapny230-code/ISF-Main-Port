@@ -13,7 +13,7 @@ export function RegistrationCTA() {
       <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-[#d6b25e]/12 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#d6b25e]/30 to-transparent" />
 
-      <Container size="default" className="relative z-10 text-center">
+      <Container size="default" className="relative z-10 text-center cta-content-reveal">
 
 
         {/* Heading */}

@@ -124,7 +124,7 @@ export default function StartupsPage() {
               <div className="grid grid-cols-2 border-y border-[#e7e0d7]">
                 <div className="border-r border-[#e7e0d7] px-5 py-5 sm:px-6">
                   <GraduationCap className="h-5 w-5 text-[#bd5b39]" aria-hidden="true" />
-                  <p className="mt-3 font-serif text-3xl font-bold leading-none text-[#252621] sm:text-4xl">8–18</p>
+                  <p className="mt-3 font-serif text-3xl font-bold leading-none text-[#252621] sm:text-4xl">8–17</p>
                   <p className="mt-2 text-[9px] font-black uppercase tracking-[0.16em] text-[#9c543a]">Junior Track</p>
                   <p className="mt-2 text-[10px] leading-4 text-[#6b6861]">Idea stage welcome. No prototype required.</p>
                 </div>

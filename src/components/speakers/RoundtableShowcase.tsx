@@ -263,7 +263,7 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                         )}
                         {isModerator && (
                           <p className="mt-2 sm:mt-2.5 font-serif text-[14px] sm:text-[15.5px] font-bold tracking-wide text-[#b65531]">
-                            Session Moderator
+                            Moderator
                           </p>
                         )}
                         <div className="mt-2 sm:mt-auto pt-1 sm:pt-5">

@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -7,6 +9,8 @@ import { Container } from "../common/Container";
 const STATS = [
   {
     value: "4",
+    num: 4,
+    suffix: "",
     label: "Immersive Days",
     sub: "17–20 Dec 2026",
     accent: "#c25e38",
@@ -16,6 +20,8 @@ const STATS = [
   },
   {
     value: "9+",
+    num: 9,
+    suffix: "+",
     label: "Sector Tracks",
     sub: "AgriTech · HealthTech · more",
     accent: "#1c6651",
@@ -25,6 +31,8 @@ const STATS = [
   },
   {
     value: "50+",
+    num: 50,
+    suffix: "+",
     label: "Speakers & Leaders",
     sub: "Visionaries · Mentors · CXOs",
     accent: "#8c671b",
@@ -34,6 +42,8 @@ const STATS = [
   },
   {
     value: "1",
+    num: 1,
+    suffix: "",
     label: "Landmark Venue",
     sub: "GIET University, Gunupur",
     accent: "#4a5752",
@@ -43,22 +53,79 @@ const STATS = [
   },
 ];
 
+function AnimatedCounter({
+  targetNum,
+  suffix,
+  accent,
+}: {
+  targetNum: number;
+  suffix: string;
+  accent: string;
+}) {
+  const [count, setCount] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+  const animatedRef = useRef(false);
+
+  useEffect(() => {
+    if (!ref.current || animatedRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !animatedRef.current) {
+          animatedRef.current = true;
+          const duration = 1400;
+          const startTime = performance.now();
+
+          const step = (now: number) => {
+            const elapsed = now - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth ease out cubic
+            const ease = 1 - Math.pow(1 - progress, 3);
+            setCount(Math.round(ease * targetNum));
+
+            if (progress < 1) {
+              requestAnimationFrame(step);
+            } else {
+              setCount(targetNum);
+            }
+          };
+
+          requestAnimationFrame(step);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, [targetNum]);
+
+  return (
+    <div
+      ref={ref}
+      className="font-serif font-black text-xl sm:text-2xl lg:text-3xl leading-none transition-transform duration-300 group-hover:scale-105"
+      style={{ color: accent }}
+    >
+      {count}
+      {suffix}
+    </div>
+  );
+}
+
 export function AboutJatharaSection() {
   return (
     <section
       aria-label="About ISF Startup Jathara"
-      className="section-reveal py-16 sm:py-24 bg-[#fcfbf8] border-b border-[#e6dfd1]"
+      className="section-reveal py-16 sm:py-24 bg-[#fcfbf8] border-b border-[#e6dfd1] overflow-hidden"
     >
       <Container size="wide">
         <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-16 items-center">
-
           {/* ── Left: Editorial text column ─────────────────────────── */}
-          <div className="flex flex-col gap-6">
-
+          <div className="flex flex-col gap-6 section-editorial-reveal">
             {/* Eyebrow + heading */}
             <div>
               <div className="flex items-center gap-3 mb-4 sm:mb-5">
-                <span className="w-5 h-px bg-[#c25e38]" aria-hidden="true" />
+                <span className="w-5 h-px bg-[#c25e38] section-line-expand" aria-hidden="true" />
                 <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
                   About the Jathara
                 </p>
@@ -72,7 +139,7 @@ export function AboutJatharaSection() {
                   {/* Hand-drawn underline accent */}
                   <svg
                     aria-hidden="true"
-                    className="absolute -bottom-1.5 left-0 w-full"
+                    className="absolute -bottom-1.5 left-0 w-full overflow-visible"
                     viewBox="0 0 220 8"
                     fill="none"
                     preserveAspectRatio="none"
@@ -82,6 +149,7 @@ export function AboutJatharaSection() {
                       stroke="#e87042"
                       strokeWidth="2.5"
                       strokeLinecap="round"
+                      className="draw-underline-path"
                     />
                   </svg>
                 </span>
@@ -110,12 +178,12 @@ export function AboutJatharaSection() {
           </div>
 
           {/* ── Right: 4 Interactive Stat Links with Pictures (2x2 grid on all screens) ── */}
-          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-5 w-full">
-            {STATS.map((stat) => (
+          <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-5 w-full section-cards-reveal">
+            {STATS.map((stat, idx) => (
               <Link
                 key={stat.label}
                 href={stat.href}
-                className="group relative rounded-xl sm:rounded-2xl border border-[#e6dfd1] bg-white overflow-hidden hover:border-[#c8c0b2] hover:shadow-[0_12px_32px_rgba(28,25,23,0.1)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+                className={`group relative rounded-xl sm:rounded-2xl border border-[#e6dfd1] bg-white overflow-hidden hover:border-[#c8c0b2] hover:shadow-[0_16px_36px_rgba(28,25,23,0.12)] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between card-enter card-enter-${idx + 1}`}
               >
                 {/* Top photo strip with subtle CTA */}
                 <div className="relative h-20 sm:h-24 md:h-28 w-full overflow-hidden">
@@ -124,7 +192,7 @@ export function AboutJatharaSection() {
                     alt={stat.label}
                     fill
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover object-center group-hover:scale-108 transition-transform duration-500 ease-out"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent" />
 
@@ -144,12 +212,11 @@ export function AboutJatharaSection() {
                     aria-hidden="true"
                   />
                   <div className="pl-1.5 sm:pl-2">
-                    <div
-                      className="font-serif font-black text-xl sm:text-2xl lg:text-3xl leading-none"
-                      style={{ color: stat.accent }}
-                    >
-                      {stat.value}
-                    </div>
+                    <AnimatedCounter
+                      targetNum={stat.num}
+                      suffix={stat.suffix}
+                      accent={stat.accent}
+                    />
                     <div className="mt-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-[#1c1917] group-hover:text-[#c25e38] transition-colors line-clamp-1">
                       {stat.label}
                     </div>
@@ -161,7 +228,6 @@ export function AboutJatharaSection() {
               </Link>
             ))}
           </div>
-
         </div>
       </Container>
     </section>
