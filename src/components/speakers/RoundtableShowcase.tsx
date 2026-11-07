@@ -112,11 +112,6 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                   <p className="mt-3 max-w-2xl mx-auto sm:mx-0 text-sm leading-6 text-[#656159] sm:text-[15px]">
                     {roundtable.description}
                   </p>
-                  {roundtable.moderator && (
-                    <p className="mt-3 text-xs font-bold text-[#18745b] sm:text-sm">
-                      Moderator: {roundtable.moderator}
-                    </p>
-                  )}
                 </div>
 
                 <div className="grid grid-cols-2 shrink-0 gap-x-4 gap-y-2 text-xs font-semibold text-[#4e4a43] sm:gap-x-6 lg:max-w-[26rem] mx-auto sm:mx-0">
@@ -154,123 +149,132 @@ export function RoundtableShowcase({ className = "" }: RoundtableShowcaseProps) 
                 return (
                   <article
                     key={panelist.id}
-                    className={`group relative min-w-0 flex-col ${
+                    className={`group relative min-w-0 flex-col overflow-hidden rounded-[22px] sm:rounded-[28px] p-[1.5px] transition-[transform,box-shadow] duration-500 ease-out hover:-translate-y-1.5 ${
+                      isModerator
+                        ? "shadow-[0_6px_28px_rgba(234,88,12,0.14),0_2px_8px_rgba(40,35,27,0.05)] hover:shadow-[0_22px_48px_rgba(234,88,12,0.22),0_4px_14px_rgba(40,35,27,0.08)] ring-1 ring-[#f59e0b]/25"
+                        : "shadow-[0_4px_20px_rgba(40,35,27,0.05)] hover:shadow-[0_18px_40px_rgba(40,35,27,0.13)]"
+                    } ${
                       hiddenUntilExpanded ? responsiveVisibility : "flex"
                     }`}
                   >
-                    <div className={`relative aspect-[4/5] w-full overflow-hidden rounded-[22px_22px_22px_8px] border bg-[#ece8df] shadow-[0_10px_28px_rgba(40,35,27,0.08)] transition-[transform,box-shadow,border-color] duration-500 ease-out group-hover:-translate-y-1 group-hover:shadow-[0_22px_46px_rgba(40,35,27,0.15)] motion-reduce:transform-none motion-reduce:transition-none sm:rounded-[30px_30px_30px_10px] ${isModerator ? "border-[#d28b6d] ring-1 ring-[#d28b6d]/20" : "border-[#d8d1c5]"}`}>
-                      {!roundtable.hidePhotos && panelist.photoUrl ? (
-                        <Image
-                          src={panelist.photoUrl}
-                          alt={panelist.name}
-                          fill
-                          sizes="(max-width: 639px) 48vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
-                          className="object-cover object-top grayscale-[6%] transition-[transform,filter] duration-700 ease-out group-hover:scale-[1.055] group-hover:grayscale-0 motion-reduce:transition-none"
-                        />
-                      ) : (
-                        <div
-                          className={`relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br ${styles.monogram}`}
-                          role="img"
-                          aria-label={`${panelist.name} monogram`}
-                        >
-                          <span className="absolute -right-8 -top-8 h-24 w-24 sm:-right-12 sm:-top-12 sm:h-36 sm:w-36 rounded-full border border-white/10" />
-                          <span className="absolute -bottom-10 -left-8 h-28 w-28 sm:-bottom-16 sm:-left-12 sm:h-44 sm:w-44 rounded-full border border-white/10" />
-                          <span className="absolute inset-x-5 bottom-5 top-5 sm:inset-x-7 sm:bottom-7 sm:top-7 rounded-full border border-white/[0.08]" />
-                          <span className="font-serif text-2.5xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-white/95">
-                            {panelist.initials}
-                          </span>
+                    {/* Rotating Border Beam: Golden-Amber Polish for Moderator, Platinum-Silver for Panelists */}
+                    <div
+                      className="platinum-border-beam absolute inset-[-150%] pointer-events-none opacity-85 transition-opacity duration-500 group-hover:opacity-100"
+                      style={{
+                        background: isModerator
+                          ? "conic-gradient(from 0deg, transparent 0deg, transparent 255deg, rgba(245,158,11,0.35) 285deg, rgba(234,88,12,0.8) 315deg, #ffffff 340deg, rgba(251,191,36,0.95) 355deg, transparent 360deg)"
+                          : "conic-gradient(from 0deg, transparent 0deg, transparent 270deg, rgba(203,213,225,0.3) 295deg, rgba(241,245,249,0.85) 325deg, #ffffff 345deg, rgba(226,232,240,0.7) 355deg, transparent 360deg)",
+                        animationDelay: isModerator ? "0s" : `${-(index * 2.4)}s`,
+                      }}
+                      aria-hidden="true"
+                    />
+
+                    {/* Static Base Border */}
+                    <div
+                      className={`absolute inset-0 rounded-[22px] sm:rounded-[28px] border pointer-events-none transition-colors duration-500 ${
+                        isModerator
+                          ? "border-[#f0d0b0] group-hover:border-[#ea580c]/60"
+                          : "border-[#e2dcd2] group-hover:border-[#cbd5e1]"
+                      }`}
+                      aria-hidden="true"
+                    />
+
+                    {/* Card Inner Surface: encapsulates photo + text */}
+                    <div
+                      className={`relative z-10 flex min-w-0 flex-1 flex-col w-full h-full rounded-[20.5px] sm:rounded-[26.5px] p-2 sm:p-2.5 ${
+                        isModerator
+                          ? "bg-gradient-to-b from-[#fffbf5] via-[#fdfbf9] to-[#faf4ec]"
+                          : "bg-[#fcfbf9]"
+                      }`}
+                    >
+                      {/* Photo Container */}
+                      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[16px] sm:rounded-[20px] bg-[#ece8df]">
+                        {!roundtable.hidePhotos && panelist.photoUrl ? (
+                          <Image
+                            src={panelist.photoUrl}
+                            alt={panelist.name}
+                            fill
+                            sizes="(max-width: 639px) 48vw, (max-width: 767px) 50vw, (max-width: 1279px) 33vw, 25vw"
+                            className="object-cover object-top transform-gpu will-change-transform transition-transform duration-600 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-[1.035] motion-reduce:transition-none"
+                          />
+                        ) : (
+                          <div
+                            className={`relative flex h-full w-full items-center justify-center overflow-hidden bg-gradient-to-br ${styles.monogram}`}
+                            role="img"
+                            aria-label={`${panelist.name} monogram`}
+                          >
+                            <span className="absolute -right-8 -top-8 h-24 w-24 sm:-right-12 sm:-top-12 sm:h-36 sm:w-36 rounded-full border border-white/10" />
+                            <span className="absolute -bottom-10 -left-8 h-28 w-28 sm:-bottom-16 sm:-left-12 sm:h-44 sm:w-44 rounded-full border border-white/10" />
+                            <span className="absolute inset-x-5 bottom-5 top-5 sm:inset-x-7 sm:bottom-7 sm:top-7 rounded-full border border-white/[0.08]" />
+                            <span className="font-serif text-2.5xl sm:text-5xl lg:text-6xl font-semibold tracking-[-0.04em] text-white/95">
+                              {panelist.initials}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      <div
+                        className={`flex min-w-0 flex-1 flex-col px-1.5 pb-1 pt-2.5 sm:px-2 sm:pt-3 ${hasLinkedIn ? "cursor-pointer" : ""}`}
+                        role={hasLinkedIn ? "link" : undefined}
+                        tabIndex={hasLinkedIn ? 0 : undefined}
+                        aria-label={hasLinkedIn ? `Open ${panelist.name}'s LinkedIn profile` : undefined}
+                        onClick={() => {
+                          if (panelist.linkedinUrl) window.open(panelist.linkedinUrl, "_blank", "noopener,noreferrer");
+                        }}
+                        onKeyDown={(event) => {
+                          if (hasLinkedIn && (event.key === "Enter" || event.key === " ")) {
+                            event.preventDefault();
+                            window.open(panelist.linkedinUrl, "_blank", "noopener,noreferrer");
+                          }
+                        }}
+                      >
+                        <div className="flex items-start gap-2">
+                          <h4
+                            className={`min-w-0 flex-1 font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] transition-colors duration-200 ${
+                              isModerator
+                                ? "text-[#1c1917] group-hover:text-[#c2410c]"
+                                : "text-[#201f1b] group-hover:text-[#9e4528]"
+                            }`}
+                          >
+                            {panelist.name}
+                          </h4>
+                          {hasLinkedIn && (
+                            <span
+                              className="mt-0.5 inline-flex shrink-0 items-center gap-1 text-[#0a66c2] transition-colors group-hover:text-[#084f96]"
+                              aria-label="Open LinkedIn profile"
+                              title="Open LinkedIn profile"
+                            >
+                              <svg className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+                              </svg>
+                              <ExternalLink className="h-3 w-3" aria-hidden="true" />
+                            </span>
+                          )}
                         </div>
-                      )}
-
-                      <div className="hidden" aria-hidden="true" />
-                      <div className="hidden" aria-hidden="true" />
-
-                      {isModerator && (
-                        <span className="hidden">
-                          Moderator
-                        </span>
-                      )}
-
-                      {hasLinkedIn && (
-                        <span
-                          className="hidden"
-                          aria-label="Open LinkedIn profile"
-                          title="Open LinkedIn profile"
-                        >
-                          <svg className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" viewBox="0 0 24 24" aria-hidden="true">
-                            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 1-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                          </svg>
-                        </span>
-                      )}
-
-                      <div className="hidden">
-                        <span className={`mb-2 block h-[2px] w-7 rounded-full ${styles.line} transition-[width] duration-300 group-hover:w-12 motion-reduce:transition-none sm:w-9`} aria-hidden="true" />
-                        <h4 className="font-serif text-[13px] font-bold leading-[1.08] tracking-tight text-white drop-shadow-sm sm:text-[1.35rem] sm:leading-[1.1] sm:tracking-[-0.02em]">
-                          {panelist.name}
-                        </h4>
                         {panelist.designation && (
-                          <p className="mt-1.5 text-[10px] font-bold leading-snug text-[#ffd9c4] sm:mt-2 sm:text-sm">
+                          <p className="mt-1.5 sm:mt-3 text-[11px] sm:text-sm font-bold leading-[1.3] sm:leading-[1.45] text-[#7a4d22]">
                             {panelist.designation}
                           </p>
                         )}
                         {panelist.organization && (
-                          <p className="mt-0.5 text-[9px] leading-snug text-white/70 sm:mt-1 sm:text-xs">
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs leading-snug sm:leading-[1.5] text-[#817b71]">
                             {panelist.organization}
                           </p>
                         )}
-                      </div>
-
-                    </div>
-
-                    <div
-                      className={`flex min-w-0 flex-1 flex-col px-1 pb-1 pt-3 sm:px-2 sm:pt-4 ${hasLinkedIn ? "cursor-pointer" : ""}`}
-                      role={hasLinkedIn ? "link" : undefined}
-                      tabIndex={hasLinkedIn ? 0 : undefined}
-                      aria-label={hasLinkedIn ? `Open ${panelist.name}'s LinkedIn profile` : undefined}
-                      onClick={() => {
-                        if (panelist.linkedinUrl) window.open(panelist.linkedinUrl, "_blank", "noopener,noreferrer");
-                      }}
-                      onKeyDown={(event) => {
-                        if (hasLinkedIn && (event.key === "Enter" || event.key === " ")) {
-                          event.preventDefault();
-                          window.open(panelist.linkedinUrl, "_blank", "noopener,noreferrer");
-                        }
-                      }}
-                    >
-                      <div className="flex items-start gap-2">
-                        <h4 className="min-w-0 flex-1 font-serif text-[13px] sm:text-[1.35rem] font-bold leading-tight sm:leading-[1.12] tracking-tight sm:tracking-[-0.02em] text-[#201f1b] transition-colors duration-200 group-hover:text-[#9e4528]">
-                          {panelist.name}
-                        </h4>
-                        {hasLinkedIn && (
-                          <span
-                            className="mt-0.5 inline-flex shrink-0 items-center gap-1 text-[#0a66c2] transition-colors group-hover:text-[#084f96]"
-                            aria-label="Open LinkedIn profile"
-                            title="Open LinkedIn profile"
-                          >
-                            <svg className="h-3.5 w-3.5 fill-current sm:h-4 sm:w-4" viewBox="0 0 24 24" aria-hidden="true">
-                              <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
-                            </svg>
-                            <ExternalLink className="h-3 w-3" aria-hidden="true" />
-                          </span>
+                        {isModerator && (
+                          <p className="mt-2 sm:mt-2.5 font-serif text-[14px] sm:text-[15.5px] font-bold tracking-wide text-[#b65531]">
+                            Session Moderator
+                          </p>
                         )}
-                      </div>
-                      {panelist.designation && (
-                        <p className="mt-1.5 sm:mt-3 text-[11px] sm:text-sm font-bold leading-[1.3] sm:leading-[1.45] text-[#7a4d22]">
-                          {panelist.designation}
-                        </p>
-                      )}
-                      {panelist.organization && (
-                        <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs leading-snug sm:leading-[1.5] text-[#817b71]">
-                          {panelist.organization}
-                        </p>
-                      )}
-                      {isModerator && (
-                        <span className="mt-2 block text-[9px] font-bold uppercase tracking-[0.16em] text-[#18745b]">
-                          Moderator
-                        </span>
-                      )}
-                      <div className="mt-2 sm:mt-auto pt-1 sm:pt-5">
-                        <div className={`h-[2px] w-6 rounded-full ${styles.line} opacity-75 transition-[width] duration-300 group-hover:w-10 motion-reduce:transition-none sm:w-8 sm:group-hover:w-12`} />
+                        <div className="mt-2 sm:mt-auto pt-1 sm:pt-5">
+                          <div
+                            className={`rounded-full opacity-85 transition-[width] duration-300 motion-reduce:transition-none ${
+                              isModerator
+                                ? "h-[2.5px] w-10 sm:w-14 bg-gradient-to-r from-[#ea580c] via-[#f59e0b] to-[#c2410c] group-hover:w-16 sm:group-hover:w-20"
+                                : `h-[2px] w-6 sm:w-8 ${styles.line} opacity-75 group-hover:w-10 sm:group-hover:w-12`
+                            }`}
+                          />
+                        </div>
                       </div>
                     </div>
                   </article>

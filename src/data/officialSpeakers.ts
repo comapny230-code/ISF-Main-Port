@@ -64,7 +64,7 @@ export const OFFICIAL_PANELISTS: Record<string, OfficialPanelist> = {
     designation: "Professor, Department of Biomedical Engineering",
     organization: "Indian Institute of Technology Hyderabad",
     roleLabel: "Moderator",
-    photoUrl: "/images/speakers/dr-renu-john-updated.webp",
+    photoUrl: "/images/speakers/dr-renu-john-color.webp",
     linkedinUrl: "https://www.linkedin.com/in/renu-john-ab20a29/",
   },
   "col-dr-k-suresh-babu": {

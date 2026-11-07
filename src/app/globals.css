@@ -13,9 +13,27 @@
   animation: speaker-photo-ring-pulse 3.2s ease-in-out infinite;
 }
 
+@keyframes platinum-beam {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.platinum-border-beam {
+  animation: platinum-beam 12s linear infinite;
+  will-change: transform;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .speaker-photo-ring {
     animation: none;
+  }
+  .platinum-border-beam {
+    animation: none;
+    display: none;
   }
 }
 
