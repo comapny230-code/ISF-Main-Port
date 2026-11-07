@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "../common/Container";
-import { Rocket, Users2, MessageSquare, Compass, Plus, ArrowUpRight } from "lucide-react";
+import { Rocket, Users2, MessageSquare, Compass } from "lucide-react";
 
 const FOUR_PILLARS = [
   {
@@ -108,39 +108,12 @@ export function FourPillarsSection() {
 
                 {/* ── INNER CANVAS CONTAINER: Pastel Canvas from Reference ── */}
                 <div
-                  className={`relative flex min-h-[175px] sm:min-h-[190px] flex-col justify-between rounded-[20px] sm:rounded-[22px] border p-4 sm:p-4.5 transition-all duration-300 ${pillar.canvasBg} ${pillar.canvasBorder}`}
+                  className={`relative flex flex-1 flex-col justify-center rounded-[20px] sm:rounded-[22px] border p-4 sm:p-5 transition-all duration-300 min-h-[110px] sm:min-h-[120px] ${pillar.canvasBg} ${pillar.canvasBorder}`}
                 >
-                  {/* Canvas Header: Tag pill + Reference Plus Button */}
-                  <div className="flex items-center justify-between gap-2">
-                    <span
-                      className="inline-block text-[9.5px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 rounded-md bg-white/75 backdrop-blur-xs shadow-2xs truncate"
-                      style={{ color: pillar.accent }}
-                    >
-                      {pillar.tag}
-                    </span>
-
-                    {/* Reference Floating Plus Action Button */}
-                    <span
-                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1c1917] text-white shadow-xs transition-all duration-300 group-hover:scale-110 group-hover:rotate-90 group-hover:bg-[#103327]"
-                      aria-hidden="true"
-                    >
-                      <Plus className="h-3 w-3" strokeWidth={2.5} />
-                    </span>
-                  </div>
-
                   {/* Canvas Description Content */}
-                  <p className="mt-3 text-xs sm:text-[12.5px] leading-relaxed text-[#3d3833] font-medium">
+                  <p className="text-xs sm:text-[13px] leading-relaxed text-[#3d3833] font-medium">
                     {pillar.description}
                   </p>
-
-                  {/* Subtle Explore Footer with Interactive Arrow */}
-                  <div
-                    className="mt-3 pt-2.5 border-t border-black/[0.05] flex items-center justify-between text-[11px] font-bold transition-opacity"
-                    style={{ color: pillar.accent }}
-                  >
-                    <span className="text-[10.5px] tracking-wide">Explore Pillar</span>
-                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
                 </div>
               </div>
             );
