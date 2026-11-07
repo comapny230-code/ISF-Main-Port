@@ -642,9 +642,9 @@ export const BUS_JOURNEY_PLANS: Record<string, CityBusPlan> = {
 };
 
 export const POPULAR_CITIES = [
-  { id: "chennai", name: "Chennai", state: "Tamil Nadu", tag: "Primary Case · 2 Buses" },
-  { id: "bhubaneswar", name: "Bhubaneswar", state: "Odisha", tag: "Direct OSRTC Available" },
   { id: "vizag", name: "Visakhapatnam (Vizag)", state: "Andhra Pradesh", tag: "Direct Bus Gateway" },
+  { id: "bhubaneswar", name: "Bhubaneswar", state: "Odisha", tag: "Direct OSRTC Available" },
+  { id: "chennai", name: "Chennai", state: "Tamil Nadu", tag: "Primary Case · 2 Buses" },
   { id: "hyderabad", name: "Hyderabad", state: "Telangana", tag: "Overnight + Connect" },
   { id: "bangalore", name: "Bengaluru", state: "Karnataka", tag: "Overnight + Connect" },
   { id: "berhampur", name: "Berhampur", state: "Odisha", tag: "Frequent 3.5h Bus" },

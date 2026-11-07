@@ -19,6 +19,8 @@ export interface HotelInfo {
   address: string;
   shortAddress: string;
   landmark: string;
+  mapQuery?: string;
+  googleMapsUrl?: string;
   distanceToCampus: string;
   driveTime: string;
   roomType: string;
@@ -44,6 +46,8 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     address: "Main Road, Near New Bus Stand, Gunupur, Odisha 765022",
     shortAddress: "Main Road, Near Bus Stand",
     landmark: "SH-4 / New Bus Stand",
+    mapQuery: "Hotel Jagannath Palace, Gunupur, Odisha 765022",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Jagannath+Palace+Gunupur+Odisha",
     distanceToCampus: "3.8 km",
     driveTime: "8 mins",
     roomType: "AC / Non-AC",
@@ -75,6 +79,8 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     address: "Main Road, Near New Bus Stand, Beside TVS Showroom, Gunupur 765022",
     shortAddress: "Beside TVS Showroom, Main Rd",
     landmark: "Beside TVS Showroom",
+    mapQuery: "Sai Surya Residency, Gunupur, Odisha 765022",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Sai+Surya+Residency+Gunupur+Odisha",
     distanceToCampus: "3.6 km",
     driveTime: "7 mins",
     roomType: "A/C Suites",
@@ -104,6 +110,8 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     address: "Main Road, Near New Bus Stand, Gunupur, Odisha 765022",
     shortAddress: "Near New Bus Stand Corridor",
     landmark: "Bus & Rail Transit Hub",
+    mapQuery: "Sree Satya Residency, Gunupur, Odisha 765022",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Sree+Satya+Residency+Gunupur+Odisha",
     distanceToCampus: "3.7 km",
     driveTime: "8 mins",
     roomType: "Furnished Beds",
@@ -135,6 +143,8 @@ export const GUNUPUR_HOTELS: HotelInfo[] = [
     address: "Up-Stairs Trends, Station Road, Gunupur 765022, Dist. Rayagada",
     shortAddress: "Station Road, Above Trends",
     landmark: "Above Trends, Station Rd",
+    mapQuery: "Hotel Vijaya Inn, Station Road, Gunupur, Odisha 765022",
+    googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Vijaya+Inn+Station+Road+Gunupur+Odisha",
     distanceToCampus: "4.2 km",
     driveTime: "9 mins",
     roomType: "Executive AC",

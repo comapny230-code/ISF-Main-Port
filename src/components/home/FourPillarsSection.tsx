@@ -1,43 +1,59 @@
 import React from "react";
 import { Container } from "../common/Container";
-import { Rocket, Users2, MessageSquare, Compass } from "lucide-react";
+import { Rocket, Users2, MessageSquare, Compass, Plus, ArrowUpRight } from "lucide-react";
 
 const FOUR_PILLARS = [
   {
-    number: "01",
+    id: "junicorn",
     title: "Junicorn Startup Showcase",
+    tag: "Grassroots & Student Founders",
     description:
       "A dedicated stage for early-stage student and grassroots founders to pitch before investors, mentors, and industry leaders.",
     icon: Rocket,
     accent: "#c25e38",
-    accentBg: "#fff5f0",
+    iconBg: "#feeae0",
+    canvasBg: "bg-gradient-to-br from-[#fff7f2] via-[#ffede3] to-[#fedecf]",
+    canvasBorder: "border-[#f9cfb9]/70",
+    hoverAccent: "group-hover:text-[#a84420]",
   },
   {
-    number: "02",
+    id: "investor-connect",
     title: "Investor & Mentor Connect",
+    tag: "Capital & 1-on-1 Mentorship",
     description:
       "Structured one-on-one meetings, panel discussions, and open mentoring sessions bridging capital with grassroots innovation.",
     icon: Users2,
-    accent: "#9e792c",
-    accentBg: "#fdf8ed",
+    accent: "#a1781c",
+    iconBg: "#fef4db",
+    canvasBg: "bg-gradient-to-br from-[#fffcf2] via-[#fef7e1] to-[#fbeec7]",
+    canvasBorder: "border-[#f7dfa3]/70",
+    hoverAccent: "group-hover:text-[#876211]",
   },
   {
-    number: "03",
+    id: "roundtables",
     title: "Sectoral Roundtables",
+    tag: "8 Growth Sectors",
     description:
       "Deep-dive roundtable dialogues across eight high-growth sectors, led by domain experts, investors, and ecosystem builders.",
     icon: MessageSquare,
-    accent: "#1c6651",
-    accentBg: "#f0f7f4",
+    accent: "#166e55",
+    iconBg: "#e6f6ef",
+    canvasBg: "bg-gradient-to-br from-[#f2faf6] via-[#e6f4ee] to-[#d3ecdf]",
+    canvasBorder: "border-[#b8e2ce]/70",
+    hoverAccent: "group-hover:text-[#115542]",
   },
   {
-    number: "04",
+    id: "dandakaranya",
     title: "Dandakaranya Experience",
+    tag: "Nature & Heritage Trek",
     description:
       "A signature immersive trekking experience through the ancient forests of Dandakaranya, where dialogue flows freely in nature.",
     icon: Compass,
-    accent: "#2d6a4f",
-    accentBg: "#eef6f2",
+    accent: "#246347",
+    iconBg: "#ecf5f0",
+    canvasBg: "bg-gradient-to-br from-[#f5f9f6] via-[#eaf4ee] to-[#d8ece0]",
+    canvasBorder: "border-[#c0ded0]/70",
+    hoverAccent: "group-hover:text-[#1c4e38]",
   },
 ];
 
@@ -45,65 +61,86 @@ export function FourPillarsSection() {
   return (
     <section
       aria-label="Four Pillars of ISF Startup Jathara"
-      className="section-reveal py-20 sm:py-28 bg-[#f7f4ec] border-b border-[#e6dfd1]"
+      className="section-reveal py-10 sm:py-14 lg:py-16 bg-[#f7f4ec] border-b border-[#e6dfd1]"
     >
       <Container size="wide">
-        {/* Section heading */}
-        <div className="max-w-2xl mb-12 sm:mb-16">
-          <div className="flex items-center gap-2.5 mb-4">
+        {/* Section heading: Reduced bottom margin to tighten spacing */}
+        <div className="max-w-2xl mb-7 sm:mb-9">
+          <div className="flex items-center gap-2.5 mb-2.5">
             <span className="w-4 h-px bg-[#c25e38]" aria-hidden="true" />
             <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-[#c25e38]">
               The Four Pillars
             </p>
           </div>
-          <h2 className="font-serif font-black text-3xl sm:text-4xl md:text-[2.5rem] text-[#1c1917] tracking-tight leading-[1.08]">
+          <h2 className="font-serif font-black text-2xl sm:text-3xl md:text-[2.25rem] text-[#1c1917] tracking-tight leading-[1.12]">
             Built on Four Exceptional Experiences
           </h2>
-          <p className="mt-3.5 text-sm sm:text-base text-[#57534e] max-w-xl leading-relaxed">
+          <p className="mt-2.5 text-xs sm:text-sm text-[#57534e] max-w-xl leading-relaxed">
             Every element of ISF Startup Jathara is designed with purpose — centered
             around four distinct pillars that make this gathering transformative.
           </p>
         </div>
 
-        {/* Pillar cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* ── Pillar Cards Grid matching Widget Reference ── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4.5">
           {FOUR_PILLARS.map((pillar, idx) => {
             const Icon = pillar.icon;
             return (
               <div
-                key={pillar.number}
-                className={`group relative rounded-2xl bg-white border border-[#e8e2d5] hover:border-transparent shadow-[0_1px_6px_rgba(28,25,23,0.05)] hover:shadow-[0_16px_40px_rgba(28,25,23,0.12)] transition-all duration-300 hover:-translate-y-1.5 overflow-hidden card-enter card-enter-${idx + 1}`}
+                key={pillar.id}
+                className={`group relative flex flex-col rounded-[26px] sm:rounded-[28px] bg-white border border-[#e8e0d2] p-2.5 sm:p-3 shadow-[0_4px_18px_rgba(28,25,23,0.04)] hover:shadow-[0_18px_42px_rgba(28,25,23,0.1)] hover:border-[#dfd3c0] transition-all duration-400 ease-out hover:-translate-y-1.5 card-enter card-enter-${idx + 1}`}
               >
-                {/* Accent top bar */}
-                <div className="h-[3px] w-full" style={{ backgroundColor: pillar.accent }} />
+                {/* ── TOP HEADER: Micro Icon + Proper Heading (No Numbers) ── */}
+                <div className="flex items-center gap-2.5 px-2 pt-1 pb-2.5 min-w-0">
+                  <span
+                    className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg shadow-2xs transition-transform duration-300 group-hover:scale-110"
+                    style={{ backgroundColor: pillar.iconBg, color: pillar.accent }}
+                  >
+                    <Icon className="h-3.5 w-3.5" strokeWidth={2.2} />
+                  </span>
+                  <h3
+                    className={`font-serif text-[13.5px] sm:text-[14px] font-bold text-[#1c1917] leading-tight truncate transition-colors duration-200 ${pillar.hoverAccent}`}
+                    title={pillar.title}
+                  >
+                    {pillar.title}
+                  </h3>
+                </div>
 
-                <div className="p-6 flex flex-col gap-5">
-                  {/* Icon + step number row */}
-                  <div className="flex items-center justify-between">
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center"
-                      style={{ backgroundColor: pillar.accentBg, color: pillar.accent }}
-                    >
-                      <Icon className="w-5 h-5" strokeWidth={1.75} />
-                    </div>
+                {/* ── INNER CANVAS CONTAINER: Pastel Canvas from Reference ── */}
+                <div
+                  className={`relative flex min-h-[175px] sm:min-h-[190px] flex-col justify-between rounded-[20px] sm:rounded-[22px] border p-4 sm:p-4.5 transition-all duration-300 ${pillar.canvasBg} ${pillar.canvasBorder}`}
+                >
+                  {/* Canvas Header: Tag pill + Reference Plus Button */}
+                  <div className="flex items-center justify-between gap-2">
                     <span
-                      className="font-mono text-xs font-bold tracking-widest"
-                      style={{ color: pillar.accent, opacity: 0.4 }}
+                      className="inline-block text-[9.5px] font-bold uppercase tracking-[0.14em] px-2 py-0.5 rounded-md bg-white/75 backdrop-blur-xs shadow-2xs truncate"
+                      style={{ color: pillar.accent }}
+                    >
+                      {pillar.tag}
+                    </span>
+
+                    {/* Reference Floating Plus Action Button */}
+                    <span
+                      className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#1c1917] text-white shadow-xs transition-all duration-300 group-hover:scale-110 group-hover:rotate-90 group-hover:bg-[#103327]"
                       aria-hidden="true"
                     >
-                      {pillar.number}
+                      <Plus className="h-3 w-3" strokeWidth={2.5} />
                     </span>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="font-serif font-bold text-[17px] text-[#1c1917] leading-snug group-hover:text-[#103327] transition-colors">
-                    {pillar.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-[13px] text-[#6b6560] leading-[1.65]">
+                  {/* Canvas Description Content */}
+                  <p className="mt-3 text-xs sm:text-[12.5px] leading-relaxed text-[#3d3833] font-medium">
                     {pillar.description}
                   </p>
+
+                  {/* Subtle Explore Footer with Interactive Arrow */}
+                  <div
+                    className="mt-3 pt-2.5 border-t border-black/[0.05] flex items-center justify-between text-[11px] font-bold transition-opacity"
+                    style={{ color: pillar.accent }}
+                  >
+                    <span className="text-[10.5px] tracking-wide">Explore Pillar</span>
+                    <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </div>
                 </div>
               </div>
             );

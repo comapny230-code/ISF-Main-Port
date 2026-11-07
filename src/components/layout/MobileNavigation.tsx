@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ExternalLink, MapPin } from "lucide-react";
+import { Menu, X, ArrowRight, ArrowUpRight, ExternalLink, MapPin } from "lucide-react";
 import { MOBILE_NAV_GROUPS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { Badge } from "../common/Badge";
@@ -174,6 +174,39 @@ export function MobileNavigation() {
                 {group.links.map((link) => {
                   const isActive = pathname === link.href;
                   const isExternal = link.href.startsWith("http://") || link.href.startsWith("https://");
+                  const isBookStall = link.href.includes("book-your-stall") || link.label === "Book My Stall";
+
+                  if (isBookStall) {
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => setIsOpen(false)}
+                        className="group flex items-center justify-between p-2.5 min-[380px]:p-3 rounded-xl transition-all text-left bg-gradient-to-r from-[#e87042] via-[#e26435] to-[#d95d2c] text-white shadow-xs border border-[#ea7c52] my-1.5"
+                      >
+                        <div className="min-w-0 pr-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-xs min-[380px]:text-sm font-bold leading-snug text-white">
+                              {link.label}
+                            </span>
+                            <span className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-white/20 text-white">
+                              Booking
+                            </span>
+                          </div>
+                          {link.description && (
+                            <p className="text-[11px] text-white/85 mt-0.5 line-clamp-1">
+                              {link.description}
+                            </p>
+                          )}
+                        </div>
+
+                        <ArrowUpRight className="w-4 h-4 shrink-0 text-white transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </Link>
+                    );
+                  }
+
                   return (
                     <Link
                       key={link.href}

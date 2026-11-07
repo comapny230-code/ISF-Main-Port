@@ -19,11 +19,11 @@ import {
 } from "@/data/busRoutePlannerData";
 
 export function SmartBusJourneyPlanner() {
-  const [selectedCityId, setSelectedCityId] = useState<string>("chennai");
+  const [selectedCityId, setSelectedCityId] = useState<string>("vizag");
   const [activeRouteIndex, setActiveRouteIndex] = useState<number>(0);
   const [searchQuery, setSearchQuery] = useState<string>("");
 
-  const plan: CityBusPlan = BUS_JOURNEY_PLANS[selectedCityId] ?? BUS_JOURNEY_PLANS["chennai"];
+  const plan: CityBusPlan = BUS_JOURNEY_PLANS[selectedCityId] ?? BUS_JOURNEY_PLANS["vizag"];
   const route: JourneyRouteOption = plan.routes[activeRouteIndex] ?? plan.routes[0];
 
   // Handle city change and reset route tab
@@ -137,22 +137,9 @@ export function SmartBusJourneyPlanner() {
                 )}
               </span>
               <div className="min-w-0 flex-1">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h4 className="font-serif text-sm sm:text-base font-bold text-[#1c1917]">
-                    Route from {plan.cityName} to Gunupur
-                  </h4>
-                  <span
-                    className={`inline-flex items-center px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-bold uppercase tracking-wider ${
-                      plan.directBusAvailable
-                        ? "bg-[#e8f4ef] text-[#1b6952] border border-[#c6dfd4]"
-                        : "bg-[#faebe4] text-[#b05331] border border-[#f5cfbf]"
-                    }`}
-                  >
-                    {plan.directBusAvailable
-                      ? "Direct Bus Available (0 Transfers)"
-                      : "Connecting Journey (1 Transfer)"}
-                  </span>
-                </div>
+                <h4 className="font-serif text-sm sm:text-base font-bold text-[#1c1917]">
+                  Route from {plan.cityName} to Gunupur
+                </h4>
                 <p className="mt-1 text-xs text-[#57534e] leading-relaxed">
                   {plan.overviewSummary}
                 </p>
@@ -311,51 +298,6 @@ export function SmartBusJourneyPlanner() {
                 </div>
               );
             })}
-
-            {/* ── Final Leg: Gunupur Stand to GIET Campus ── */}
-            <div className="rounded-2xl border border-[#ded5c7] bg-[#fdfbf7] p-4 sm:p-5 shadow-xs">
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 pb-3 border-b border-[#ece5da]">
-                <div>
-                  <span className="text-[10px] font-black uppercase tracking-wider text-[#a74e2d]">
-                    Campus Transfer
-                  </span>
-                  <h5 className="font-serif text-sm sm:text-base font-bold text-[#1c1917] leading-tight">
-                    Gunupur Bus Stand ➔ GIET Campus
-                  </h5>
-                </div>
-                <div className="inline-flex items-center gap-1.5 self-start sm:self-auto rounded-full bg-[#f4ece1] px-3 py-1 text-xs font-bold text-[#8c671b] border border-[#e2d5c3]">
-                  <MapPin className="h-3.5 w-3.5 text-[#a74e2d] shrink-0" />
-                  <span>3.8 km · ~10 mins</span>
-                </div>
-              </div>
-
-              {/* 3 Clear, Punchy Options */}
-              <div className="mt-3.5 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 text-xs">
-                {/* 1. Shared Auto */}
-                <div className="rounded-xl border border-[#e8e2d8] bg-white p-3.5 transition hover:border-[#a74e2d]/40">
-                  <strong className="block text-xs font-bold text-[#1c1917] mb-1">Shared Auto</strong>
-                  <p className="text-[11px] text-[#6e685f] leading-normal">
-                    Plys continuously from stand gate directly to GIET Main Entrance.
-                  </p>
-                </div>
-
-                {/* 2. Private Auto */}
-                <div className="rounded-xl border border-[#e8e2d8] bg-white p-3.5 transition hover:border-[#a74e2d]/40">
-                  <strong className="block text-xs font-bold text-[#1c1917] mb-1">Private Auto</strong>
-                  <p className="text-[11px] text-[#6e685f] leading-normal">
-                    Direct hire outside exit gate. Best if carrying event luggage.
-                  </p>
-                </div>
-
-                {/* 3. College Bus */}
-                <div className="rounded-xl border border-[#e8e2d8] bg-white p-3.5 transition hover:border-[#a74e2d]/40">
-                  <strong className="block text-xs font-bold text-[#1c1917] mb-1">College Bus</strong>
-                  <p className="text-[11px] text-[#6e685f] leading-normal">
-                    Available at the bus stand, provided by the college to campus.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* ── Bottom Action & Backup Advice Bar ── */}

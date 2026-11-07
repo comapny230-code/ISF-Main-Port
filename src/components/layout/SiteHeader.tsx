@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { ArrowUpRight } from "lucide-react";
 import { NAV_LINKS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { MobileNavigation } from "./MobileNavigation";
@@ -72,7 +73,24 @@ export function SiteHeader() {
             >
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
-                const isExternal = link.href.startsWith("https://");
+                const isExternal = link.href.startsWith("https://") || link.href.startsWith("http://");
+                const isBookStall = link.href.includes("book-your-stall") || link.label === "Book My Stall";
+
+                if (isBookStall) {
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group ml-1 xl:ml-2 inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs xl:text-[13px] font-bold text-white bg-gradient-to-r from-[#e87042] via-[#e26435] to-[#d95d2c] hover:from-[#d95d2c] hover:to-[#c25022] shadow-[0_2px_10px_rgba(232,112,66,0.28)] hover:shadow-[0_4px_16px_rgba(232,112,66,0.38)] border border-[#ea7c52] transition-all duration-200 ease-out active:scale-95 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
+                    >
+                      <span>{link.label}</span>
+                      <ArrowUpRight className="w-3.5 h-3.5 text-white/90 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" aria-hidden="true" />
+                    </Link>
+                  );
+                }
+
                 return (
                   <Link
                     key={link.href}
