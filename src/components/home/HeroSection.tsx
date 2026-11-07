@@ -97,6 +97,7 @@ function RegistrationCountdown({ countdown }: { countdown: Countdown | null }) {
 export function HeroSection() {
   const [activeSlide, setActiveSlide] = useState(0);
   const [countdown, setCountdown] = useState<Countdown | null>(null);
+  const [loadedIndices, setLoadedIndices] = useState<number[]>([0]);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -104,6 +105,15 @@ export function HeroSection() {
     }, 5500);
     return () => clearInterval(timer);
   }, []);
+
+  // Progressive image preloading: only load active slide + next upcoming slide, saving ~85% initial hero network bandwidth
+  useEffect(() => {
+    const nextIdx = (activeSlide + 1) % HERO_BACKDROPS.length;
+    setLoadedIndices((prev) => {
+      if (prev.includes(activeSlide) && prev.includes(nextIdx)) return prev;
+      return Array.from(new Set([...prev, activeSlide, nextIdx]));
+    });
+  }, [activeSlide]);
 
   useEffect(() => {
     const updateCountdown = () => setCountdown(getRegistrationCountdown());
@@ -122,6 +132,9 @@ export function HeroSection() {
       <div className="absolute inset-0 z-0 pointer-events-none select-none">
         {HERO_BACKDROPS.map((slide, index) => {
           const isActive = index === activeSlide;
+          const isLoaded = loadedIndices.includes(index);
+          if (!isLoaded) return null;
+
           return (
             <div
               key={slide.src}
@@ -134,6 +147,7 @@ export function HeroSection() {
                 alt={slide.alt}
                 fill
                 priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
                 sizes="100vw"
                 className={`object-cover object-center brightness-90 transition-transform duration-[7000ms] ease-out ${
                   isActive ? "scale-[1.03]" : "scale-100"

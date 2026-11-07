@@ -834,7 +834,7 @@ export function DiyaCelebration() {
           {/* User's Diya Image Centered (Zero Overlap with Text, Compact on Mobile) */}
           <div className="relative z-10 w-11 h-13 sm:w-16 sm:h-19 flex items-center justify-center animate-diya-float pointer-events-none">
             <Image
-              src="/images/diya.png"
+              src="/images/diya.webp"
               alt="Diwali Diya"
               width={64}
               height={76}
@@ -890,7 +890,7 @@ export function DiyaCelebration() {
               aria-hidden="true"
             />
             <Image
-              src="/images/diya.png"
+              src="/images/diya.webp"
               alt="Diwali Diya"
               width={72}
               height={84}
