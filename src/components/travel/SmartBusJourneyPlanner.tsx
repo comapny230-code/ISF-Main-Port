@@ -334,7 +334,7 @@ export function SmartBusJourneyPlanner() {
               </a>
 
               <a
-                href="https://www.redbus.in/bus-tickets/gunupur"
+                href="https://www.redbus.in/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex min-h-[42px] items-center justify-center gap-2 rounded-xl bg-white border border-[#ded5c7] text-[#1c1917] px-4 text-xs font-bold shadow-2xs hover:bg-[#f7f2ea] transition active:scale-[0.98]"

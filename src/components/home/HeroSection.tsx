@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { DIWALI_DECOR_ENABLED, DiwaliToran } from "@/components/diwali/DiwaliDecor";
 
 const HERO_BACKDROPS = [
   {
@@ -168,6 +169,8 @@ export function HeroSection() {
           aria-hidden="true"
         />
       </div>
+
+      {DIWALI_DECOR_ENABLED && <DiwaliToran />}
 
       {/* Foreground Content */}
       <div className="hero-foreground-content relative z-30 w-full max-w-4xl mx-auto px-5 sm:px-8 text-center flex flex-col items-center justify-center">

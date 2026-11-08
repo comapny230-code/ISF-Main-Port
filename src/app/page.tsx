@@ -8,6 +8,12 @@ import { RegistrationCTA } from "@/components/home/RegistrationCTA";
 import { OrganizersPartnersSection } from "@/components/home/OrganizersPartnersSection";
 import { ScrollObserver } from "@/components/common/ScrollObserver";
 import { DiyaCelebration } from "@/components/home/DiyaCelebration";
+import {
+  DIWALI_DECOR_ENABLED as diwali,
+  DiwaliDefs,
+  DiwaliDivider,
+  DiwaliThreshold,
+} from "@/components/diwali/DiwaliDecor";
 
 export default function HomePage() {
   return (
@@ -16,16 +22,24 @@ export default function HomePage() {
       <ScrollObserver />
 
       {/* Interactive Festive Diwali Diya & Sky Shots Celebration */}
-      <DiyaCelebration />
+      <div className="dw-festive">
+        <DiyaCelebration />
+      </div>
+      {diwali && <DiwaliDefs />}
 
       {/* Home Page Sections (Hero untouched, remaining sections animate on scroll) */}
       <HeroSection />
+      {diwali && <DiwaliThreshold />}
       <AboutJatharaSection />
+      {diwali && <DiwaliDivider />}
       <FourPillarsSection />
+      {diwali && <DiwaliDivider />}
       <ISFFounderSection />
+      {diwali && <DiwaliDivider />}
       <DandakaranyaHomeSection />
       <RegistrationCTA />
       <OrganizersPartnersSection />
+      {diwali && <DiwaliDivider diyas={5} above />}
     </div>
   );
 }

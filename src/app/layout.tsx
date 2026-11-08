@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter, Libre_Baskerville, Great_Vibes } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+import { DIWALI_ENDS_AT } from "@/components/diwali/DiwaliDecor";
 import { PublicHeaderWrapper, PublicFooterWrapper } from "@/components/layout/ConditionalPublicLayout";
 import { SmoothScroll } from "@/components/common/SmoothScroll";
 
@@ -26,7 +28,7 @@ const greatVibes = Great_Vibes({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://isf-startup-jathara-2026.vercel.app";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.startupjathara.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -83,9 +85,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={`${inter.variable} ${libreBaskerville.variable} ${greatVibes.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#fcfbf8] text-[#161e1b] selection:bg-[#c25e38]/20 selection:text-[#a74e2d]">
+        {/* Hide the Diwali decorations once the festival is over (see DIWALI_ENDS_AT). */}
+        <Script
+          id="diwali-expiry"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `if (Date.now() >= ${Date.parse(DIWALI_ENDS_AT)}) document.documentElement.setAttribute("data-festive", "off");`,
+          }}
+        />
+
         {/* Global Butter-Smooth Scrolling Engine (Lenis) */}
         <SmoothScroll />
 

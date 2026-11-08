@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowRight, Calendar, MapPin } from "lucide-react";
 import { Container } from "../common/Container";
+import { DIWALI_DECOR_ENABLED, DiwaliLanterns } from "../diwali/DiwaliDecor";
 
 export function RegistrationCTA() {
   return (
@@ -12,6 +13,7 @@ export function RegistrationCTA() {
       <div className="absolute -top-32 left-1/4 w-[500px] h-[300px] bg-[#e87042]/15 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
       <div className="absolute bottom-0 right-1/3 w-64 h-64 bg-[#d6b25e]/12 rounded-full blur-[80px] pointer-events-none" aria-hidden="true" />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#d6b25e]/30 to-transparent" />
+      {DIWALI_DECOR_ENABLED && <DiwaliLanterns />}
 
       <Container size="default" className="relative z-10 text-center cta-content-reveal">
 

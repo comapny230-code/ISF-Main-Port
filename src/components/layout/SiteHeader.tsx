@@ -9,6 +9,7 @@ import { NAV_LINKS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { MobileNavigation } from "./MobileNavigation";
 import { Container } from "../common/Container";
+import { DIWALI_DECOR_ENABLED, DiwaliBrandLights } from "../diwali/DiwaliDecor";
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -38,9 +39,10 @@ export function SiteHeader() {
           <div className="flex items-center shrink min-w-0">
             <Link
               href="/"
-              className="group flex items-center gap-1.5 min-[360px]:gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl shrink min-w-0"
+              className="group flex items-center gap-1.5 min-[360px]:gap-2 min-[400px]:gap-2.5 sm:gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] rounded-xl shrink min-w-0 relative"
               aria-label="ISF Startup Jathara 2026 Homepage"
             >
+              {DIWALI_DECOR_ENABLED && <DiwaliBrandLights />}
               {/* Official ISF Mark Container */}
               <div className="w-7 h-7 min-[360px]:w-8 min-[360px]:h-8 min-[380px]:w-9 min-[380px]:h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-0.5 min-[360px]:p-1 flex items-center justify-center shadow-2xs border border-[#e8dfd3] transition-transform duration-200 group-hover:scale-105 shrink-0">
                 <Image

@@ -1,0 +1,183 @@
+/* After the festival the root layout sets <html data-festive="off">, which hides everything Diwali. */
+html[data-festive="off"] .dw-festive {
+  display: none !important;
+}
+
+/* Diwali home-page decorations. Everything here is decorative (aria-hidden) and
+   uses only transform/opacity animations so it stays cheap on phones. */
+
+/* ── Diya flame ── */
+.dw-flame-light {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  opacity: 0;
+  animation: dw-light-up 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2) forwards;
+  animation-delay: var(--dw-delay, 0s);
+}
+.dw-flame {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: dw-flicker var(--dw-flicker, 1.3s) ease-in-out infinite;
+}
+.dw-glow {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  animation:
+    dw-light-up 0.9s ease-out forwards var(--dw-delay, 0s),
+    dw-glow-breathe 2.6s ease-in-out infinite calc(var(--dw-delay, 0s) + 0.9s);
+}
+@keyframes dw-light-up {
+  from { opacity: 0; transform: scale(0.15); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes dw-flicker {
+  0%, 100% { transform: scale(1, 1) skewX(0deg); }
+  20% { transform: scale(0.93, 1.07) skewX(-2.5deg); }
+  45% { transform: scale(1.05, 0.95) skewX(1.5deg); }
+  70% { transform: scale(0.96, 1.09) skewX(-1deg); }
+  85% { transform: scale(1.02, 0.98) skewX(2deg); }
+}
+@keyframes dw-glow-breathe {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+/* ── Toran: twisted red-and-gold mauli cord with marigold strands ── */
+.dw-cord {
+  background: repeating-linear-gradient(-55deg, #b4161b 0 5px, #f2b631 5px 8px, #b4161b 8px 13px, #7c0d10 13px 14px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+.dw-sway {
+  transform-box: view-box;
+  transform-origin: 28px 6px;
+  animation: dw-sway var(--dw-sway, 4s) ease-in-out infinite alternate;
+  animation-delay: var(--dw-delay, 0s);
+}
+@keyframes dw-sway {
+  from { transform: rotate(-2.4deg); }
+  to { transform: rotate(2.4deg); }
+}
+
+/* ── Threshold: red-ochre floor with white rice-paste (jhoti) art ── */
+.dw-floor {
+  background:
+    radial-gradient(ellipse 70% 120% at 50% 0%, rgba(255, 170, 90, 0.18), transparent 60%),
+    radial-gradient(circle at 20% 70%, rgba(0, 0, 0, 0.08) 0 1px, transparent 2px) 0 0 / 9px 9px,
+    linear-gradient(180deg, #a13b21 0%, #8a2f1a 55%, #6f2413 100%);
+}
+.dw-step {
+  opacity: 0;
+  animation: dw-step-in 0.5s ease-out forwards var(--dw-delay, 0s);
+}
+@keyframes dw-step-in {
+  from { opacity: 0; transform: scale(0.6); }
+  to { opacity: 0.95; transform: scale(1); }
+}
+.dw-greeting {
+  opacity: 0;
+  animation: dw-greet 1s ease-out forwards 1.6s;
+}
+@keyframes dw-greet {
+  from { opacity: 0; transform: translateY(8px); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+
+/* ── Registration: akash kandil lanterns and a string of jhalar lights ── */
+.dw-lantern {
+  transform-origin: 50% 0%;
+  animation: dw-lantern-sway var(--dw-sway, 5s) ease-in-out infinite alternate var(--dw-delay, 0s);
+}
+@keyframes dw-lantern-sway {
+  from { transform: rotate(-3.5deg); }
+  to { transform: rotate(3.5deg); }
+}
+.dw-bulb {
+  position: absolute;
+  width: 8px;
+  height: 10px;
+  margin-left: -4px;
+  border-radius: 50% 50% 45% 45%;
+  background: var(--dw-bulb);
+  box-shadow: 0 0 6px 2px var(--dw-bulb), 0 0 16px 4px color-mix(in srgb, var(--dw-bulb) 45%, transparent);
+  animation: dw-twinkle 1.8s ease-in-out infinite alternate var(--dw-delay, 0s);
+}
+/* Header strand: the wire is revealed left to right, then each bulb switches on. */
+.dw-bulb-sm {
+  width: 5px;
+  height: 6px;
+  margin: -3px 0 0 -2.5px;
+  box-shadow: 0 0 4px 1px var(--dw-bulb), 0 0 10px 2px color-mix(in srgb, var(--dw-bulb) 35%, transparent);
+}
+.dw-wire {
+  clip-path: inset(0 100% 0 0);
+  animation: dw-wire-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) 0.3s forwards;
+}
+@keyframes dw-wire-draw {
+  to { clip-path: inset(0 0 0 0); }
+}
+.dw-light {
+  opacity: 0;
+  animation:
+    dw-light-on 0.45s ease-out forwards var(--dw-delay, 0s),
+    dw-glimmer 3.4s ease-in-out infinite calc(var(--dw-delay, 0s) + 0.45s);
+}
+@keyframes dw-light-on {
+  from { opacity: 0; transform: scale(0.3); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes dw-glimmer {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+@keyframes dw-twinkle {
+  from { opacity: 1; }
+  to { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dw-flame, .dw-sway, .dw-lantern, .dw-bulb { animation: none !important; }
+  .dw-flame-light, .dw-glow, .dw-step, .dw-greeting, .dw-light { animation: none !important; opacity: 1; }
+  .dw-wire { animation: none !important; clip-path: none; }
+  .dw-step { opacity: 0.95; }
+}
+
+/* ── "Happy Diwali" celebration greeting ── */
+.celebrate-title {
+  background: linear-gradient(100deg, #f5a524 0%, #ffd36b 22%, #fff6d5 38%, #ffd36b 52%, #f08a1c 72%, #ffd36b 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 18px rgba(255, 170, 60, 0.45)) drop-shadow(0 3px 4px rgba(0, 0, 0, 0.85));
+  clip-path: inset(-20% 100% -20% -5%);
+  animation:
+    celebrate-write 1.3s cubic-bezier(0.55, 0, 0.3, 1) 0.1s forwards,
+    celebrate-shimmer 3.2s linear 1.2s infinite;
+}
+@keyframes celebrate-write {
+  to { clip-path: inset(-20% -5% -20% -5%); }
+}
+@keyframes celebrate-shimmer {
+  from { background-position: 0% 0; }
+  to { background-position: -220% 0; }
+}
+.celebrate-rise {
+  opacity: 0;
+  animation: celebrate-rise 0.8s ease-out 0.9s forwards;
+}
+@keyframes celebrate-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+.celebrate-halo {
+  background: radial-gradient(circle, rgba(255, 200, 100, 0.55) 0%, rgba(255, 140, 40, 0.18) 45%, transparent 70%);
+  animation: celebrate-halo 2.4s ease-in-out infinite;
+}
+@keyframes celebrate-halo {
+  0%, 100% { opacity: 0.7; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .celebrate-title, .celebrate-rise, .celebrate-halo { animation: none !important; clip-path: none; opacity: 1; }
+}

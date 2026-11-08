@@ -20,7 +20,7 @@ import {
 } from "@/data/leadershipData";
 
 export const metadata: Metadata = {
-  title: "About GIET University | ISF Startup Jathara 2026",
+  title: "About GIET University",
   description: "Learn about GIET University's 28-year legacy of learning, research and innovation in Gunupur, Odisha, and its role as the official host institution for ISF Startup Jathara 2026 @ Dandakaranya.",
 };
 

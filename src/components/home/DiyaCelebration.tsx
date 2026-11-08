@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import Image from "next/image";
+import { Diya } from "@/components/diwali/DiwaliDecor";
 
 // ── Realistic Fireworks Audio Synthesizer (Zero External Dependencies) ──
 class RealisticFireworkAudio {
@@ -129,19 +130,19 @@ const audio = new RealisticFireworkAudio();
 
 // Realistic Grand Color Palettes (RGB strings for precise alpha blending)
 const PALETTES = [
-  // 0: Royal 24K Golden Willow
+  // 0: Golden willow
   { primary: "251, 191, 36", secondary: "254, 240, 138", core: "255, 255, 255" },
-  // 1: Saffron & Ruby Brocade
+  // 1: Saffron and ruby
   { primary: "244, 63, 94", secondary: "251, 146, 60", core: "254, 240, 138" },
-  // 2: Imperial Emerald & Gold
-  { primary: "16, 185, 129", secondary: "251, 191, 36", core: "255, 255, 255" },
-  // 3: Electric Cyan & Sunset Coral
-  { primary: "6, 182, 212", secondary: "251, 113, 133", core: "255, 255, 255" },
-  // 4: Royal Violet & Neon Magenta
-  { primary: "168, 85, 247", secondary: "244, 63, 94", core: "255, 255, 255" },
-  // 5: Prismatic Rainbow (Cyan, Ruby, Emerald, Gold)
-  { primary: "56, 189, 248", secondary: "244, 63, 94", core: "250, 204, 21" },
-  // 6: Sunset Rose & Tangerine
+  // 2: Marigold and pearl
+  { primary: "249, 115, 22", secondary: "255, 237, 213", core: "255, 255, 255" },
+  // 3: Rose gold
+  { primary: "251, 113, 133", secondary: "253, 186, 116", core: "255, 247, 237" },
+  // 4: Crimson and gold
+  { primary: "220, 38, 38", secondary: "250, 204, 21", core: "254, 240, 138" },
+  // 5: Grand shell: gold with white glitter
+  { primary: "253, 200, 70", secondary: "255, 255, 255", core: "255, 250, 220" },
+  // 6: Sunset rose and tangerine
   { primary: "244, 63, 94", secondary: "249, 115, 22", core: "254, 240, 138" },
 ];
 
@@ -158,6 +159,7 @@ interface Particle {
   drag: number;
   trail: { x: number; y: number }[];
   isWillow?: boolean;
+  glitter?: boolean;
 }
 
 interface Rocket {
@@ -199,7 +201,7 @@ export function DiyaCelebration() {
   const checkSectionTheme = useCallback((currPos?: { x: number; y: number } | null) => {
     if (typeof window === "undefined") return;
     const isMobile = window.innerWidth < 640;
-    const size = isMobile ? 104 : 152;
+    const size = isMobile ? 88 : 152;
     const diyaCenterY = currPos ? currPos.y + size / 2 : window.innerHeight - 80;
 
     // Dark sections on the page: Hero, Registration CTA, Footer
@@ -239,7 +241,7 @@ export function DiyaCelebration() {
   useEffect(() => {
     if (typeof window === "undefined") return;
     const isMobile = window.innerWidth < 640;
-    const size = isMobile ? 104 : 152;
+    const size = isMobile ? 88 : 152;
     const margin = isMobile ? 14 : 24;
     const initialPos = {
       x: Math.max(8, window.innerWidth - size - margin),
@@ -256,7 +258,7 @@ export function DiyaCelebration() {
       setPosition((prev) => {
         if (!prev) return null;
         const m = window.innerWidth < 640;
-        const s = m ? 104 : 152;
+        const s = m ? 88 : 152;
         const next = {
           x: Math.max(8, Math.min(window.innerWidth - s - 8, prev.x)),
           y: Math.max(8, Math.min(window.innerHeight - s - 8, prev.y)),
@@ -301,7 +303,7 @@ export function DiyaCelebration() {
     }
 
     const isMobile = typeof window !== "undefined" && window.innerWidth < 640;
-    const size = isMobile ? 104 : 152;
+    const size = isMobile ? 88 : 152;
     const currentX = position?.x ?? (window.innerWidth - size - (isMobile ? 14 : 24));
     const currentY = position?.y ?? (window.innerHeight - size - (isMobile ? 14 : 24));
 
@@ -326,7 +328,7 @@ export function DiyaCelebration() {
 
     if (hasMovedRef.current) {
       const isMobile = window.innerWidth < 640;
-      const size = isMobile ? 104 : 152;
+      const size = isMobile ? 88 : 152;
       const newX = Math.max(8, Math.min(window.innerWidth - size - 8, dragStartRef.current.posX + dx));
       const newY = Math.max(8, Math.min(window.innerHeight - size - 8, dragStartRef.current.posY + dy));
       const nextPos = { x: newX, y: newY };
@@ -436,15 +438,15 @@ export function DiyaCelebration() {
     flashesRef.current.push({
       x,
       y,
-      radius: isTextBurst ? 480 : 320 + Math.random() * 120,
-      alpha: 0.95,
+      radius: isTextBurst ? 300 : 190 + Math.random() * 70,
+      alpha: 0.42,
       rgb: pal.core,
     });
     flashesRef.current.push({
       x,
       y,
-      radius: isTextBurst ? 320 : 200 + Math.random() * 90,
-      alpha: 0.8,
+      radius: isTextBurst ? 220 : 140 + Math.random() * 50,
+      alpha: 0.32,
       rgb: pal.primary,
     });
 
@@ -506,13 +508,11 @@ export function DiyaCelebration() {
     if (isTextBurst && typeof window !== "undefined") {
       const w = window.innerWidth;
       const rainbowColors = [
-        "244, 63, 94",  // Ruby Rose
-        "251, 146, 60", // Sunset Saffron
-        "250, 204, 21", // Radiant Gold
-        "56, 189, 248", // Electric Cyan
-        "168, 85, 247", // Royal Violet
-        "52, 211, 153", // Emerald Green
-        "255, 255, 255", // Diamond Starlight
+        "255, 255, 255", // Pearl
+        "254, 240, 138", // Pale gold
+        "251, 191, 36", // Gold
+        "251, 146, 60", // Saffron
+        "251, 113, 133", // Rose
       ];
       for (let s = 0; s < 95; s++) {
         const sparkX = w * (0.15 + Math.random() * 0.70);
@@ -533,6 +533,7 @@ export function DiyaCelebration() {
           drag: 0.982,
           trail: [],
           isWillow: true,
+          glitter: true,
         });
       }
 
@@ -670,8 +671,9 @@ export function DiyaCelebration() {
           ctx.stroke();
         }
 
-        // Glowing particle head
-        ctx.fillStyle = `rgba(${p.rgb}, ${p.alpha})`;
+        // Glowing particle head; glitter flickers like a sparkler
+        const flicker = p.glitter && Math.random() < 0.45 ? 0.2 : 1;
+        ctx.fillStyle = `rgba(${p.rgb}, ${p.alpha * flicker})`;
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
@@ -786,7 +788,7 @@ export function DiyaCelebration() {
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerCancel}
           aria-label="Light Diwali Diya and launch 7-second sky shot fireworks (Draggable)"
-          className={`relative flex items-center justify-center w-24 h-24 sm:w-36 sm:h-36 bg-transparent border-none p-0 focus:outline-none transition-transform duration-150 ${
+          className={`relative flex items-center justify-center w-20 h-20 sm:w-36 sm:h-36 bg-transparent border-none p-0 focus:outline-none transition-transform duration-150 ${
             isDragging ? "cursor-grabbing scale-105" : "cursor-grab hover:scale-105 active:scale-95"
           }`}
           style={{ touchAction: "none" }}
@@ -832,7 +834,7 @@ export function DiyaCelebration() {
           </svg>
 
           {/* User's Diya Image Centered (Zero Overlap with Text, Compact on Mobile) */}
-          <div className="relative z-10 w-11 h-13 sm:w-16 sm:h-19 flex items-center justify-center animate-diya-float pointer-events-none">
+          <div className="relative z-10 w-9 h-11 sm:w-16 sm:h-19 flex items-center justify-center animate-diya-float pointer-events-none">
             <Image
               src="/images/diya.webp"
               alt="Diwali Diya"
@@ -854,7 +856,7 @@ export function DiyaCelebration() {
           }`}
           style={{
             background:
-              "radial-gradient(ellipse at 50% 45%, rgba(6, 8, 14, 0.22) 0%, rgba(6, 8, 14, 0.42) 60%, rgba(6, 8, 14, 0.62) 100%)",
+              "radial-gradient(ellipse 80% 45% at 50% 100%, rgba(255, 138, 40, 0.22) 0%, transparent 70%), radial-gradient(ellipse at 50% 42%, rgba(8, 6, 16, 0.5) 0%, rgba(8, 6, 16, 0.72) 60%, rgba(5, 4, 10, 0.88) 100%)",
             backdropFilter: "blur(1px)",
             WebkitBackdropFilter: "blur(1px)",
           }}
@@ -882,57 +884,47 @@ export function DiyaCelebration() {
           style={{ willChange: "transform, opacity" }}
           aria-live="polite"
         >
-          {/* Centered Glowing Diya Mascot */}
-          <div className="relative w-16 h-18 sm:w-20 sm:h-24 mx-auto mb-1 animate-diya-float flex items-center justify-center">
-            {/* Subtle Ambient Ground Warmth */}
-            <span
-              className="absolute -bottom-1 w-12 sm:w-16 h-2 bg-[#f59e0b]/35 rounded-full blur-[6px] pointer-events-none"
-              aria-hidden="true"
-            />
+          {/* Diya with a warm breathing halo */}
+          <div className="relative mx-auto mb-2 flex h-20 w-16 items-center justify-center sm:h-24 sm:w-20">
+            <span className="celebrate-halo absolute inset-[-60%] rounded-full" aria-hidden="true" />
             <Image
               src="/images/diya.webp"
-              alt="Diwali Diya"
+              alt=""
               width={72}
               height={84}
               priority
-              className="object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] select-none pointer-events-none"
+              className="relative animate-diya-float object-contain drop-shadow-[0_4px_14px_rgba(255,140,40,0.55)] select-none pointer-events-none"
             />
           </div>
 
-          {/* ── Headline: "Happy Diwali" (Royal Cursive Calligraphy, Clean Gradient, Zero Glow Halo) ── */}
-          <h2
-            className="font-calligraphy text-5xl min-[360px]:text-6xl min-[420px]:text-7xl sm:text-8xl lg:text-9xl select-none leading-none py-1 sm:py-2 tracking-wide"
-            style={{
-              background: "linear-gradient(135deg, #ff416c 0%, #ff758c 22%, #f7b733 48%, #ffea79 70%, #00f2fe 92%, #4facfe 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              filter: "drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8))",
-            }}
-          >
+          {/* Molten-gold headline, written in from left to right, with a slow shimmer */}
+          <h2 className="celebrate-title font-calligraphy text-6xl leading-none tracking-wide py-2 select-none min-[400px]:text-7xl sm:text-8xl lg:text-9xl">
             Happy Diwali
           </h2>
 
-          {/* ── Subtitle: Short Inspiring English Subtitle with Elegant Hairline Accents ── */}
-          <div className="flex items-center justify-center gap-2.5 sm:gap-4 mt-2 sm:mt-2.5 select-none px-4">
-            <span
-              className="hidden min-[420px]:block h-px w-6 sm:w-12 bg-gradient-to-r from-transparent via-[#ffd166]/50 to-[#ffd166]"
-              aria-hidden="true"
-            />
-            <p
-              className="font-serif font-bold text-[10px] min-[360px]:text-xs sm:text-sm lg:text-base tracking-[0.20em] sm:tracking-[0.26em] uppercase max-w-[280px] min-[400px]:max-w-sm sm:max-w-xl mx-auto leading-normal select-none text-center"
-              style={{
-                background: "linear-gradient(90deg, #ff758c 0%, #ffd166 50%, #4facfe 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                filter: "drop-shadow(0 1px 3px rgba(0, 0, 0, 0.85))",
-              }}
-            >
-              Lighting the Path of Innovation &amp; Prosperity
-            </p>
-            <span
-              className="hidden min-[420px]:block h-px w-6 sm:w-12 bg-gradient-to-l from-transparent via-[#ffd166]/50 to-[#ffd166]"
-              aria-hidden="true"
-            />
+          <div className="celebrate-rise mt-3 flex items-center justify-center gap-3 sm:mt-4" aria-hidden="true">
+            <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#f6c453] sm:w-20" />
+            <span className="h-1.5 w-1.5 rotate-45 bg-[#f6c453]" />
+            <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#f6c453] sm:w-20" />
+          </div>
+
+          <p className="celebrate-rise mt-3 max-w-xl px-4 font-serif text-base italic leading-relaxed text-[#fde9c8] drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] sm:text-xl">
+            Lighting the path of innovation and prosperity
+          </p>
+          <p className="celebrate-rise mt-1.5 text-xs font-semibold tracking-wide text-[#f6c453]/90 sm:text-sm">
+            ISF Startup Jathara 2026
+          </p>
+
+          {/* A row of diyas that light one after another */}
+          <div className="mt-6 flex items-end justify-center gap-2 sm:mt-8 sm:gap-4" aria-hidden="true">
+            {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+              <Diya
+                key={i}
+                delay={0.9 + Math.abs(i - 3) * 0.16}
+                flicker={1.05 + (i % 3) * 0.2}
+                className={`h-10 w-9 sm:h-12 sm:w-11 ${i === 0 || i === 6 ? "hidden min-[400px]:block" : ""}`}
+              />
+            ))}
           </div>
         </div>
       )}
