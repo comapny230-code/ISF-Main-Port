@@ -3,6 +3,13 @@ html[data-festive="off"] .dw-festive {
   display: none !important;
 }
 
+/* These wrappers contribute no layout (absolute, or height:0), so skipping their paint
+   and animation work while off-screen is free: nothing shifts when they resume. */
+.dw-lazy-render {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 1px;
+}
+
 /* Diwali home-page decorations. Everything here is decorative (aria-hidden) and
    uses only transform/opacity animations so it stays cheap on phones. */
 

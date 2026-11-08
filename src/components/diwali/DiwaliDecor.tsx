@@ -109,15 +109,15 @@ export function Diya({ delay = 0, flicker = 1.3, className = "" }: { delay?: num
 
 /** Toran of mango leaves and marigold strands hung across the top of the hero. */
 export function DiwaliToran() {
-  const units = 35;
+  const units = 16;
   const mid = Math.floor(units / 2);
   return (
-    <div className="dw-festive pointer-events-none absolute inset-x-0 top-0 z-[35] select-none" aria-hidden="true">
+    <div className="dw-festive dw-lazy-render pointer-events-none absolute inset-x-0 top-0 z-[35] select-none" aria-hidden="true">
       <div className="dw-cord relative z-10 h-2.5 w-full" />
       <div className="-mt-1.5 flex justify-center overflow-hidden">
         {Array.from({ length: units }, (_, i) => {
           // Strands are short over the centre (the hero logo) and longer toward the edges.
-          const flowers = 1 + Math.min(5, Math.round(Math.abs(i - mid) / 2.3)) + (i % 4 === 1 ? 1 : 0);
+          const flowers = 1 + Math.min(3, Math.round(Math.abs(i - mid) / 2.3));
           const vars: Vars = { "--dw-sway": `${3.4 + rnd(i, 1) * 2.2}s`, "--dw-delay": `${-rnd(i, 2) * 4}s` };
           return (
             <svg key={i} viewBox="0 0 56 120" className="h-[88px] w-[42px] shrink-0 overflow-visible sm:h-[120px] sm:w-[56px]">
@@ -185,7 +185,7 @@ function FootprintTrail({ side }: { side: "left" | "right" }) {
 
 /** The doorway: a row of lit diyas on a red-ochre floor painted with jhoti, and the greeting. */
 export function DiwaliThreshold() {
-  const diyas = 15;
+  const diyas = 9;
   const mid = Math.floor(diyas / 2);
   return (
     <section aria-label="Diwali greeting" className="dw-festive dw-floor relative z-20 text-center text-[#fff3df]">
@@ -227,7 +227,7 @@ export function DiwaliThreshold() {
 // `above` keeps the row inside the page wrapper (which clips overflow) at the very bottom.
 export function DiwaliDivider({ diyas = 1, above = false }: { diyas?: number; above?: boolean }) {
   return (
-    <div className="dw-festive pointer-events-none relative z-20 h-0" aria-hidden="true">
+    <div className="dw-festive dw-lazy-render pointer-events-none relative z-20 h-0" aria-hidden="true">
       <div className={`absolute left-1/2 top-0 flex -translate-x-1/2 items-center gap-2 ${above ? "-translate-y-[88%]" : "-translate-y-1/2"}`}>
         <svg className="w-[22vw] max-w-72" style={{ height: 12 }}>
           <rect width="100%" height="100%" fill="url(#dw-chain)" />
@@ -303,10 +303,10 @@ export function DiwaliBrandLights() {
 /** Akash kandil lanterns and a swagged string of jhalar lights for the dark registration band. */
 export function DiwaliLanterns() {
   const swags = 3;
-  const perSwag = 9;
+  const perSwag = 6;
   const colors = ["#ffd166", "#ff8a3d", "#ff5e7e", "#ffe9a8"];
   return (
-    <div className="dw-festive pointer-events-none absolute inset-0 z-[5] overflow-hidden" aria-hidden="true">
+    <div className="dw-festive dw-lazy-render pointer-events-none absolute inset-0 z-[5] overflow-hidden" aria-hidden="true">
       <div className="absolute inset-x-0 top-0 h-[50px]">
         <svg viewBox="0 0 300 50" preserveAspectRatio="none" className="absolute inset-0 h-full w-full">
           <path
