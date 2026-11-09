@@ -9,7 +9,7 @@ export const DIWALI_DECOR_ENABLED = true;
  * layout compares this with the visitor's clock and marks <html data-festive="off">;
  * diwali.css then hides every `.dw-festive` element. No redeploy needed.
  */
-export const DIWALI_ENDS_AT = "2026-11-10T00:00:00+05:30";
+export const DIWALI_ENDS_AT = "2026-11-09T00:00:00+05:30";
 
 // Integer-only pseudo-random so server and client render identical markup.
 const rnd = (i: number, k: number) => ((i * 9301 + k * 49297 + 233280) % 233280) / 233280;
