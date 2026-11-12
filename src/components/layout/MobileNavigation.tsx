@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ArrowRight, ArrowUpRight, ExternalLink, MapPin } from "lucide-react";
+import { Menu, X, ArrowRight, ArrowUpRight, Download, ExternalLink, MapPin, Smartphone } from "lucide-react";
 import { MOBILE_NAV_GROUPS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { Badge } from "../common/Badge";
@@ -261,6 +261,30 @@ export function MobileNavigation() {
 
         {/* Drawer Footer */}
         <div className="p-3.5 min-[380px]:p-4 sm:p-5 border-t border-[#e8dfd3] bg-[#f5efe6] space-y-2.5 shrink-0 pb-[max(1rem,env(safe-area-inset-bottom))]">
+          <a
+            href="/downloads/isf-startup-jathara-2026.apk"
+            download="ISF-Startup-Jathara-2026.apk"
+            onClick={() => setIsOpen(false)}
+            className="group flex w-full items-center gap-3 rounded-xl border border-[#dfd6c4] bg-white px-3.5 py-2.5 text-left text-[#1c1917] shadow-xs transition-all hover:border-[#e87042]/50 hover:bg-[#fff8f3] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
+            aria-label="Download the ISF Startup Jathara Android app (APK)"
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#fff0e8] text-[#c25022]">
+              <Smartphone className="h-4 w-4" aria-hidden="true" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="flex items-center gap-2 text-xs min-[380px]:text-sm font-bold leading-tight">
+                Download Android App
+                <span className="rounded-full bg-[#fff0e8] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-[#b9471e]">
+                  APK
+                </span>
+              </span>
+              <span className="mt-0.5 block text-[10px] font-medium text-[#78716c]">
+                Install the official Jathara app
+              </span>
+            </span>
+            <Download className="h-4 w-4 shrink-0 text-[#c25022] transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+          </a>
+
           <a
             href="https://docs.google.com/forms/d/e/1FAIpQLSclfkUey6kqmsxTEwQporewODZJzRqPwQVaVOzRjkry6HIbWQ/viewform"
             target="_blank"

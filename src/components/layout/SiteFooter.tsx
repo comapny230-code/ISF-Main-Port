@@ -4,8 +4,10 @@ import Image from "next/image";
 import { 
   MapPin, 
   Calendar, 
+  Download,
   Mail, 
-  Phone 
+  Phone,
+  Smartphone,
 } from "lucide-react";
 import { EVENT_METADATA } from "@/data/eventData";
 import { Container } from "../common/Container";
@@ -53,6 +55,22 @@ export function SiteFooter() {
               <p className="max-w-xs text-xs leading-relaxed text-[#a8a29e]">
                 National entrepreneurship &amp; grassroots innovation summit convening in South Odisha.
               </p>
+
+              <a
+                href="/downloads/isf-startup-jathara-2026.apk"
+                download="ISF-Startup-Jathara-2026.apk"
+                className="group inline-flex w-full max-w-[250px] items-center gap-3 rounded-xl border border-[#e87042]/25 bg-[#e87042]/5 px-3 py-2.5 text-left transition-colors hover:border-[#e87042]/60 hover:bg-[#e87042]/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
+                aria-label="Download the ISF Startup Jathara Android app (APK)"
+              >
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-[#e87042]/15 text-[#f08a60]">
+                  <Smartphone className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-xs font-bold text-[#fcfbf8]">Get the Jathara App</span>
+                  <span className="mt-0.5 block text-[10px] text-[#a8a29e]">Download for Android · APK</span>
+                </span>
+                <Download className="h-4 w-4 shrink-0 text-[#f08a60] transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
+              </a>
 
               <div className="space-y-2.5 pt-1 text-xs text-[#d6d0c7]">
                 <div className="flex items-center gap-2">
@@ -138,6 +156,7 @@ export function SiteFooter() {
                   </Link>
                 </li>
               </ul>
+
             </div>
 
             {/* Column 3: Participation */}

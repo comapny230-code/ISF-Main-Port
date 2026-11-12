@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Download } from "lucide-react";
 import { NAV_LINKS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { MobileNavigation } from "./MobileNavigation";
@@ -71,7 +71,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
             <nav
               aria-label="Main Navigation"
-              className="hidden min-[1180px]:flex items-center gap-1 xl:gap-1.5"
+              className="hidden min-[1180px]:flex items-center gap-0 min-[1350px]:gap-1"
             >
               {NAV_LINKS.map((link) => {
                 const isActive = pathname === link.href;
@@ -100,7 +100,7 @@ export function SiteHeader() {
                     target={isExternal ? "_blank" : undefined}
                     rel={isExternal ? "noopener noreferrer" : undefined}
                     className={cn(
-                      "px-3 py-1.5 rounded-xl text-xs xl:text-[13px] transition-all duration-200 ease-out whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]",
+                      "px-2 min-[1350px]:px-3 py-1.5 rounded-xl text-xs xl:text-[13px] transition-all duration-200 ease-out whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]",
                       isActive
                         ? "text-[#1c1917] font-bold bg-white shadow-[0_2px_10px_rgba(28,25,23,0.08)] border border-[#e8dfd3]/70"
                         : "text-[#57534e] font-medium hover:text-[#1c1917] hover:bg-white/60 hover:shadow-xs"
@@ -126,6 +126,16 @@ export function SiteHeader() {
                 );
               })}
             </nav>
+
+            <a
+              href="/downloads/isf-startup-jathara-2026.apk"
+              download="ISF-Startup-Jathara-2026.apk"
+              className="group hidden min-[1180px]:inline-flex h-9 shrink-0 items-center gap-1.5 rounded-xl border border-[#e8c4b1] bg-[#fff8f3] px-3 text-[#a7431e] transition-colors hover:border-[#e87042] hover:bg-[#fff0e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
+              aria-label="Download the ISF Startup Jathara Android app (APK)"
+            >
+              <Download className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden="true" />
+              <span className="text-xs font-bold whitespace-nowrap">Get the App</span>
+            </a>
 
 
             {/* Mobile / Tablet Navigation Trigger */}
