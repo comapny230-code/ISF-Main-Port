@@ -273,13 +273,13 @@ export function MobileNavigation() {
             </span>
             <span className="min-w-0 flex-1">
               <span className="flex items-center gap-2 text-xs min-[380px]:text-sm font-bold leading-tight">
-                Download Android App
+                Download Jathara App
                 <span className="rounded-full bg-[#fff0e8] px-1.5 py-0.5 text-[8px] font-bold uppercase tracking-wider text-[#b9471e]">
                   APK
                 </span>
               </span>
               <span className="mt-0.5 block text-[10px] font-medium text-[#78716c]">
-                Install the official Jathara app
+                Get the app for your Android phone
               </span>
             </span>
             <Download className="h-4 w-4 shrink-0 text-[#c25022] transition-transform group-hover:translate-y-0.5" aria-hidden="true" />
