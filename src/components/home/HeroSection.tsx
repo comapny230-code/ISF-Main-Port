@@ -40,7 +40,7 @@ const HERO_BACKDROPS = [
   },
 ];
 
-const REGISTRATION_ENDS_AT = new Date("2026-11-10T23:59:59+05:30").getTime();
+const REGISTRATION_ENDS_AT = new Date("2026-11-12T23:59:59+05:30").getTime();
 
 type Countdown = {
   days: number;
@@ -83,7 +83,7 @@ function RegistrationCountdown({ countdown }: { countdown: Countdown | null }) {
   return (
     <div className="w-full">
       <p className="text-center text-[10px] font-bold uppercase tracking-[0.15em] text-white/85 sm:text-xs">
-        Registration deadline: November 10th
+        Registration deadline: November 12th
       </p>
       <div className="mt-3 flex items-center justify-center gap-2.5 sm:gap-4" aria-live="polite">
         <FlipCountdownUnit label="Days" value={countdown?.days ?? null} />

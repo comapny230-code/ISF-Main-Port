@@ -18,7 +18,7 @@ const MILESTONES: MilestoneData[] = [
     phase: "Phase 01",
     stepNumber: "01",
     stepLabel: "Stage 01",
-    monthLabel: "November 10, 2026",
+    monthLabel: "November 12, 2026",
     title: "Applications Close",
     description:
       "Submit your idea or working prototype. Open to school builders and student innovators from 20+ states nationwide.",
