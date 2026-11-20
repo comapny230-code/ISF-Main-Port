@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { ArrowUpRight, Download } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { NAV_LINKS } from "@/data/eventData";
 import { cn } from "@/lib/utils";
 import { MobileNavigation } from "./MobileNavigation";
@@ -126,17 +126,6 @@ export function SiteHeader() {
                 );
               })}
             </nav>
-
-            <a
-              href="/downloads/isf-startup-jathara-2026.apk"
-              download="ISF-Startup-Jathara-2026.apk"
-              className="group hidden min-[1180px]:inline-flex h-9 shrink-0 items-center gap-1.5 rounded-xl border border-[#e8c4b1] bg-[#fff8f3] px-3 text-[#a7431e] transition-colors hover:border-[#e87042] hover:bg-[#fff0e8] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042]"
-              aria-label="Download the ISF Startup Jathara Android app (APK)"
-            >
-              <Download className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-0.5" aria-hidden="true" />
-              <span className="text-xs font-bold whitespace-nowrap">Get the App</span>
-            </a>
-
 
             {/* Mobile / Tablet Navigation Trigger */}
             <MobileNavigation />
