@@ -25,6 +25,12 @@ export interface SubEvent {
   speaker?: string;
 }
 
+export interface DomainTrack {
+  sNo: number;
+  domain: string;
+  venue: string;
+}
+
 export interface Session {
   id: string;
   timeSlot: string;
@@ -39,6 +45,7 @@ export interface Session {
   speakerIds?: string[];
   capacityNote?: string;
   subEvents?: SubEvent[];
+  domainTracks?: DomainTrack[];
 }
 
 export interface ProgrammeDay {

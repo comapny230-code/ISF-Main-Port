@@ -243,6 +243,46 @@ function SessionRow({
             {session.description}
           </p>
 
+          {/* 3rd Cohort Demo Day Domain Tracks */}
+          {session.domainTracks && session.domainTracks.length > 0 && (
+            <div className="mt-4 border-t border-[#ede7db] pt-3.5">
+              <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-[#c25022] flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#e87042]" />
+                  3rd Cohort Demo Day Domain Venues (02:30 PM – 05:30 PM)
+                </h4>
+                <span className="text-[11px] font-semibold text-[#78716c] bg-[#ede7db]/60 px-2 py-0.5 rounded-md">
+                  CSE Building
+                </span>
+              </div>
+              <div className="overflow-x-auto rounded-xl border border-[#ede7db] bg-[#faf8f5] shadow-2xs">
+                <table className="w-full text-left text-xs">
+                  <thead className="bg-[#f0ece4] text-[#57534e] font-bold uppercase text-[10px] tracking-wider border-b border-[#ede7db]">
+                    <tr>
+                      <th className="py-2.5 px-3 w-12 text-center">S. No.</th>
+                      <th className="py-2.5 px-3">Domain</th>
+                      <th className="py-2.5 px-3 text-right">Venue</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#ede7db]/70">
+                    {session.domainTracks.map((dt) => (
+                      <tr key={dt.sNo} className="hover:bg-[#fff] transition-colors">
+                        <td className="py-2 px-3 font-mono font-bold text-[#c25022] text-center">{dt.sNo}</td>
+                        <td className="py-2 px-3 font-medium text-[#1c1917]">{dt.domain}</td>
+                        <td className="py-2 px-3 text-right">
+                          <span className="inline-flex items-center gap-1 font-semibold text-[#78716c] bg-white px-2 py-0.5 rounded-md border border-[#e8dfd3]">
+                            <MapPin className="w-3 h-3 text-[#e87042] shrink-0" />
+                            {dt.venue}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
+
           {/* Sub-event accordion */}
           {session.subEvents && session.subEvents.length > 0 && (
             <CeremonyAccordion subEvents={session.subEvents} />
@@ -253,67 +293,14 @@ function SessionRow({
   );
 }
 
-// ─── Pre-Summit parallel grid ──────────────────────────────────────────────────
-function ParallelSessionsGrid({
-  sessions,
-}: {
-  sessions: (typeof PROGRAMME_DAYS)[0]["sessions"];
-}) {
-  return (
-    <div>
-      <div className="flex flex-wrap items-center gap-3 mb-5">
-        <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-violet-50 border border-violet-200">
-          <Clock className="w-4 h-4 text-violet-600 shrink-0" />
-          <span className="font-mono font-bold text-sm text-violet-700">
-            1:30 PM – 5:30 PM
-          </span>
-        </div>
-        <span className="text-sm text-[#57534e] font-medium">
-          9 parallel sectoral breakouts across campus venues
-        </span>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {sessions.map((session, i) => (
-          <div
-            key={session.id}
-            className={cn(
-              "group rounded-xl border bg-white p-4 transition-all duration-200",
-              "hover:shadow-md hover:-translate-y-0.5 hover:border-violet-300",
-              "shadow-[0_1px_4px_rgba(0,0,0,0.05)] border-[#eee8de]"
-            )}
-          >
-            <div className="flex items-center justify-between mb-2.5">
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-violet-600 text-white text-[10px] font-bold shrink-0">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div className="flex items-center gap-1 text-[10px] text-[#78716c] font-medium">
-                <MapPin className="w-2.5 h-2.5 text-[#e87042] shrink-0" />
-                <span>{session.location}</span>
-              </div>
-            </div>
-            <h4 className="font-serif font-bold text-sm text-[#1c1917] leading-snug group-hover:text-violet-700 transition-colors">
-              {session.title}
-            </h4>
-            <p className="mt-1.5 text-[11px] text-[#78716c] leading-relaxed line-clamp-2">
-              {session.description}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 // ─── Main export ───────────────────────────────────────────────────────────────
 export function ProgrammeClient() {
-  const [selectedDayId, setSelectedDayId] = useState(PROGRAMME_DAYS[1].id);
+  const [selectedDayId, setSelectedDayId] = useState(PROGRAMME_DAYS[0].id);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
   const activeDay =
-    PROGRAMME_DAYS.find((d) => d.id === selectedDayId) || PROGRAMME_DAYS[1];
-  const isPreSummit = activeDay.dayNumber === 0;
+    PROGRAMME_DAYS.find((d) => d.id === selectedDayId) || PROGRAMME_DAYS[0];
 
   function handleDayChange(id: string) {
     if (id === selectedDayId) return;
@@ -414,7 +401,7 @@ export function ProgrammeClient() {
                           isSelected ? "bg-[#e87042] text-white" : "bg-[#ede7db] text-[#78716c]"
                         )}
                       >
-                        {day.dayNumber === 0 ? "Pre" : `D${day.dayNumber}`}
+                        {`Day ${day.dayNumber}`}
                       </span>
                       {day.status === "Tentative" && !isSelected && (
                         <span className="text-[9px] font-semibold text-amber-600 uppercase tracking-wider">
@@ -478,33 +465,29 @@ export function ProgrammeClient() {
               {/* Stats bar */}
               <DayStatsBar day={activeDay} />
 
-              {/* Pre-summit: parallel grid; regular: vertical timeline */}
-              {isPreSummit ? (
-                <ParallelSessionsGrid sessions={activeDay.sessions} />
-              ) : (
-                <div className="relative">
-                  {/* Spine line */}
-                  <div className="absolute hidden sm:block left-36 top-6 bottom-6 w-px bg-gradient-to-b from-[#e87042]/60 via-[#dfd6c4] to-[#e87042]/20" />
+              {/* Vertical timeline */}
+              <div className="relative">
+                {/* Spine line */}
+                <div className="absolute hidden sm:block left-36 top-6 bottom-6 w-px bg-gradient-to-b from-[#e87042]/60 via-[#dfd6c4] to-[#e87042]/20" />
 
-                  <div className="space-y-0">
-                    {activeDay.sessions.map((session) => (
-                      <SessionRow
-                        key={session.id}
-                        session={session}
-                        isTentativeDay={activeDay.status === "Tentative"}
-                      />
-                    ))}
-                  </div>
-
-                  {/* End cap */}
-                  <div className="flex items-center gap-3 mt-4 pl-8 sm:pl-[10.5rem]">
-                    <div className="w-3 h-3 rounded-full border-2 border-[#dfd6c4] bg-[#f7f4ec]" />
-                    <span className="text-xs text-[#a8a29e] font-medium italic">
-                      End of {activeDay.dateFormatted} schedule
-                    </span>
-                  </div>
+                <div className="space-y-0">
+                  {activeDay.sessions.map((session) => (
+                    <SessionRow
+                      key={session.id}
+                      session={session}
+                      isTentativeDay={activeDay.status === "Tentative"}
+                    />
+                  ))}
                 </div>
-              )}
+
+                {/* End cap */}
+                <div className="flex items-center gap-3 mt-4 pl-8 sm:pl-[10.5rem]">
+                  <div className="w-3 h-3 rounded-full border-2 border-[#dfd6c4] bg-[#f7f4ec]" />
+                  <span className="text-xs text-[#a8a29e] font-medium italic">
+                    End of {activeDay.dateFormatted} schedule
+                  </span>
+                </div>
+              </div>
             </div>
 
           </div>
