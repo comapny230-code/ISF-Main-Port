@@ -104,7 +104,7 @@ export function SiteFooter() {
                     rel="noopener noreferrer"
                     className="block transition-colors hover:text-[#e87042] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#e87042] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0c10]"
                   >
-                    Arush Kumar <span className="font-medium text-[#a8a29e]">· FocusTrigger Automation</span>
+                    Amartya Sarangee <span className="font-medium text-[#a8a29e]">· FocusTrigger Automation</span>
                   </a>
                   <a
                     href="https://mdfaizaanrazakhan.netlify.app"
